@@ -51,6 +51,11 @@
 \newcommand{\course}[1]{\def\course@value{#1}}
 \newcommand{\student}[1]{\def\student@value{#1}}
 \newcommand{\semester}[1]{\def\semester@value{#1}}
+\newcommand{\mpc}{\textsc{MPC}}
+\newcommand{\commonlaw}{\textsc{Common Law}}
+\newcommand{\constitutionalstandards}{\textsc{Constitutional Standards}}
+\newcommand{\majorityjurisdictions}{\textsc{Majority Jurisdictions}}
+\newcommand{\minorityjurisdictions}{\textsc{Minority Jurisdictions}}
 \course{}
 \student{}
 \semester{}
@@ -94,6 +99,9 @@
 \newcommand{\holding}[2]{\begin{lawbox}{Holding}{holdingred}{paperred}{}#2\end{lawbox}}
 \newcommand{\analysisbox}[2]{\begin{lawbox}{Analysis}{analysisgold}{paperyellow}{}#2\end{lawbox}}
 \newcommand{\policybox}[2]{\begin{lawbox}{Policy}{policyteal}{paperteal}{}#2\end{lawbox}}
+\newcommand{\holding}[2]{\begin{lawbox}{Holding: #1}{holdingred}{paperred}{}#2\end{lawbox}}
+\newcommand{\analysisbox}[2]{\begin{lawbox}{Analysis: #1}{analysisgold}{paperyellow}{}#2\end{lawbox}}
+\newcommand{\policybox}[2]{\begin{lawbox}{Policy: #1}{policyteal}{paperteal}{}#2\end{lawbox}}
 \newcommand{\definition}[2]{\begin{lawbox}{Definition: #1}{analysisgold}{papercream}{}#2\end{lawbox}}
 \newcommand{\example}[2]{\begin{lawbox}{Example: #1}{casepurple}{paperpurple}{}#2\end{lawbox}}
 \newcommand{\note}[2]{\begin{lawbox}{Note: #1}{muted}{papercream}{}#2\end{lawbox}}
@@ -124,4 +132,3 @@
 }
 
 \endinput
-

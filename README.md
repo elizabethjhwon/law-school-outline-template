@@ -72,6 +72,8 @@ Each command takes a title and body unless noted otherwise:
 
 The class also provides `\\definition`, `\\example`, and `\\note` for general-purpose notes.
 
+For recurring legal terms, use `\\mpc`, `\\commonlaw`, `\\constitutionalstandards`, `\\majorityjurisdictions`, and `\\minorityjurisdictions`.
+
 ## License
 
 MIT. See `LICENSE`.
