@@ -96,11 +96,15 @@
 \newcommand{\analysisbox}[2]{\begin{lawbox}{Analysis: #1}{analysisgold}{paperyellow}{}#2\end{lawbox}}
 \newcommand{\policybox}[2]{\begin{lawbox}{Policy: #1}{policyteal}{paperteal}{}#2\end{lawbox}}
 
-\newcommand{\mpc}[2]{\begin{lawbox}{MPC #1}{#2}}
-\newcommand{\commonlaw}[2]{\begin{lawbox}{Common Law Norm #1}#2}
-\newcommand{\constitutionalstandards}[2]{\begin{lawbox}{Constitutional Standard #1}#2}
-\newcommand{\majorityjurisdictions}[2]{\begin{lawbox}{Majority Jurisdictions #1}#2}
-\newcommand{\minorityjurisdictions}[2]{\begin{lawbox}{Minority Jurisdictions #1}#2}
+\newcommand{\mpc}[2]{\begin{lawbox}{MPC: #1}{ruleblue}{paperblue}{}#2\end{lawbox}}
+
+\newcommand{\commonlaw}[2]{\begin{lawbox}{Common Law: #1}{casepurple}{paperpurple}{}#2\end{lawbox}}
+
+\newcommand{\constitutionalstandards}[2]{\begin{lawbox}{Constitutional Standards: #1}{policyteal}{paperteal}{}#2\end{lawbox}}
+
+\newcommand{\majorityjurisdictions}[2]{\begin{lawbox}{Majority Jurisdictions: #1}{statutegreen}{papergreen}{}#2\end{lawbox}}
+
+\newcommand{\minorityjurisdictions}[2]{\begin{lawbox}{Minority Jurisdictions: #1}{examorange}{paperred}{}#2\end{lawbox}}
 
 \newcommand{\definition}[2]{\begin{lawbox}{Definition: #1}{analysisgold}{papercream}{}#2\end{lawbox}}
 \newcommand{\example}[2]{\begin{lawbox}{Example: #1}{casepurple}{paperpurple}{}#2\end{lawbox}}
