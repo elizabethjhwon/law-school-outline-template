@@ -9,8 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: xu-cheng/latex-action@v4
         with:
-          root_file: outline.tex
-          working_directory: example
+          root_file: example/outline.tex
+          working_directory: .
           latexmk_use_xelatex: false
