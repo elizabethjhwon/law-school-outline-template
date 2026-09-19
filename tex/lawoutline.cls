@@ -88,9 +88,9 @@
   fonttitle=\small
 }
 
-\newcommand{\rulebox}[2]{\begin{lawbox}{Rule}{ruleblue}{paperblue}{}#2\end{lawbox}}
+\newcommand{\rulebox}[2]{\begin{lawbox}{Rule: #1}{ruleblue}{paperblue}{}#2\end{lawbox}}
 \newcommand{\casebox}[3]{\begin{lawbox}{Case: #1}{casepurple}{paperpurple}{#2}#3\end{lawbox}}
-\newcommand{\statutebox}[2]{\begin{lawbox}{Statute / Regulation}{statutegreen}{papergreen}{}#2\end{lawbox}}
+\newcommand{\statutebox}[2]{\begin{lawbox}{Statute / Regulation: #1}{statutegreen}{papergreen}{}#2\end{lawbox}}
 \newcommand{\holding}[2]{\begin{lawbox}{Holding}{holdingred}{paperred}{}#2\end{lawbox}}
 \newcommand{\analysisbox}[2]{\begin{lawbox}{Analysis}{analysisgold}{paperyellow}{}#2\end{lawbox}}
 \newcommand{\policybox}[2]{\begin{lawbox}{Policy}{policyteal}{paperteal}{}#2\end{lawbox}}
