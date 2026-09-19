@@ -118,7 +118,7 @@
     \begin{flushleft}
       \color{muted}\rule{\textwidth}{1pt}\par
       \vspace{0.8em}
-      {\small LAW SCHOOL OUTLINE}\par
+      {\small OUTLINE}\par
     \end{flushleft}
   \end{titlepage}
 }
