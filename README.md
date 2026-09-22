@@ -66,13 +66,14 @@ Each command takes a title and body unless noted otherwise:
 | `\\holding{title}{body}` | Holding or takeaway |
 | `\\analysisbox{title}{body}` | Analysis or synthesis |
 | `\\policybox{title}{body}` | Policy argument |
+| `\\doctrine{title}{body` | Doctrine of law/courts |
 | `\\examtip{body}` | Exam-oriented reminder |
 | `\\question{title}{body}` | Open question |
 | `\\todoitem{body}` | Adds an item to the todo list |
 
 The class also provides `\\definition`, `\\example`, and `\\note` for general-purpose notes.
 
-For recurring legal terms, use `\\mpc`, `\\commonlaw`, `\\constitutionalstandards`, `\\majorityjurisdictions`, and `\\minorityjurisdictions`.
+For crim, use `\\mpc`, `\\commonlaw`, `\\constitutionalstandards`, `\\majorityjurisdictions`, and `\\minorityjurisdictions`.
 
 ## License
 
