@@ -70,8 +70,28 @@ DATA AS PROPERTY? NEWS AS PROPERTY?
 
 \section{Acquisition Through Adverse Possession}
 \doctrine{Adverse Possession}
-{If the true owner does not timely (statute of limitations) assert their ownership rights, while another person openly treats the land as their own, the law may eventually recognize the possessor as the owner. \\
-\textbf{Rule} To constitute adverse possession, there must be actual possession which is uninterrupted, open and notorious, hostile and exclusive, and under a claim of right made in good faith for the statutory period.}
+{If the true owner does not timely (statute of limitations) assert their ownership rights, while another person openly treats the land as their own, the law may eventually recognize the possessor as the owner.}
+
+\subsection{Elements of Adverse Possession}
+
+\rulebox{Requirements for Adverse Possession}{
+To constitute adverse possession, there must be actual possession which is:
+\begin{enumerate}
+    \item Actual: Engaged in acts that look like claims to possession; Acted in a way an owner would. 
+    \item Exclusive: Using it in a way to exclude others.
+    \item Continuous: Adverse possession must have been occurring for some statutory period (usually 10 years). 
+    \item Open and Notorious: Used the property in a way such that the \textbf{reasonable} owner would have noticed.
+    \item Hostile under a claim of right: 
+    \begin{itemize}
+        \item Hostile: Without permission or when permission is revoked. 
+        \item Under a claim of right: 
+        \begin{enumerate}
+            \item Objective test states do not require good-faith use;
+            \item Subjective test states require good-faith use, which can include requiring a document/color of title or paying taxes on the land. 
+        \end{enumerate}
+    \end{itemize}
+\end{enumerate}
+}
 
 \casebox
 {\textit{Scott v. Anderson-Tully Co.} (2015)}
@@ -79,8 +99,8 @@ DATA AS PROPERTY? NEWS AS PROPERTY?
 {
     \textbf{Facts}
     \begin{itemize}
-        \item Scott claimed ownership of a disputed twenty-acre parcel through inheritance
-        \item Anderson-Tully harvested timber from it, and claimed title through adverse possession
+        \item Scott claimed ownership of a disputed twenty-acre parcel through inheritance.
+        \item Anderson-Tully harvested timber from it, and claimed title through adverse possession.
     \end{itemize}
     
     \textbf{Question} Did Anderson-Tully prove the elements of adverse possession?
@@ -96,15 +116,18 @@ DATA AS PROPERTY? NEWS AS PROPERTY?
         \item \textbf{Continuous and uninterrupted for the statutory period:} Anderson-Tully marked the boundary in 1969, repainted it in 1986 and 1998, and harvested timber in 1990, 1999, and 2010. Scott’s objection in 2003 came too late. 
         \item \textbf{Exclusive:} The evidence showed that Anderson-Tully used the disputed land after 1969 with intention to possess the land to the exclusion of others, including Smith. 
         \item \textbf{Peaceful:} Anderson-Tully’s possession was not maintained through force or ongoing conflict. 
+        \note{On peaceful use}{Not common!}
     \end{itemize}
 }
 
-    \question
-    {Which factors are at issue in \textit{Scott}?}
-    {Important to note how this is the way courts assure themselves that the adverse possessor is acting the way an owner would.}
+\definition{Quieting a title}{This is when a court establishes that you are the owner of that property, thereby ``quieting'' the debate surrounding it.}
 
-    \note{Recreational Activities}
-    {In Kentucky, a court ruled that engaging in recreational activities on the land like hunting, fishing, etc. do not qualify for ``actual possession," in order to reduce fears of property owners that they might lose property rights by allowing recreational users on their land.}
+\question
+{Which factors are at issue in \textit{Scott}?}
+{This is the way courts assure themselves that the adverse possessor is acting the way an owner would.}
+
+\note{Recreational Activities}
+{In Kentucky, a court ruled that engaging in recreational activities on the land like hunting, fishing, etc. do not qualify for ``actual possession," in order to reduce fears of property owners that they might lose property rights by allowing recreational users on their land.}
 
 \casebox
 {\textit{Carpenter v. Ruperto} (1982)}
@@ -114,7 +137,7 @@ DATA AS PROPERTY? NEWS AS PROPERTY?
 \begin{itemize}
     \item Carpenter used a strip of her neighbors’ land as an extension of her yard for more than thirty years.
     \item She knew that the strip was not part of her property.
-    \item She argued that hse had acquired this plot of land through adverse possession. 
+    \item She argued that she had acquired this plot of land through adverse possession. 
 \end{itemize}
 
 \textbf{Question} Did Carpenter establish adverse possession under a valid claim of right?
@@ -131,6 +154,8 @@ DATA AS PROPERTY? NEWS AS PROPERTY?
     \item Knowledge that one’s title is defective is not automatically disqualifying, but knowing that one has no title or legitimate claim is.
 \end{itemize}
 }
+
+
 
 \casebox
 {\textit{Howard v. Kunto} (1970)}
@@ -154,8 +179,8 @@ DATA AS PROPERTY? NEWS AS PROPERTY?
 \textbf{Holding} 
 \begin{itemize}
     \item The court ruled for Kunto, saying that:
-    \item No, seasonal use does not defeat continuity
-    \item Yes, Kunto could tack his predecessors’ possession
+    \item No, seasonal use does not defeat continuity; and
+    \item Yes, Kunto could tack his predecessors’ possession.
 \end{itemize}
 
 \textbf{Reasoning}
@@ -174,7 +199,149 @@ DATA AS PROPERTY? NEWS AS PROPERTY?
         \item Motivation behind privity is recognizing the need for some reasonable connection between successive occupants of the real property.
     \end{itemize}
 \end{itemize}
-
 }
+
+\begin{center}
+    \textbf{Knowledge Spectrum for a Good-Faith Claim of Right}
+    
+    \vspace{0.5em}
+    \begin{tikzpicture}
+        \draw[<->, thick] (0,0) -- (12,0);
+        \foreach \x in {1,6,11} {
+            \draw (\x,0.12) -- (\x,-0.12);
+        }
+        \node[
+            below=6pt,
+            text width=2.5cm,
+            align=center
+        ] at (1,0) {
+            Confusion or\\
+            mistake
+        };
+        \node[
+            below=6pt,
+            text width=3.5cm,
+            align=center
+        ] at (6,0) {
+            \textit{Carpenter}:\\
+            too close to certainty
+        };
+        \node[
+            below=6pt,
+            text width=3cm,
+            align=center
+        ] at (11,0) {
+            Certainty of lacking\\
+            possession or title
+        };
+    \end{tikzpicture}
+\end{center}
+
+
+\chapter{Alternatives to Private Property}
+\section{Limits of Private Property}
+\subsection{Theoretical Perspectives}
+
+\subsubsection{Anti-commodification}
+
+Property is often seen as a ``bundle'' of rights and referred to like a ``bundle of sticks''. This bundle includes the rights to exclusion, use, and transfer. 
+
+\begin{enumerate}
+    \item \textbf{\textit{Property and Personhood}, Radin}
+    \begin{itemize}
+        \item Can something still be property of we take away a stick, i.e., one of the rights? 
+        \begin{center}
+            \begin{tikzpicture}
+                \draw[<->, thick] (0,0) -- (10,0);
+                \node[above] at (0,0) {Fungible; ex) pencil};
+                \node[above] at (10,0) {Personal; ex) engagement ring};
+            \end{tikzpicture}
+        \end{center}
+        \definition{Fungible}{When individual units of an asset or good are completely interchangeable and of equal value (market value).}
+        \item Property needs to be separable with yourself. 
+        \item $\exists$ anti-commodification and inalienability rules, such as for prescription drugs or medical devices. 
+    \end{itemize}
+
+    \item \textbf{\textit{Market Inalienability}, Radin}
+    \begin{itemize}
+        \item Commodification of some things may be harmful to the society as a whole.
+        \item Prophylactic/Coercion argument: 
+        \begin{itemize}
+            \item For certain things, $\exists$ high likelihood that there is coercion involved in its sale/distribution.
+            \item Because it's costly to scan every transaction to check for free will, better to ban it altogether. 
+            \item Examples: organ sales or prostitution. 
+        \end{itemize} 
+        
+        \item Prohibition/Moral argument:
+        \begin{itemize}
+            \item More of a rhetorical argument. 
+            \item Reference to something as a commodity would lead to moral wrongs. 
+        \end{itemize}
+
+        \item Domino argument:
+        \begin{itemize}
+            \item Commodifying some of $x$ would lead to the commodification of all instances of $x$. 
+        \end{itemize}
+
+        \item Double bind/paradox:
+        \begin{itemize}
+            \item Banning commodification could be worse in the short-term for some people, because it cuts off one way they could better their circumstances.
+            \item Example: Someone in poverty would remain in poverty due to the fact that they can't engage in prostitution and make money in that way. 
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+\question{Pros and cons of inalienability rules}{Is limiting alienability a limit on liberties? Or a prevention of exploitation?}
+
+\subsubsection{The Commons}
+This is a reference to the \textit{tragedy of the commons}, which results when an open access piece of property is being exploited by non-cooperative users. 
+
+\definition{Externalities}{A cost that someone involuntarily pays due to another's actions.}
+\definition{Internalize (an externality)}{Take on the externality; Bearing the cost of your own actions.}
+
+\begin{enumerate}
+    \item \textbf{\textit{Governing the Commons}, Ostrom}
+    \begin{itemize}
+        \item Lays out the following possible responses to the tragedy of the commons:
+        \begin{enumerate}
+            \item Command and control by a central authority (usually the government).
+            \item Privatization by individuals, which leads to each person internalizing the externalities (and thus experiencing their own harm). (More on this by Demsetz.) 
+            \item Closed access commons, usually done through communal ownership that limits ownership/use to a group of people rather than everyone. 
+            \begin{itemize}
+                \item This is usually regulated through contracts or social norms. 
+            \end{itemize}
+
+            \item (Not mentioned by Ostrom) Tradable access rights, established by capping total resource use and letting a market set a price on individual quotas. 
+        \end{enumerate}
+    \end{itemize}
+
+    \item \textbf{Applications/Real-world case studies}
+    \begin{itemize}
+        \item Lobster gangs of Maine
+        \begin{itemize}
+            \item Used a system of closed access commons, regulated by social norms and (sometimes) violent retributions.
+            \item Because of the increased cost of lobster, unaffiliated people who were unfamiliar with the social norms began to encroach on this practice, which led to violence, which ultimately led to command/control by a central authority. 
+        \end{itemize}  
+
+        \item Island of Barbuda
+        \begin{itemize}
+            \item Used a unique communal land system that gave everyone three distinct plots of land for free: one for a home, one for agriculture, and one for a commercial business.
+            \item After Hurricane Irma, the central government argued that communal ownership prevented residents from using their property as collateral to secure bank loans for rebuilding.
+            \item As a result, the government is trying to move towards privatization of the land. 
+        \end{itemize}
+    \end{itemize}
+
+    \item \textbf{\textit{Theory of Property Rights}, Demsetz}
+    \begin{itemize}
+        \item \textbf{Thesis:} Property rights emerge in order to internalize externalities, when the gains of internalization > cost of internalization. 
+        \item \textbf{Case study:} 
+        \begin{itemize}
+            \item Fur trade increasing the value of fur leads to increase in hunting. 
+            \item Property rights emerge to prevent over-hunting. 
+            \item Benefits of this, like getting to raise and profit from fur-bearing animals > Costs of internalization, such as policing/monitoring, or even fencing. 
+        \end{itemize}
+    \item \textbf{Key point:} As trade and technology increase the value of a resource, property rights are likely to emerge, and make it more valuable to avoid the tragedy of the commons. 
+    \end{itemize}
+\end{enumerate}
 
 \end{document}

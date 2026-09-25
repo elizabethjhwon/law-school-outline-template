@@ -20,7 +20,6 @@
 
 \definecolor{ink}{HTML}{202020}
 \definecolor{muted}{HTML}{777777}
-
 \definecolor{ruleborder}{HTML}{1D3557}
 \definecolor{rulepaper}{HTML}{EAF2F8}
 
@@ -88,7 +87,6 @@
   citecolor=caseborder,
   pdftitle={Law School Outline}
 }
-
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.32em}
 \setlist{nosep,leftmargin=*}
@@ -104,7 +102,6 @@
 \newcommand{\course}[1]{\def\course@value{#1}}
 \newcommand{\student}[1]{\def\student@value{#1}}
 \newcommand{\semester}[1]{\def\semester@value{#1}}
-
 \course{}
 \student{}
 \semester{}
@@ -166,17 +163,11 @@
 
 \newcommand{\minorityjurisdictions}[2]{\begin{lawbox}{Minority Jurisdictions: #1}{minorityborder}{minoritypaper}{}#2\end{lawbox}}
 
-\newcommand{\lincanon}[2]{
-    \begin{lawbox}{Linguistic Canon: #1}{lincanonborder}{lincanonpaper}{}
-        #2
-    \end{lawbox}
-}
+\newcommand{\lincanon}[2]{%
+  \begin{lawbox}{Linguistic Canon: #1}{lincanonborder}{lincanonpaper}{}#2\end{lawbox}}
 
-\newcommand{\subcanon}[2]{
-    \begin{lawbox}{Substantive Canon: #1}{subcanonborder}{subcanonpaper}{}%
-        #2
-    \end{lawbox}
-}
+\newcommand{\subcanon}[2]{%
+  \begin{lawbox}{Substantive Canon: #1}{subcanonborder}{subcanonpaper}{}#2\end{lawbox}}
 
 \newcommand{\definition}[2]{\begin{lawbox}{Definition: #1}{definitionborder}{definitionpaper}{}#2\end{lawbox}}
 
@@ -189,7 +180,6 @@
 \newcommand{\examtip}[1]{\begin{lawbox}{Exam Tip}{examtipborder}{examtippaper}{}#1\end{lawbox}}
 
 \newcommand{\todoitem}[1]{\begin{lawbox}{To-do}{todoborder}{todopaper}{}#1\end{lawbox}\addcontentsline{tdo}{section}{#1}}
-
 \newcommand{\listoftodos}{\chapter*{Todo list}\@starttoc{tdo}}
 
 \renewcommand{\maketitle}{%
@@ -207,7 +197,7 @@
     \begin{flushleft}
       \color{muted}\rule{\textwidth}{1pt}\par
       \vspace{0.8em}
-      {\small OUTLINE}\par
+      {\small LAW SCHOOL OUTLINE}\par
     \end{flushleft}
   \end{titlepage}
 }
