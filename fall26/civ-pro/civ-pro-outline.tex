@@ -1,21 +1,6 @@
 \documentclass[11pt]{tex/lawoutline}
 \usepackage{amssymb}
 \usepackage{enumitem}
-\usetikzlibrary{positioning,calc}
-
-\tikzset{
-    flowbox/.style={draw=ink, fill=notepaper, rounded corners=2pt,
-        align=center, inner sep=5pt, font=\small, text width=3.0cm},
-    flowblue/.style={flowbox, draw=ruleborder, fill=rulepaper},
-    flowgreen/.style={flowbox, draw=statuteborder, fill=statutepaper},
-    flowpurple/.style={flowbox, draw=caseborder, fill=casepaper},
-    floworange/.style={flowbox, draw=examtipborder, fill=examtippaper},
-    flowteal/.style={flowbox, draw=policyborder, fill=policypaper},
-    flowarrow/.style={->, thick, draw=ink},
-    flowyes/.style={font=\scriptsize\bfseries, text=statuteborder},
-    flowno/.style={font=\scriptsize\bfseries, text=holdingborder},
-    flowlabel/.style={font=\scriptsize, align=center, text=ink}
-}
 
 \course{Civil Procedure}
 \student{Prof: J. Greiner}
@@ -41,35 +26,22 @@ State courts are generally courts of general jurisdiction. Federal courts need a
 
 \examtip{Do not confuse SMJ and PJ. SMJ concerns the court's power over the kind of dispute; PJ concerns the court's power over the defendant. A federal court generally needs both.}
 
-\section{Master Jurisdiction Map}
+\examtip{On the exam, argue both sides when the doctrine is uncertain or the facts support competing inferences.}
 
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.75cm and 0.7cm]
-    \node[flowblue, text width=3.7cm] (filed)
-        {A lawsuit is filed\par in state court};
-    \node[flowgreen, below left=of filed, text width=3.45cm] (smj)
-        {Can a federal court hear this type of case?\par \textbf{SMJ}};
-    \node[flowpurple, below right=of filed, text width=3.45cm] (pj)
-        {Can this court exercise power over this defendant?\par \textbf{PJ}};
-    \node[floworange, below=1.0cm of smj, text width=3.45cm] (basis)
-        {Federal basis:\par \S\,1331, \S\,1332, or supplemental jurisdiction};
-    \node[flowteal, below=1.0cm of pj, text width=3.45cm] (contact)
-        {State long-arm statute +\par due process};
-    \node[flowbox, below=1.0cm of $(basis)!0.5!(contact)$, text width=4.2cm]
-        (proceed) {If the requirements are satisfied:\par proceed to the merits};
+\examtip{The phrase ``same case or controversy'' is better than the phrase ``common nucleus of operative fact''.}
 
-    \draw[flowarrow] (filed) -- node[flowlabel, above left]{first} (smj);
-    \draw[flowarrow] (filed) -- node[flowlabel, above right]{then} (pj);
-    \draw[flowarrow] (smj) -- (basis);
-    \draw[flowarrow] (pj) -- (contact);
-    \draw[flowarrow] (basis) -- (proceed);
-    \draw[flowarrow] (contact) -- (proceed);
-\end{tikzpicture}%
+\section{Quick Court-Access Checklist}
+
+\rulebox{The same case can raise several separate gateway questions}{
+The same dispute may be filed in state court even when it cannot be filed in federal court. If the case is in federal court, ask separately:
+\begin{enumerate}
+    \item Is there subject-matter jurisdiction?
+    \item Does the court have personal jurisdiction over each defendant?
+    \item Is venue proper, and is there a reason to move or decline the case?
+    \item Which state's law applies?
+\end{enumerate}
+Satisfying one requirement does not substitute for satisfying the others.
 }
-\end{center}
-
-\note{}{The same case may be filed in state court even when it cannot be filed in federal court. If the case is in federal court, analyze both SMJ and PJ; satisfying one does not substitute for the other.}
 
 \section{State and Federal Courts}
 
@@ -77,7 +49,8 @@ State courts are generally courts of general jurisdiction. Federal courts need a
 State courts may hear almost every kind of claim. Federal courts may hear only cases that fall within a federal statute granting jurisdiction, such as 28 U.S.C. \S\,1331 or \S\,1332. Unless Congress makes federal jurisdiction exclusive, state and federal courts usually have concurrent jurisdiction over federal claims.
 }
 
-\note{Examples of commonly exclusive federal matters}{Patents, copyrights, bankruptcy, and certain actions involving the United States. Always check the governing statute before assuming jurisdiction is concurrent.}
+\note{Examples of commonly exclusive federal matters:}
+{Patents, copyrights, bankruptcy, and certain actions involving the United States. Always check the governing statute before assuming jurisdiction is concurrent.}
 
 \chapter{Subject-Matter Jurisdiction}
 
@@ -85,36 +58,10 @@ State courts may hear almost every kind of claim. Federal courts may hear only c
 
 \statutebox{28 U.S.C. \S\,1331}{Federal district courts have original jurisdiction over civil actions arising under the Constitution, laws, or treaties of the United States. The statute is narrower than the broad constitutional grant in Article III.}
 
-\subsection{Federal SMJ: Which Door?}
+\note{Boundaries}
+{Article III supplies the outer constitutional boundary; \S\,1331 is Congress's statutory grant within that boundary. \textit{Osborn v. Bank of the United States} reflects the broad constitutional understanding of arising-under jurisdiction, while \textit{Mottley} supplies the narrower statutory rule used in ordinary cases.}
 
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.7cm and 0.55cm]
-    \node[flowblue, text width=3.45cm] (start)
-        {Can the case enter federal court?};
-    \node[flowgreen, below left=of start, text width=3.25cm] (federal)
-        {Federal question?\par Plaintiff's claim arises under federal law};
-    \node[flowpurple, below right=of start, text width=3.25cm] (diversity)
-        {Diversity?\par Complete diversity + AIC $>$ \$75,000};
-    \node[floworange, below=of federal, text width=3.25cm] (well)
-        {Apply the well-pleaded complaint rule\par (Mottley)};
-    \node[floworange, below=of diversity, text width=3.25cm] (party)
-        {Check citizenship of every party\par (Strawbridge, Mas, Hertz)};
-    \node[flowteal, below=1.0cm of $(well)!0.5!(party)$, text width=3.8cm] (yes)
-        {If a door is satisfied:\par federal district court has original SMJ};
-    \node[flowbox, below=1.0cm of yes, text width=3.8cm] (state)
-        {If neither door is satisfied:\par state court, unless a special statute applies};
-
-    \draw[flowarrow] (start) -- node[flowyes, above left]{yes} (federal);
-    \draw[flowarrow] (start) -- node[flowyes, above right]{yes} (diversity);
-    \draw[flowarrow] (federal) -- (well);
-    \draw[flowarrow] (diversity) -- (party);
-    \draw[flowarrow] (well) -- (yes);
-    \draw[flowarrow] (party) -- (yes);
-    \draw[flowarrow] (yes) -- node[flowno, right]{no federal basis} (state);
-\end{tikzpicture}%
-}
-\end{center}
+\examtip{Always check the date of the case to check whether statutes have been passed or not!}
 
 \subsection{The Well-Pleaded Complaint Rule}
 
@@ -152,6 +99,8 @@ Grable's state quiet-title claim depended on whether the IRS had complied with a
 \textbf{Exam factors:} Consider the federal interest, federalism and the likely number of similar cases, whether the dispute is principally legal or factual, and what Congress likely intended.
 }
 
+\examtip{For the Smith--Grable exception, do not stop after identifying a federal statute. Ask whether the federal issue is necessary to the state-law claim, actually disputed, substantial to the federal system, and compatible with the federal--state division of labor. A federal court may have power but still decide that exercising it would be imprudent.}
+
 \casebox{Moore v. Chesapeake \& Ohio Railway Co.}{186 U.S. 642 (1903)}{
 \textbf{Takeaway:} A federal issue inside a state-law claim is not automatically enough. The claim must satisfy the narrow Smith--Grable framework.
 }
@@ -187,67 +136,6 @@ If the imagined action is based only on state law, the declaratory-judgment plai
 Under \textit{Strawbridge}, every plaintiff must be diverse from every defendant. The Constitution permits minimal diversity, but the diversity statute has been interpreted to require complete diversity.
 }
 
-\subsection{Diversity Flowchart}
-
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.72cm and 0.55cm]
-    \node[flowblue, text width=3.3cm] (start)
-        {Start with all plaintiffs and defendants};
-    \node[flowpurple, below=of start, text width=3.3cm] (citizens)
-        {Determine each party's citizenship\par (domicile, incorporation, PPB, or members)};
-    \node[floworange, below=of citizens, text width=3.3cm] (complete)
-        {Is every plaintiff diverse from every defendant?};
-    \node[flowgreen, below left=of complete, text width=3.2cm] (pass)
-        {Yes:\par continue};
-    \node[flowbox, below right=of complete, text width=3.2cm] (fail)
-        {No:\par no ordinary diversity jurisdiction};
-    \node[floworange, below=of pass, text width=3.2cm] (aic)
-        {Does the amount in controversy exceed \$75,000?};
-    \node[flowgreen, below left=of aic, text width=3.2cm] (federal)
-        {Yes:\par \S\,1332 satisfied};
-    \node[flowbox, below right=of aic, text width=3.2cm] (low)
-        {No:\par unless another basis of SMJ exists};
-
-    \draw[flowarrow] (start) -- (citizens);
-    \draw[flowarrow] (citizens) -- (complete);
-    \draw[flowarrow] (complete) -- node[flowyes, above left]{yes} (pass);
-    \draw[flowarrow] (complete) -- node[flowno, above right]{no} (fail);
-    \draw[flowarrow] (pass) -- (aic);
-    \draw[flowarrow] (aic) -- node[flowyes, above left]{yes} (federal);
-    \draw[flowarrow] (aic) -- node[flowno, above right]{no} (low);
-\end{tikzpicture}%
-}
-\end{center}
-
-\begin{center}
-\resizebox{0.92\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.25cm and 1.15cm]
-    \node[flowgreen, text width=2.6cm] (p1a) {P1: SC};
-    \node[flowgreen, below=of p1a, text width=2.6cm] (p2a) {P2: SC};
-    \node[flowgreen, right=of p1a, text width=2.6cm] (d1a) {D1: VA};
-    \node[flowgreen, below=of d1a, text width=2.6cm] (d2a) {D2: NC};
-    \node[flowbox, right=1.0cm of d1a, text width=2.4cm] (completeyes) {Complete diversity};
-    \draw[flowarrow, draw=statuteborder] (p1a) -- (d1a);
-    \draw[flowarrow, draw=statuteborder] (p1a) -- (d2a);
-    \draw[flowarrow, draw=statuteborder] (p2a) -- (d1a);
-    \draw[flowarrow, draw=statuteborder] (p2a) -- (d2a);
-    \draw[flowarrow, draw=statuteborder] (d2a) -- (completeyes);
-
-    \node[floworange, below=1.0cm of p1a, text width=2.6cm] (p1b) {P1: SC};
-    \node[floworange, below=of p1b, text width=2.6cm] (p2b) {P2: SC};
-    \node[floworange, right=of p1b, text width=2.6cm] (d1b) {D1: VA};
-    \node[floworange, below=of d1b, text width=2.6cm] (d2b) {D2: SC};
-    \node[flowbox, right=1.0cm of d1b, text width=2.4cm] (completeNo) {Not complete};
-    \draw[flowarrow, draw=examtipborder] (p1b) -- (d1b);
-    \draw[flowarrow, draw=examtipborder] (p1b) -- (d2b);
-    \draw[flowarrow, draw=examtipborder] (p2b) -- (d1b);
-    \draw[flowarrow, draw=examtipborder] (p2b) -- (d2b);
-    \draw[flowarrow, draw=examtipborder] (d2b) -- (completeNo);
-\end{tikzpicture}%
-}
-\end{center}
-
 \casebox{Strawbridge v. Curtiss}{7 U.S. (3 Cranch) 267 (1806)}{
 \textbf{Takeaway:} For ordinary \S\,1332 jurisdiction, no plaintiff may share state citizenship with any defendant. Check every party on both sides.
 }
@@ -256,6 +144,12 @@ Under \textit{Strawbridge}, every plaintiff must be diverse from every defendant
 
 \rulebox{Amount in controversy}{
 The plaintiff's good-faith allegation controls unless it is legally impossible for the plaintiff to recover more than \$75,000. Interest and costs do not count. Claims by one plaintiff against one defendant may generally be aggregated, even if the claims are unrelated. Do not aggregate separate claims by different plaintiffs merely to reach the threshold.
+}
+
+\note{When calculating the amount in controversy, consider all legally available damages, including compensatory, punitive, statutory, and injunctive relief when appropriate. If several plaintiffs seek one common and indivisible right, aggregation may be possible; separate individual injuries ordinarily cannot be combined.}
+
+\casebox{Troy Bank v. G.A. Whitehead \& Co.}{222 U.S. 39 (1911)}{
+\textbf{Takeaway:} Multiple plaintiffs may aggregate their claims when they seek to enforce one common and indivisible title or right. Separate personal claims ordinarily cannot be aggregated.
 }
 
 \subsection{Citizenship}
@@ -277,77 +171,56 @@ A person keeps the old domicile until both residence and intent establish a new 
 A corporation is a citizen of every state and foreign state where it is incorporated and of the state where it has its principal place of business. Under \textit{Hertz}, the principal place of business is the corporation's ``nerve center,'' usually where its officers direct, control, and coordinate the company's activities.
 }
 
+\casebox{Hertz Corp. v. Friend}{559 U.S. 77 (2010)}{
+\textbf{Takeaway:} A corporation's principal place of business is its nerve center: the place where its officers direct, control, and coordinate the corporation's activities, usually its headquarters.
+}
+
 \rulebox{Unincorporated entities}{
 Partnerships, labor unions, LLCs, and similar entities are citizens of every state of which any member is a citizen. Do not use the corporation rule for an unincorporated association.
+}
+
+\rulebox{Foreign parties and federally chartered banks}{
+An alien or foreign national is treated as a citizen of the foreign state for diversity purposes, subject to the statutory limits on suits involving foreign parties. A federally chartered national bank is a citizen of the state designated as its main office in its articles of association; do not automatically treat every branch as a separate citizenship.
+}
+
+\casebox{Wachovia Bank v. Schmidt}{546 U.S. 303 (2006)}{
+\textbf{Takeaway:} A national bank is a citizen of the state designated as its main office in its articles of association. The location of branches does not automatically create additional state citizenships.
+}
+
+\casebox{Americold Realty Trust v. Conagra Foods}{577 U.S. 378 (2016)}{
+\textbf{Takeaway:} An unincorporated entity has the citizenship of all of its members. The entity's citizenship is not limited to the state of its principal office.
 }
 
 \rulebox{Estates and representatives}{
 The legal representative of a decedent's estate has the decedent's citizenship. The representative of a minor or incompetent has the citizenship of the represented person.
 }
 
+\note{Diversity does not ordinarily cover divorce, alimony, child-custody, or probate matters even when the citizenship and amount requirements appear satisfied. Check for the domestic-relations and probate exceptions before proceeding.}
+
 \examtip{Diversity is measured when the complaint is filed. Analyze each party's citizenship, then test complete diversity, then test the amount in controversy.}
 
 \section{Supplemental Jurisdiction}
 
-\statutebox{28 U.S.C. \S\,1367(a)}{When a federal court has original jurisdiction over at least one claim, it generally has supplemental jurisdiction over other claims that form part of the same Article III case or controversy. The claims must share a common nucleus of operative fact. Supplemental jurisdiction can include claims involving additional parties.}
+\statutebox{28 U.S.C. \S\,1367(a)}{When a federal court has original jurisdiction over at least one claim, it generally has supplemental jurisdiction over other claims that form part of the same Article III case or controversy. The usual way to show this is that the claims share a common nucleus of operative fact. Supplemental jurisdiction can include claims involving additional parties.}
 
 \rulebox{Supplemental-jurisdiction sequence}{
 For each additional claim, ask:
 \begin{enumerate}
     \item Is there an anchoring claim with original federal jurisdiction?
-    \item Does the additional claim share a common nucleus of operative fact with the anchor?
-    \item If the anchor is diversity-only, does \S\,1367(b) bar the plaintiff's claim because it would be inconsistent with complete diversity?
-    \item Even if jurisdiction exists, should the court decline it under \S\,1367(c)?
+    \item Do the claims form the same Article III case or controversy, usually because they share a common nucleus of operative fact?
+    \item If the anchor is diversity-only, does \S\,1367(b) bar the plaintiff's claim because it would be inconsistent with complete diversity or the amount-in-controversy requirement?
+    \item Even if supplemental jurisdiction exists, should the court decline it under \S\,1367(c)?
 \end{enumerate}
 }
 
-\subsection{Supplemental-Jurisdiction Flowchart}
-
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.72cm and 0.55cm]
-    \node[flowblue, text width=3.55cm] (anchor)
-        {Is there an anchoring claim with original federal jurisdiction?};
-    \node[floworange, below left=of anchor, text width=3.25cm] (same)
-        {Do the claims form the same case or controversy?};
-    \node[flowbox, below right=of same, text width=3.1cm] (notSame)
-        {No:\par no supplemental jurisdiction};
-    \node[flowbox, below right=of anchor, text width=3.25cm] (noanchor)
-        {No:\par no supplemental jurisdiction};
-    \node[flowpurple, below=of same, text width=3.25cm] (diversity)
-        {Is original jurisdiction founded solely on diversity?};
-    \node[flowgreen, below right=of diversity, text width=3.1cm] (nondiversity)
-        {No:\par apply \S\,1367(a)};
-    \node[floworange, below left=of diversity, text width=3.25cm] (bar)
-        {Would the plaintiff's added claim violate \S\,1332?};
-    \node[flowbox, below right=of bar, text width=3.1cm] (barred)
-        {Yes:\par \S\,1367(b) bars the claim};
-    \node[flowgreen, below=1.0cm of bar, text width=3.25cm] (power)
-        {No:\par supplemental power exists under \S\,1367(a)};
-    \node[flowteal, below=of power, text width=3.65cm] (discretion)
-        {Court may still decline under \S\,1367(c)};
-
-    \draw[flowarrow] (anchor) -- node[flowyes, above left]{yes} (same);
-    \draw[flowarrow] (anchor) -- node[flowno, above right]{no} (noanchor);
-    \draw[flowarrow] (same) -- node[flowyes, below left]{yes} (diversity);
-    \draw[flowarrow] (same) -- node[flowno, above right]{no} (notSame);
-    \draw[flowarrow] (diversity) -- node[flowno, above right]{no} (nondiversity);
-    \draw[flowarrow] (diversity) -- node[flowyes, above left]{yes} (bar);
-    \draw[flowarrow] (bar) -- node[flowno, above right]{no} (power);
-    \draw[flowarrow] (bar) -- node[flowno, above left]{yes} (barred);
-    \draw[flowarrow] (power) -- (discretion);
-    \draw[flowarrow, bend right=18] (nondiversity) to (power);
-\end{tikzpicture}%
-}
-\end{center}
-
 \statutebox{28 U.S.C. \S\,1367(b)}{In a case founded solely on diversity jurisdiction, supplemental jurisdiction does not allow certain claims by plaintiffs against parties joined under Rules 14, 19, 20, or 24 when those claims would violate the requirements of \S\,1332. The provision mainly preserves complete diversity against end-runs by plaintiffs.}
+
+\examtip{Section 1367(b) is mainly a restriction on claims made by plaintiffs in diversity-only cases. Claims by defendants, including many counterclaims and impleader claims, are generally not excluded by the text of \S\,1367(b), although the claim must still satisfy \S\,1367(a).}
 
 \statutebox{28 U.S.C. \S\,1367(c)}{A court may decline supplemental jurisdiction when the additional claim raises a novel or complex state-law issue, substantially predominates, all original-jurisdiction claims have been dismissed, or exceptional circumstances provide another compelling reason.}
 
 \casebox{United Mine Workers v. Gibbs}{383 U.S. 715 (1966)}{
-\textbf{Takeaway:} A state-law claim may travel with a federal claim when both arise from the same core facts and would ordinarily be tried together. Supplemental jurisdiction is also discretionary and should serve efficiency, fairness, and federalism. \\
-\textbf{Missing item:} Missing a statute (1367)
+\textbf{Takeaway:} A state-law claim may travel with a federal claim when both arise from the same core facts and would ordinarily be tried together. Supplemental jurisdiction is also discretionary and should serve efficiency, fairness, and federalism.
 }
 
 \casebox{Owen Equipment \& Erection Co. v. Kroger}{437 U.S. 365 (1978)}{
@@ -360,6 +233,61 @@ For each additional claim, ask:
 
 \casebox{Guaranteed Systems, Inc. v. American National Can Co.}{842 F. Supp. 855 (M.D.N.C. 1994)}{
 \textbf{Takeaway:} Even when an impleader claim is factually related, a diversity-only case cannot use supplemental jurisdiction to permit a plaintiff's claim against a nondiverse third-party defendant when \S\,1367(b) makes that claim inconsistent with \S\,1332.
+}
+
+\casebox{Exxon Mobil Corp. v. Allapattah Services, Inc.}{545 U.S. 546 (2005)}{
+\textbf{Takeaway:} When at least one plaintiff satisfies complete diversity and the amount-in-controversy requirement, additional diverse plaintiffs may proceed under supplemental jurisdiction even if their individual claims are below \$75,000, so long as \S\,1367(b) does not otherwise bar them.
+}
+
+\section{Expanding the Lawsuit}
+
+\examtip{When a problem adds a claim or party, ask two separate questions: (1) is the joinder permitted by the Federal Rules of Civil Procedure; and (2) is there subject-matter jurisdiction over the new claim? A claim can be procedurally permissible but still lack SMJ.}
+
+\subsection{Counterclaims and Crossclaims}
+
+\rulebox{Rule 13}{
+\textbf{Compulsory counterclaim:} A claim against an opposing party that arises from the same transaction or occurrence as the original claim. It must generally be brought in the current action or it will later be barred by claim preclusion.
+
+\textbf{Permissive counterclaim:} A claim against an opposing party that does not arise from the same transaction or occurrence. It may be brought separately, but it needs its own basis of SMJ unless supplemental jurisdiction applies.
+
+\textbf{Crossclaim:} A claim against a coparty arising from the same transaction or occurrence as the original action or a counterclaim, or relating to the same property. Crossclaims are permissive, not compulsory.
+}
+
+\note{To decide whether claims arise from the same transaction or occurrence, compare the factual and legal issues, the evidence, the relationship between the claims, and whether the claims are logical parts of one controversy. The test is broad and designed to encourage one efficient lawsuit.}
+
+\casebox{United States v. Heyward-Robinson Co.}{268 F.2d 322 (2d Cir. 1959)}{
+\textbf{Takeaway:} The transaction-or-occurrence test is flexible. A counterclaim may be compulsory when the claims share a logical relationship, even if they do not involve exactly the same facts.
+}
+
+\casebox{Twin Disc, Inc. v. Lowell}{}{%
+\textbf{Takeaway:} A party that fails to assert a compulsory counterclaim generally cannot bring it later in a separate federal action.
+}
+
+\subsection{Third-Party Practice and Permissive Joinder}
+
+\rulebox{Rule 14: impleader}{
+A defending party may bring in a nonparty who is or may be liable to the defending party for all or part of the plaintiff's claim. Impleader is derivative: the third-party defendant's liability must depend on the defending party's liability. Leave of court is required if the third-party complaint is filed more than 14 days after the original answer.
+}
+
+\rulebox{Rule 20: permissive joinder}{
+Multiple plaintiffs may sue together, or multiple defendants may be sued together, when:
+\begin{enumerate}
+    \item the claims arise from the same transaction, occurrence, or series of transactions or occurrences; and
+    \item at least one common question of law or fact will arise.
+\end{enumerate}
+The joinder rule does not itself supply SMJ. For claims made by plaintiffs in a diversity-only case, check \S\,1367(b) carefully.
+}
+
+\subsection{Intervention}
+
+\rulebox{Rule 24}{
+\textbf{Intervention of right:} On a timely motion, the proposed intervenor has an interest relating to the property or transaction, disposition may impair the ability to protect that interest, and existing parties do not adequately represent it.
+
+\textbf{Permissive intervention:} The proposed intervenor has a claim or defense sharing a common question of law or fact with the main action, and intervention will not cause undue delay or prejudice. The court has discretion to allow it.
+}
+
+\casebox{Smuck v. Hobson}{408 F.2d 175 (D.C. Cir. 1969)}{
+\textbf{Takeaway:} Intervention of right turns on a legally cognizable interest, possible impairment of that interest, and inadequate representation by existing parties. Parents were allowed limited intervention because the school board had stopped pursuing the appeal, leaving their interests unrepresented.
 }
 
 \section{Removal and Remand}
@@ -377,46 +305,15 @@ For each additional claim, ask:
 \end{itemize}
 }
 
+\note{Removal transfers the case to federal court immediately upon filing the notice, even if the removal is later shown to be defective. The plaintiff may move to remand for a procedural defect within 30 days; lack of SMJ can be raised at any time before final judgment, and the federal court may remand on its own.}
+
 \casebox{Shamrock Oil \& Gas Corp. v. Sheets}{313 U.S. 100 (1941)}{
 \textbf{Takeaway:} Removal is construed narrowly. A plaintiff who filed in state court cannot later remove merely because the defendant asserted a federal counterclaim.
 }
 
 \statutebox{28 U.S.C. \S\,1447}{Procedural objections to removal must generally be raised within 30 days after removal. A challenge based on lack of SMJ may be raised at any time before final judgment, and the court may notice the defect on its own.}
 
-\note{}{If a case contains a removable federal claim and a claim outside federal and supplemental jurisdiction, the federal court may sever and remand the unrelated claim rather than remand the entire action.}
-
-\subsection{Removal and Remand Flowchart}
-
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.72cm and 0.55cm]
-    \node[flowblue, text width=3.35cm] (statefile)
-        {Plaintiff files in state court};
-    \node[flowgreen, right=of statefile, text width=3.35cm] (removable)
-        {Could the federal court have heard it originally?};
-    \node[flowbox, below=of removable, text width=3.3cm] (stay)
-        {No:\par remain in state court};
-    \node[flowpurple, right=of removable, text width=3.35cm] (notice)
-        {Yes:\par defendant files notice of removal};
-    \node[floworange, below=of notice, text width=3.35cm] (requirements)
-        {Check:\par 30 days, all required defendants consent, and no forum-defendant problem};
-    \node[flowteal, right=of notice, text width=3.35cm] (federal)
-        {Case moves immediately to federal court};
-    \node[flowbox, below=of federal, text width=3.35cm] (procedural)
-        {Procedural defect?\par Move to remand within 30 days};
-    \node[floworange, below=of procedural, text width=3.35cm] (smj)
-        {No SMJ?\par Remand at any time before final judgment};
-
-    \draw[flowarrow] (statefile) -- (removable);
-    \draw[flowarrow] (removable) -- node[flowno, below left]{no} (stay);
-    \draw[flowarrow] (removable) -- node[flowyes, above]{yes} (notice);
-    \draw[flowarrow] (notice) -- (requirements);
-    \draw[flowarrow] (requirements) -- (federal);
-    \draw[flowarrow] (federal) -- (procedural);
-    \draw[flowarrow] (procedural) -- (smj);
-\end{tikzpicture}%
-}
-\end{center}
+\note{If a case contains a removable federal claim and a claim outside federal and supplemental jurisdiction, the federal court may sever and remand the unrelated claim rather than remand the entire action.}
 
 \section{Abstention}
 
@@ -435,46 +332,17 @@ First confirm that there are substantially the same parties and issues in parall
 
 \definition{Horizontal choice of law}{The process of deciding which state's law applies when more than one state's law could govern an issue. HCOL does not decide where the case may be filed; it decides what law the chosen court will apply.}
 
-\rulebox{Two-step analysis}{
+\rulebox{HCOL exam sequence}{
 \begin{enumerate}
+    \item Ask whether the states' laws actually conflict on the particular issue. If there is no real conflict, apply the common rule.
     \item Decide whether the issue is procedural or substantive. If procedural, the forum generally applies its own law. For this course, statutes of limitations are treated as procedural for HCOL purposes.
     \item If substantive, identify whether the forum follows the First Restatement or the Second Restatement. The forum uses its own choice-of-law method.
 \end{enumerate}
 }
 
-\subsection{HCOL Flowchart}
-
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.72cm and 0.65cm]
-    \node[flowblue, text width=3.4cm] (issue)
-        {Do the states' laws actually conflict on this issue?};
-    \node[flowbox, below left=of issue, text width=3.2cm] (same)
-        {No conflict:\par apply the uncontroversial rule};
-    \node[floworange, below right=of issue, text width=3.2cm] (type)
-        {Yes:\par procedural or substantive?};
-    \node[flowgreen, below left=of type, text width=3.2cm] (procedure)
-        {Procedural:\par apply forum law};
-    \node[flowpurple, below right=of type, text width=3.2cm] (substance)
-        {Substantive:\par identify the forum's Restatement};
-    \node[flowgreen, below left=of substance, text width=3.2cm] (first)
-        {First Restatement:\par lex loci delicti\par (usually place of injury)};
-    \node[flowteal, below right=of substance, text width=3.2cm] (second)
-        {Second Restatement:\par injury-place presumption + interests};
-    \node[flowbox, below=1.0cm of $(first)!0.5!(second)$, text width=4.0cm]
-        (issuebyissue) {Apply the selected state's law to the particular issue};
-
-    \draw[flowarrow] (issue) -- node[flowno, above left]{no} (same);
-    \draw[flowarrow] (issue) -- node[flowyes, above right]{yes} (type);
-    \draw[flowarrow] (type) -- node[flowyes, above left]{procedural} (procedure);
-    \draw[flowarrow] (type) -- node[flowyes, above right]{substantive} (substance);
-    \draw[flowarrow] (substance) -- node[flowlabel, above left]{forum chooses} (first);
-    \draw[flowarrow] (substance) -- node[flowlabel, above right]{forum chooses} (second);
-    \draw[flowarrow] (first) -- (issuebyissue);
-    \draw[flowarrow] (second) -- (issuebyissue);
-\end{tikzpicture}%
+\rulebox{Federal courts and HCOL}{
+Under \textit{Klaxon}, a federal court sitting in diversity applies the choice-of-law rules of the state in which it sits. Choice of law is issue-specific: different issues in the same case may be governed by different states' laws.
 }
-\end{center}
 
 \section{First Restatement: Vested Rights}
 
@@ -486,13 +354,15 @@ For a tort, apply the law of the place where the last event necessary to create 
 \textbf{Takeaway:} Under the First Restatement, the place of injury controls the tort claim. Carroll was injured in Mississippi, so Mississippi's fellow-servant rule barred recovery even though the employment relationship and alleged negligence were connected to Alabama.
 }
 
-\note{}{\textbf{Strength of the First Restatement:} predictability and administrability. \textbf{Main criticism:} the place of injury may be accidental and may have little connection to the parties or the policy behind the disputed rule.}
+\note{Strength of the First Restatement: predictability and administrability. Main criticism: the place of injury may be accidental and may have little connection to the parties or the policy behind the disputed rule.}
 
 \section{Second Restatement: Interest Analysis}
 
 \rulebox{Second Restatement approach}{
 Start with a presumption in favor of the place of injury, then ask whether another state has the most significant relationship to the particular issue. Consider the policies and interests of the states, the parties' expectations, the place of conduct and injury, the place of the relationship, convenience, and the goals of the law at issue. Different issues may receive different states' laws.
 }
+
+\note{The most important Second Restatement contacts are: the place of injury; the place of conduct causing the injury; the parties' domiciles, residences, citizenship, incorporation, and places of business; and the place where the parties' relationship is centered. The approach is more responsive to interests but less predictable and may produce ``Frankenlaw'' by applying different states' laws to different issues.}
 
 \casebox{Babcock v. Jackson}{191 N.E.2d 279 (N.Y. 1963)}{
 \textbf{Takeaway:} The place of injury is not automatically controlling when it is only an accidental contact. New York law applied to a New York guest injured in Ontario because the parties, car, insurance, and trip were centered in New York, while Ontario's guest statute had little connection to this dispute.
@@ -512,7 +382,7 @@ The First Restatement values certainty and avoids ``Frankenlaw.'' The Second Res
 
 \subsection{Should courts pay attention to legal academics?}
 
-\note{}{Restatements summarize and influence law, but they do not automatically control. The controlling question is what method the forum's courts have adopted.}
+\note{Restatements summarize and influence law, but they do not automatically control. The controlling question is what method the forum's courts have adopted.}
 
 \chapter{Personal Jurisdiction}
 
@@ -535,41 +405,6 @@ For an out-of-state defendant, ask:
 Under Federal Rule of Civil Procedure 4(k)(1)(A), a federal district court ordinarily has the same PJ that a court of general jurisdiction in the state where it sits would have. Thus, the federal court usually uses the forum state's long-arm statute and constitutional analysis. Rule 4(k)(2) can provide jurisdiction for a federal claim against a defendant not subject to jurisdiction in any state's courts when the defendant has sufficient contacts with the United States as a whole.
 }
 
-\subsection{PJ Flowchart}
-
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.72cm and 0.55cm]
-    \node[flowblue, text width=3.5cm] (court)
-        {Where is the case filed?};
-    \node[flowgreen, below left=of court, text width=3.25cm] (state)
-        {State court:\par check the state's long-arm statute};
-    \node[flowpurple, below right=of court, text width=3.25cm] (federal)
-        {Federal court:\par Rule 4(k)(1)(A) usually borrows state PJ};
-    \node[floworange, below=1.0cm of $(state)!0.5!(federal)$, text width=3.5cm] (type)
-        {Choose the jurisdictional basis};
-    \node[flowgreen, below left=of type, text width=3.25cm] (general)
-        {General jurisdiction:\par at home, consent, or tag};
-    \node[floworange, below right=of type, text width=3.25cm] (specific)
-        {Specific jurisdiction:\par purposeful contact + related claim + fairness};
-    \node[flowteal, below=1.0cm of $(general)!0.5!(specific)$, text width=4.0cm] (due)
-        {If a basis exists:\par satisfy the Due Process Clause};
-    \node[flowbox, below=of due, text width=4.0cm] (no)
-        {If no basis exists:\par dismiss for lack of PJ};
-
-    \draw[flowarrow] (court) -- node[flowlabel, above left]{state} (state);
-    \draw[flowarrow] (court) -- node[flowlabel, above right]{federal} (federal);
-    \draw[flowarrow] (state) -- (type);
-    \draw[flowarrow] (federal) -- (type);
-    \draw[flowarrow] (type) -- (general);
-    \draw[flowarrow] (type) -- (specific);
-    \draw[flowarrow] (general) -- (due);
-    \draw[flowarrow] (specific) -- (due);
-    \draw[flowarrow] (due) -- node[flowno, right]{not satisfied} (no);
-\end{tikzpicture}%
-}
-\end{center}
-
 \section{The Traditional View: Territorialism}
 
 \definition{In personam, in rem, and quasi in rem}{
@@ -577,37 +412,6 @@ Under Federal Rule of Civil Procedure 4(k)(1)(A), a federal district court ordin
 \textbf{In rem:} the action determines rights in property located in the forum.\par
 \textbf{Quasi in rem:} the court attaches property in the forum to support a claim against an absent defendant; historically, recovery was limited to the property's value.
 }
-
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.72cm and 0.55cm]
-    \node[flowblue, text width=3.4cm] (property)
-        {Is the lawsuit about property or a person?};
-    \node[flowgreen, below left=of property, text width=3.25cm] (propertyyes)
-        {Property is the subject of the dispute};
-    \node[flowpurple, below right=of property, text width=3.25cm] (person)
-        {The defendant is the target};
-    \node[flowgreen, below=of propertyyes, text width=3.25cm] (inrem)
-        {In rem:\par determine rights in property};
-    \node[floworange, below=of person, text width=3.25cm] (qir)
-        {Is forum property only being held as security?};
-    \node[flowbox, below left=of qir, text width=3.1cm] (notqir)
-        {No:\par analyze in personam PJ};
-    \node[flowteal, below right=of qir, text width=3.1cm] (qiryes)
-        {Yes:\par quasi in rem};
-    \node[floworange, below=1.0cm of qiryes, text width=4.0cm]
-        (shaffer) {After Shaffer:\par identify minimum contacts among defendant, property, forum, and claim};
-
-    \draw[flowarrow] (property) -- node[flowyes, above left]{property} (propertyyes);
-    \draw[flowarrow] (property) -- node[flowlabel, above right]{person} (person);
-    \draw[flowarrow] (propertyyes) -- (inrem);
-    \draw[flowarrow] (person) -- (qir);
-    \draw[flowarrow] (qir) -- node[flowno, above left]{no} (notqir);
-    \draw[flowarrow] (qir) -- node[flowyes, above right]{yes} (qiryes);
-    \draw[flowarrow] (qiryes) -- (shaffer);
-\end{tikzpicture}%
-}
-\end{center}
 
 \casebox{Pennoyer v. Neff}{95 U.S. 714 (1877)}{
 \textbf{Takeaway:} Pennoyer tied PJ to territorial sovereignty. A state could exercise general jurisdiction over a nonresident who was personally served while physically in the state, but publication alone could not support a personal judgment against an absent nonresident.\par
@@ -631,32 +435,16 @@ Washington sought unemployment contributions from International Shoe, a Delaware
 \textbf{Specific jurisdiction:} The claim arises out of or relates to the defendant's purposeful contacts with the forum. The court's power is limited to claims connected to those contacts.
 }
 
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.7cm and 0.55cm]
-    \node[flowblue, text width=3.45cm] (basis)
-        {What connects the defendant to the forum?};
-    \node[flowgreen, below left=of basis, text width=3.25cm] (home)
-        {At home?\par Domicile, incorporation, or PPB};
-    \node[flowpurple, below=of basis, text width=3.25cm] (consent)
-        {Consent?\par Forum clause or waived objection};
-    \node[floworange, below right=of basis, text width=3.25cm] (tag)
-        {Tag?\par Personal service while physically present};
-    \node[flowteal, below left=1.0cm and 0.2cm of consent, text width=3.45cm]
-        (generalresult) {General jurisdiction:\par claims need not relate to the forum};
-    \node[floworange, below right=1.0cm and 0.2cm of consent, text width=3.45cm]
-        (specificresult) {Specific jurisdiction:\par purposeful contact + related claim + fairness};
-
-    \draw[flowarrow] (basis) -- (home);
-    \draw[flowarrow] (basis) -- (consent);
-    \draw[flowarrow] (basis) -- (tag);
-    \draw[flowarrow] (home) -- (generalresult);
-    \draw[flowarrow] (tag) -- (generalresult);
-    \draw[flowarrow] (consent) -- (generalresult);
-    \draw[flowarrow] (basis) -- (specificresult);
-\end{tikzpicture}%
+\rulebox{General-jurisdiction checklist}{
+First identify statutory authorization; in federal court, ordinarily cite Rule 4(k)(1)(A) and the forum state's long-arm statute. Then ask whether the defendant is:
+\begin{itemize}
+    \item domiciled in the forum;
+    \item a corporation incorporated or principally based in the forum;
+    \item subject to jurisdiction by consent, including a forum-selection clause or waiver; or
+    \item physically present and personally served in the forum, subject to the unresolved rationale in \textit{Burnham}.
+\end{itemize}
+For a corporation, substantial business alone usually does not make the corporation ``at home'' under \textit{Daimler}; the affiliation must be exceptional compared with the corporation's activities everywhere else.
 }
-\end{center}
 
 \casebox{Daimler AG v. Bauman}{571 U.S. 117 (2014)}{
 \textbf{Takeaway:} General jurisdiction over an out-of-state corporation is exceptional. Continuous and substantial business in the forum is not enough by itself; the corporation must be essentially at home there relative to its overall activities.\par
@@ -669,49 +457,16 @@ The usual locations are the corporation's state of incorporation and principal p
 After confirming statutory authorization, ask whether:
 \begin{enumerate}
     \item the defendant purposefully established contacts with the forum;
+    \item the contacts connect the defendant, the forum, and the subject matter of the litigation;
     \item the claim arises out of or relates to those contacts; and
     \item exercising jurisdiction is fair and reasonable.
 \end{enumerate}
 The court should not jump to fairness factors if there is no meaningful defendant-created contact connecting the forum to the dispute.
 }
 
-\subsection{Specific PJ Flowchart}
+\note{Purposeful contacts include directly conducting business, sending employees, advertising or providing advice in the forum, owning forum property, or otherwise reaching into the state. A plaintiff's unilateral move and the mere foreseeability that a product may travel into the state do not suffice.}
 
-\begin{center}
-\resizebox{\textwidth}{!}{%
-\begin{tikzpicture}[node distance=0.7cm and 0.5cm]
-    \node[flowblue, text width=3.35cm] (contact)
-        {Did the defendant create a contact with the forum?};
-    \node[flowbox, below left=of contact, text width=3.0cm] (nocontact)
-        {No:\par no specific PJ};
-    \node[floworange, below right=of contact, text width=3.25cm] (purpose)
-        {Was the contact purposeful?\par Not merely the plaintiff's unilateral act};
-    \node[flowbox, below left=of purpose, text width=3.0cm] (nopurpose)
-        {No:\par no specific PJ};
-    \node[flowpurple, below right=of purpose, text width=3.25cm] (related)
-        {Does the claim arise out of or relate to the contact?};
-    \node[flowbox, below left=of related, text width=3.0cm] (norelated)
-        {No:\par no specific PJ};
-    \node[flowteal, below right=of related, text width=3.25cm] (fair)
-        {Would jurisdiction be fair and reasonable?};
-    \node[flowgreen, below left=of fair, text width=3.0cm] (yes)
-        {Yes:\par PJ permitted};
-    \node[flowbox, below right=of fair, text width=3.0cm] (no)
-        {No:\par PJ denied};
-
-    \draw[flowarrow] (contact) -- node[flowno, above left]{no} (nocontact);
-    \draw[flowarrow] (contact) -- node[flowyes, above right]{yes} (purpose);
-    \draw[flowarrow] (purpose) -- node[flowno, above left]{no} (nopurpose);
-    \draw[flowarrow] (purpose) -- node[flowyes, above right]{yes} (related);
-    \draw[flowarrow] (related) -- node[flowno, above left]{no} (norelated);
-    \draw[flowarrow] (related) -- node[flowyes, above right]{yes} (fair);
-    \draw[flowarrow] (fair) -- node[flowyes, above left]{yes} (yes);
-    \draw[flowarrow] (fair) -- node[flowno, above right]{no} (no);
-\end{tikzpicture}%
-}
-\end{center}
-
-\note{}{The fairness inquiry considers the defendant's burden, the forum's interest, the plaintiff's interest and convenience, the location of witnesses and evidence, and the likely governing law. World-Wide Volkswagen emphasizes that these factors do not replace the minimum-contact requirement.}
+\note{The fairness inquiry considers the defendant's burden, the forum's interest, the plaintiff's interest and convenience, the location of witnesses and evidence, and the likely governing law. World-Wide Volkswagen emphasizes that these factors do not replace the minimum-contact requirement.}
 
 \casebox{McGee v. International Life Insurance Co.}{355 U.S. 220 (1957)}{
 \textbf{Takeaway:} One deliberate, forum-directed contract can support specific jurisdiction when the claim arises from that contract. California could hear the beneficiary's claim because the insurer deliberately assumed a California insurance relationship and received premiums from there.\par
@@ -764,9 +519,18 @@ Justice Scalia's plurality relied heavily on the historical tradition of tag jur
 
 \section{In Rem and Quasi in Rem After International Shoe}
 
+\rulebox{Quasi in rem exam checklist}{
+Remember that the historical suit is against the property, not directly against the person, and recovery is limited to the property's value. Ask whether the property is actually in the forum and whether it is corporeal or incorporeal. Then present both readings of \textit{Shaffer}:
+\begin{enumerate}
+    \item \textbf{Narrow reading:} quasi in rem survives, but an unusually coercive statute like Delaware's may be unconstitutional.
+    \item \textbf{Broad reading:} all assertions of jurisdiction must satisfy \textit{International Shoe}, requiring contacts among the defendant, property, forum, and claim, plus fair and reasonable jurisdiction.
+\end{enumerate}
+Real property has a stronger and more permanent forum connection than movable property or an intangible such as a debt or stock.
+}
+
 \casebox{Harris v. Balk}{198 U.S. 215 (1905)}{
 \textbf{Takeaway:} Under the old territorial approach, a debt was treated as following the debtor. Maryland could garnish the debt when the garnishee was personally served there, even though the creditor, debtor, and underlying transaction were connected to North Carolina.\par
-The case illustrates the difficulty of locating intangible property and the old emphasis on power over the person who held the obligation.
+The case illustrates the difficulty of locating intangible property and the old emphasis on power over the person who held the obligation. It also shows why courts must decide where an intangible is located before deciding whether it can be attached.
 }
 
 \casebox{Shaffer v. Heitner}{433 U.S. 186 (1977)}{
@@ -785,7 +549,7 @@ Delaware seized stock owned by directors and officers of a Delaware corporation 
 Luban's online statements intentionally targeted Griffis, whom she knew lived in Alabama, but the record did not show that Luban targeted Alabama itself. The Alabama judgment therefore could not be enforced in Minnesota because Alabama lacked PJ.
 }
 
-\note{}{Walden v. Fiore later reinforced the forum-focus requirement: the plaintiff cannot be the only link between the defendant and the forum. Ask whether the defendant's conduct itself created a connection with the forum, not merely whether the plaintiff felt the injury there.}
+\note{Walden v. Fiore later reinforced the forum-focus requirement: the plaintiff cannot be the only link between the defendant and the forum. Ask whether the defendant's conduct itself created a connection with the forum, not merely whether the plaintiff felt the injury there.}
 
 \examtip{For an Internet intentional-tort question, do not stop at the fact that the defendant knew the plaintiff lived in the forum or would be injured there. Look for conduct expressly aimed at the forum itself---for example, conduct tied to the forum's activities, audience, market, or a relationship that is uniquely connected to that state.}
 
@@ -805,9 +569,48 @@ For each proposed forum, write:
 
 \chapter{Venue}
 
+\definition{Venue}{Venue asks which federal district is the proper geographic location for the case. Unlike SMJ and PJ, venue is primarily statutory.}
 
+\statutebox{28 U.S.C. \S\,1391}{
+Venue is proper in a federal district if:
+\begin{enumerate}
+    \item all defendants reside in the same state and at least one defendant resides in the district;
+    \item a substantial part of the events or omissions giving rise to the claim occurred in the district, or a substantial part of the property at issue is located there; or
+    \item if neither of those options works, any defendant is subject to personal jurisdiction in the district.
+\end{enumerate}
+The third option is a fallback and usually matters only when the events occurred outside the United States.
+}
+
+\rulebox{Venue checklist}{
+\begin{enumerate}
+    \item Identify every defendant's residence for venue purposes. A natural person resides where domiciled; a corporation or unincorporated entity resides in any district where it is subject to personal jurisdiction for the action.
+    \item If all defendants reside in the same state, ask whether at least one resides in the district.
+    \item If not, ask where a substantial part of the events, omissions, or property is located.
+    \item If neither provision applies, ask whether any defendant is subject to personal jurisdiction in the district.
+\end{enumerate}
+}
+
+\note{A corporation that is subject to personal jurisdiction throughout a state is treated as residing in every district in that state where its contacts would support jurisdiction if the district were treated as a separate state. A foreign defendant may be sued in any district, and its presence is disregarded when determining venue as to the other defendants.}
+
+\section{Forum Non Conveniens}
+
+\definition{Forum non conveniens}{Forum non conveniens allows a court to dismiss when a substantially more appropriate forum exists, usually a state court or a court in another country. It is not the mechanism for moving a case from one federal district to another; federal district-to-district movement uses transfer statutes.}
+
+\rulebox{Forum non conveniens checklist}{
+First confirm that an adequate alternative forum exists. Then balance private and public interest factors:
+\begin{itemize}
+    \item \textbf{Private interests:} access to proof, compulsory process for unwilling witnesses, travel costs, viewing the premises, enforceability of a judgment, and other practical trial concerns.
+    \item \textbf{Public interests:} court congestion, the forum's relationship to the dispute, local interest in deciding local controversies, burdens on jurors, and the court's familiarity with the governing law.
+\end{itemize}
+A domestic plaintiff's choice of forum receives substantial deference. A foreign plaintiff's choice receives less deference. Dismissal is improper when the alternative forum offers no adequate remedy at all.
+}
+
+\casebox{Piper Aircraft Co. v. Reyno}{454 U.S. 235 (1981)}{
+\textbf{Takeaway:} The Court upheld dismissal on forum non conveniens grounds where a Scottish forum was substantially more connected to an airplane crash involving Scottish victims. A foreign plaintiff's choice of a United States forum receives less deference, but the alternative forum must still be adequate.
+}
 
 \chapter{Erie Doctrine}
 
+\note{The Erie section is reserved for the later question of when a federal court applies state law or federal law to a dispute. It should be kept separate from HCOL: HCOL chooses among states' laws, while Erie addresses the state-law/federal-law relationship in federal court.}
 
 \end{document}
