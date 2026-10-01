@@ -1,6 +1,7 @@
 \documentclass[11pt]{tex/lawoutline}
-\usepackage{amssymb}
-\usepackage{enumitem}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
 
 \course{Criminal Law}
 \student{Prof: I. Rabb}
@@ -13,363 +14,934 @@
 
 \chapter{Background}
 
+\section{Sources and Structure of Criminal Law}
+
+\textbf{Sources of Criminal Law}
+\begin{itemize}
+    \item Criminal law primarily comes from:
+    \begin{itemize}
+        \item State and federal statutes;
+        \item Constitutional provisions;
+        \item Local regulations;
+        \item Judicial decisions interpreting statutes and constitutional requirements; and
+        \item The Model Penal Code (MPC), which is persuasive but not itself binding law.
+    \end{itemize}
+
+    \item The United States generally does not recognize common-law crimes. However, common-law principles continue to influence statutory interpretation and provide background norms.
+
+    \item Criminal liability generally requires:
+    \begin{itemize}
+        \item \textbf{Actus reus:} a voluntary act or legally sufficient omission;
+        \item \textbf{Mens rea:} the required culpable mental state;
+        \item \textbf{Causation:} the defendant's conduct must cause the prohibited result, when the offense requires one;
+        \item \textbf{Attendant circumstances:} facts that must exist for the conduct to constitute the offense; and
+        \item Any additional statutory or constitutional requirements.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Law, Morality, and Legal Reasoning}
+
+\textbf{Law and Morality}
+\begin{itemize}
+    \item Criminal law and morality overlap, but they are not identical.
+    \item Criminal rules often reflect judgments about blameworthiness, public safety, individual liberty, and the preservation of human life.
+    \item \textit{Dudley \& Stephens} illustrates that legal analysis may produce a result different from ordinary moral intuition.
+    \item Courts must distinguish:
+    \begin{itemize}
+        \item Questions of law, which are decided by the judge; and
+        \item Questions of fact, which are generally decided by the jury.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Theories of Punishment}
+
+\textbf{Utilitarian Theory}
+\begin{itemize}
+    \item Punishment is justified when it prevents a greater harm.
+    \item Because punishment itself causes suffering, it should be imposed only when it produces a net social benefit.
+    \item Main utilitarian purposes include:
+    \begin{itemize}
+        \item \textbf{General deterrence:} discouraging the public from committing crimes;
+        \item \textbf{Specific deterrence:} discouraging the defendant from reoffending;
+        \item \textbf{Incapacitation:} preventing the defendant from committing additional crimes; and
+        \item \textbf{Rehabilitation:} attempting to change the defendant's conduct.
+    \end{itemize}
+\end{itemize}
+
+
+\textbf{Retributive Theory}
+\begin{itemize}
+    \item Punishment is justified because the defendant deserves it for committing a blameworthy offense.
+    \item Punishment should be proportionate to the defendant's culpability and the seriousness of the offense.
+    \item Retribution focuses on just deserts rather than future social benefits.
+    \item Public denunciation may express the community's condemnation of the offense and affirm the victim's value.
+\end{itemize}
+
+
+\textbf{Expressive and Mixed Theories}
+\begin{itemize}
+    \item Criminal punishment may serve both utilitarian and retributive purposes.
+    \item Criminal law can express society's judgment that particular conduct is wrongful.
+    \item Utilitarian goals may explain the purpose of punishment, while retributive principles limit how severely punishment may be imposed.
+\end{itemize}
+
+
+\textbf{Alternative Theories}
+\begin{itemize}
+    \item \textbf{Restorative justice:} focuses on repairing harm to victims, offenders, and the community.
+    \item \textbf{Systemic justice:} focuses on institutional structures and whether social resources and burdens are distributed fairly.
+    \item \textbf{Transformative justice:} emphasizes community-based accountability, healing, and safety, often without relying primarily on state punishment.
+\end{itemize}
+
+
+
 \chapter{Common Law Requirements: \textit{Actus Reus}}
 
 \section{Voluntary Acts}
 
+\textbf{The Voluntary Act Requirement}
+\begin{itemize}
+    \item \textit{Nullum crimen sine actu}: there is no crime without an act.
+    \item Criminal liability generally requires a \textbf{voluntary bodily movement} by the defendant.
+    \item An involuntary movement does not satisfy the actus reus requirement.
+    \item The voluntary-act requirement reflects the principle that criminal punishment should be based on conduct, not merely on a person's condition, status, or thoughts.
+    \item The prosecution must prove that the relevant conduct was voluntary when voluntariness is contested.
+\end{itemize}
+
+
+\casebox{\textit{Martin v. State}}
+{}
+{
+\textbf{Facts}
+\begin{itemize}
+    \item Police officers forcibly brought the defendant onto a public highway while he was intoxicated.
+    \item The defendant was convicted of being drunk on a public highway.
+\end{itemize}
+
+\textbf{Question}
+\begin{itemize}
+    \item Was the defendant's presence on the highway a voluntary act?
+\end{itemize}
+
+\textbf{Holding}
+\begin{itemize}
+    \item No. The conviction was reversed because the defendant's presence in public was not voluntary.
+\end{itemize}
+
+\textbf{Discussion}
+\begin{itemize}
+    \item The offense required a voluntary act of appearing in public.
+    \item The defendant's intoxication did not itself establish the required actus reus.
+\end{itemize}
+}
+
+\casebox{\textit{People v. Newton}}
+{}
+{
+\textbf{Facts}
+\begin{itemize}
+    \item The defendant argued that his conduct occurred while he was unconscious or otherwise incapable of conscious control.
+\end{itemize}
+
+\textbf{Question}
+\begin{itemize}
+    \item Can unconscious or involuntary conduct satisfy the actus reus requirement?
+\end{itemize}
+
+\textbf{Holding}
+\begin{itemize}
+    \item Evidence of unconsciousness may negate the voluntary-act requirement.
+\end{itemize}
+
+\textbf{Discussion}
+\begin{itemize}
+    \item The relevant question is whether the bodily movement was the product of conscious control.
+    \item When the defendant presents evidence of automatism or unconsciousness, the issue may be submitted to the factfinder.
+\end{itemize}
+}
+
+\mpc{\S 2.01: Voluntary Act}{
+\begin{itemize}
+    \item A person is not guilty unless criminal liability is based on conduct that includes a voluntary act or an omission to perform an act of which the person is physically capable.
+    \item The following are not voluntary acts:
+    \begin{itemize}
+        \item A reflex or convulsion;
+        \item A bodily movement during unconsciousness or sleep;
+        \item Conduct during hypnosis or hypnotic suggestion; or
+        \item Any bodily movement that is not the product of the actor's effort or determination, whether conscious or habitual.
+    \end{itemize}
+    \item The MPC treats voluntariness as a prerequisite to criminal liability, not merely as an affirmative defense.
+    \item A habitual act may still qualify as voluntary if it results from the actor's effort or determination.
+\end{itemize}
+}
+
+
 \section{Acts of Omission}
 
+\subsection{Common Law Rule}
+
+\textbf{Omissions and Legal Duties}
+\begin{itemize}
+    \item \textit{Nulla poena sine lege}: there should be no punishment without a legal rule defining the prohibited conduct.
+    \item At common law, a person generally has no criminal duty to rescue or assist another person merely because assistance would be morally desirable.
+    \item An omission can satisfy the actus reus requirement only when the defendant had a legally recognized duty to act.
+    \item The law generally distinguishes between:
+    \begin{itemize}
+        \item A failure to create a risk; and
+        \item A failure to prevent a risk that already exists.
+    \end{itemize}
+    \item The second category usually requires proof of an independent legal duty.
+\end{itemize}
+
+
+\textbf{Sources of an Affirmative Duty}
+\begin{itemize}
+    \item A duty to act may arise from:
+    \begin{enumerate}
+        \item A statute imposing a duty;
+        \item A special status relationship, such as parent-child;
+        \item An express or implied contract;
+        \item Voluntary assumption of care, followed by abandonment or failure to act reasonably; or
+        \item Creating or contributing to the risk that resulted in harm.
+    \end{enumerate}
+    \item Some jurisdictions have Good Samaritan statutes that impose limited duties to assist or report certain emergencies.
+    \item American criminal law generally places greater emphasis on individual liberty than on imposing broad duties to rescue.
+\end{itemize}
+
+
+\mpc{\S 2.01(3): Liability for Omissions}{
+\begin{itemize}
+    \item Liability may not be based on an omission unless:
+    \begin{enumerate}
+        \item The law defining the offense expressly makes the omission sufficient; or
+        \item Another law imposes a duty to perform the omitted act.
+    \end{enumerate}
+    \item The MPC therefore rejects general criminal liability for merely failing to help another person.
+    \item The prosecution must identify the legal source of the defendant's duty to act.
+\end{itemize}
+}
+
+\rulebox{Maryland Child-Abuse Statute}{
+A parent, adoptive parent, person acting in loco parentis, or supervisor of a minor may be liable for child abuse committed through either an act of commission or an omission.
+}
+
+
 \section{Police Duty to Intervene}
+
+\subsection{Police Use of Deadly Force}
+
+\subsubsection{Rules and Norms of Police Use of Deadly Force}
+
+\textbf{Common Law and Constitutional Limits}{
+\begin{itemize}
+    \item Under the traditional common-law rule, a peace officer could use deadly force to prevent any felony, but not merely to prevent a misdemeanor.
+    \item Modern constitutional doctrine limits deadly force to circumstances involving a serious threat to the officer or another person.
+    \item Under \textit{Tennessee v. Garner}, deadly force is generally permissible only when the officer has probable cause to believe that the suspect poses a significant threat of death or serious physical injury.
+    \item The Fourth Amendment prohibits unreasonable seizures, including unreasonable uses of force.
+\end{itemize}
+}
+
+\mpc{\S 3.07(5)(a): Deadly Force to Arrest}{
+\begin{itemize}
+    \item Deadly force to make an arrest is justified only when:
+    \begin{enumerate}
+        \item The person to be arrested has committed or attempted a crime involving the use or threatened use of deadly force; or
+        \item There is a substantial risk that the person will cause death or serious bodily harm if apprehension is delayed.
+    \end{enumerate}
+    \item The MPC focuses on the seriousness of the underlying offense and the danger created by delaying apprehension.
+\end{itemize}
+}
+
+\subsection{Affirmative Duty to Intervene}
+
+\textbf{Police Duties to Intervene}{
+\begin{itemize}
+    \item Some jurisdictions impose an affirmative duty on officers to intervene when another officer uses excessive or unlawful force.
+    \item The duty may arise from a statute, police regulation, departmental policy, or constitutional doctrine.
+    \item There is no single nationwide common-law rule requiring every officer to intervene in every situation.
+    \item Liability generally depends on whether:
+    \begin{itemize}
+        \item The officer observed or reasonably should have observed the misconduct;
+        \item The officer had a realistic opportunity to intervene; and
+        \item The officer failed to take reasonable steps.
+    \end{itemize}
+\end{itemize}
+}
+
+\rulebox{BPD Rule 303}{
+Officers should use only force that is reasonably necessary, attempt de-escalation when feasible, and act to preserve life, minimize harm, and maintain accountability and public trust.
+}
+
+\textbf{Constitutional Civil-Liability Overlay}{
+\begin{itemize}
+    \item \textit{Tennessee v. Garner} and related cases concern constitutional limits on police conduct.
+    \item Qualified immunity is generally a civil-liability doctrine, not a defense to criminal liability.
+    \item The issue is usually whether the officer violated a constitutional right that was clearly established at the time.
+\end{itemize}
+}
+
 
 \chapter{Common Law Requirements: \textit{Mens Rea}}
 
 \section{Basic Concepts}
 
-\textbf{Common Law Norms}
+\definition{Mens Rea}{
 \begin{itemize}
-    \item \textbf{Specific Intent Crimes:} 
+    \item \textit{Actus non facit reum nisi mens sit rea}: an act does not make a person guilty unless accompanied by a guilty mind.
+    \item \textit{Mens rea} refers to the culpable mental state required by the offense.
+    \item The mental state requirement may concern:
     \begin{itemize}
-        \item Purpose at the time of commission to carry out some other crime.
-        \item Example: Burglary = breaking and entering \textit{with intent} to commit a felony inside. 
+        \item The nature of the defendant's conduct;
+        \item The existence of attendant circumstances;
+        \item The result caused by the conduct; or
+        \item The defendant's purpose or awareness.
     \end{itemize}
-
-    \item \textbf{General Intent Crimes:} 
-    \begin{itemize}
-        \item No need to prove intent/attendant circumstances.
-        \item Example: Trespass = entering a building or other premise purposefully, where such act is unlawful. 
-    \end{itemize} 
-
-    \item \textbf{Mixed (Either/Or) Crimes:} 
-    \begin{itemize}
-        \item Jurisdictionally defined.
-        \item Example: Bigamy = being married to multiple people.
-        \item \textbf{Specific intent:} requires attendant circumstances (being aware of marital status).
-        \item \textbf{General intent:} Awareness doesn't matter.
-    \end{itemize} 
-
-    \item \textbf{Mistake at common law:}
-    \begin{itemize}
-        \item \textit{ignoratia legis neminem excusat}: ignorance or mistake of law is no excuse. 
-    \end{itemize}
-\end{itemize}
-
-\textbf{MPC Reforms}
-\begin{itemize}
-    \item \textbf{Purpose:} Not a formal legal code, but wanted to clarify legal statutes. 
-    \item Frequently cited by courts. 
-\end{itemize}
-
-\mpc{2.02 (on mens rea):}
-{
-\begin{itemize}
-    \item \textbf{Purposely:} Focuses on purpose of $\Delta$.
-    \item \textbf{Knowingly:} $\Delta$ is aware of risks that could come from his conduct.
-    \item \textbf{Recklessness:} $\Delta$ knowingly disregards a risk that could result from his conduct.
-    \item \textbf{Negligence:} $\Delta$ \textit{should} be aware of substantial risk.
-    \item Each element needs to be proved separately regarding $\Delta$'s crime (``elemental approach'').
-    \item Hesitant to apply negligence: similar to acts of omission
+    \item The prosecution must prove the required mental state beyond a reasonable doubt.
 \end{itemize}
 }
 
-\begin{itemize}
-    \item Mistake as an exception:
-\end{itemize}
-\mpc{2.04 (mistake)}{A mistake of fact or law serves as a defense when it prevents the defendant from having the specific mental state required by the crime. (Mistake of fact would be up to the jury to decide.)}
+\subsection{Common Law Norms}
 
-\note{Application of common law norms and MPC}{
 \begin{itemize}
-    \item Judges will usually impute reasonable common law norms or MPC mens rea standard with the exception of negligence.
-    \item Presumption of mens rea is favored. 
-\end{itemize}}
+    \item \textbf{Specific Intent Crimes:}
+    \begin{itemize}
+        \item Require intent to commit the act plus an additional purpose or objective.
+        \item Example: burglary requires breaking and entering with intent to commit a felony inside.
+        \item An honest mistake may negate the required specific intent.
+    \end{itemize}
+
+    \item \textbf{General Intent Crimes:}
+    \begin{itemize}
+        \item Require intent to perform the prohibited act.
+        \item They generally do not require an additional purpose or objective.
+        \item Example: battery traditionally requires an intentional application of unlawful force, but not a further purpose to injure.
+    \end{itemize}
+
+    \item \textbf{Malice:}
+    \begin{itemize}
+        \item At common law, malice may include intent to cause the prohibited harm or reckless disregard of an unjustifiable risk.
+        \item Its meaning depends on the particular offense.
+    \end{itemize}
+
+    \item \textbf{Mixed Crimes:}
+    \begin{itemize}
+        \item Some offenses combine specific-intent and general-intent elements.
+        \item The classification may vary by jurisdiction.
+        \item For example, a jurisdiction may treat bigamy as requiring awareness of the defendant's existing marital status, or may treat awareness as irrelevant.
+    \end{itemize}
+
+    \item \textbf{Mistake at Common Law:}
+    \begin{itemize}
+        \item \textit{Ignorantia legis neminem excusat}: ignorance or mistake of law generally is no excuse.
+        \item A mistake of fact may be a defense when it negates the mental state required by the offense.
+        \item The effect of the mistake traditionally depends on whether the crime requires specific or general intent.
+    \end{itemize}
+\end{itemize}
+
+\subsection{MPC Reforms}
+
+\begin{itemize}
+    \item The MPC is not a formal criminal code applicable everywhere.
+    \item Its purpose was to clarify and rationalize criminal law.
+    \item It is frequently cited by courts and has influenced many state criminal statutes.
+    \item The MPC replaces the common-law specific-intent/general-intent distinction with a more precise system of culpable mental states.
+\end{itemize}
+
+\mpc{\S 2.02: Culpability Requirements}{
+\begin{itemize}
+    \item \textbf{Purposely:}
+    \begin{itemize}
+        \item It is the actor's conscious object to engage in the conduct or cause the result.
+        \item For attendant circumstances, the actor is aware of their existence or believes they exist.
+    \end{itemize}
+
+    \item \textbf{Knowingly:}
+    \begin{itemize}
+        \item The actor is aware that the conduct is of the specified nature or that the relevant circumstances exist.
+        \item As to a result, the actor is aware that the result is practically certain to occur.
+    \end{itemize}
+
+    \item \textbf{Recklessly:}
+    \begin{itemize}
+        \item The actor consciously disregards a substantial and unjustifiable risk.
+        \item The disregard must constitute a gross deviation from the standard of conduct a law-abiding person would observe.
+    \end{itemize}
+
+    \item \textbf{Negligently:}
+    \begin{itemize}
+        \item The actor should be aware of a substantial and unjustifiable risk.
+        \item The failure to perceive the risk must constitute a gross deviation from the reasonable person's standard of care.
+    \end{itemize}
+
+    \item The MPC uses an \textbf{elemental approach}: the required mental state must be proven separately as to each material element of the crime.
+\end{itemize}
+}
+
+\mpc{\S 2.02(3)-(4): Default and Elemental Rules}{
+\begin{itemize}
+    \item If a statute does not specify a culpable mental state, recklessness is generally sufficient for each material element of the offense.
+    \item When a statute prescribes a mental state, that mental state ordinarily applies to every material element of the offense.
+    \item A higher level of culpability generally satisfies a lower level:
+    \begin{itemize}
+        \item Purpose satisfies knowledge, recklessness, and negligence;
+        \item Knowledge satisfies recklessness and negligence; and
+        \item Recklessness satisfies negligence.
+    \end{itemize}
+\end{itemize}
+}
+
+\subsection{Application of Common Law Norms and the MPC}{
+\begin{itemize}
+    \item Courts generally presume that criminal statutes require some form of mens rea unless the legislature clearly indicates otherwise.
+    \item Courts are especially reluctant to apply negligence or strict liability to serious crimes or conduct that would otherwise appear innocent.
+    \item The defendant's mental state must be analyzed in relation to each relevant element rather than to the offense as a whole.
+\end{itemize}
+}
+
+
+\subsection{Mistake}
+
+\textbf{Mistake of Fact and Law}
+\begin{itemize}
+    \item A mistake may be a defense when it prevents the defendant from possessing the mental state required by the offense.
+    \item At common law:
+    \begin{itemize}
+        \item An honest mistake may negate specific intent;
+        \item A mistake generally must be reasonable to negate general intent; and
+        \item Ignorance or mistake of law ordinarily is not a defense.
+    \end{itemize}
+\end{itemize}
+
+
+\mpc{\S 2.04: Ignorance or Mistake}{
+\begin{itemize}
+    \item Ignorance or mistake of fact or law is a defense when it negates the mental state required to establish a material element of the offense.
+    \item The relevant question is whether the defendant actually possessed the required purpose, knowledge, recklessness, or negligence.
+    \item If the defendant's mistaken belief would establish a lesser offense, the mistake may reduce the grade of the offense.
+    \item The MPC is therefore less dependent than common law on the distinction between specific and general intent.
+\end{itemize}
+}
 
 
 \section{Strict Liability}
-\casebox{\textit{United States v. Baliant} (1922)}
+
+\subsection{Strict Liability Offenses}{
+\begin{itemize}
+    \item A strict-liability offense does not require proof of mens rea as to one or more elements.
+    \item Strict liability is an exception to the general presumption that criminal liability requires a culpable mental state.
+    \item Strict-liability offenses are more common in public-welfare and regulatory legislation.
+    \item Courts consider:
+    \begin{itemize}
+        \item The statutory language;
+        \item The seriousness of the penalty;
+        \item Whether the conduct is traditionally criminal;
+        \item Whether the statute regulates dangerous or public-welfare conduct;
+        \item Whether innocent conduct would otherwise be criminalized; and
+        \item Whether requiring mens rea would undermine enforcement.
+    \end{itemize}
+\end{itemize}
+}
+
+\casebox{\textit{United States v. Balint} (1922)}
 {}
 {
-\textbf{Class Notes}
-\begin{itemize}
-    \item A case that doesn't require \textit{mens rea}
-    \item The court decides this is a matter of strict liability, which is supported by the betterment of public welfare.
-\end{itemize}
-
 \textbf{Facts}
 \begin{itemize}
-    \item $\Delta$ found indicted for violating the Narcotics Act of 1914 by selling derivatives of illegal drugs (5 years imprisonment).
-    \item $\Delta$ argued that the prosecution didn't prove mens rea. 
+    \item The defendants were prosecuted under the Narcotics Act for selling prohibited drug derivatives.
+    \item They argued that the prosecution had to prove that they knew the substances were prohibited.
 \end{itemize}
 
 \textbf{Question}
 \begin{itemize}
-    \item Is the prosecution required to prove that $\Delta$ \textit{knowingly} sold prohibited drugs?
+    \item Did the statute require proof that the defendants knowingly sold prohibited drugs?
 \end{itemize}
 
 \textbf{Holding}
 \begin{itemize}
-    \item Court held that the statute does not require knowledge of the offense. 
-    \item Held that $\Delta$ was guilty as charged.
+    \item No. The statute did not require proof that the defendants knew the substances were prohibited.
 \end{itemize}
 
 \textbf{Discussion}
 \begin{itemize}
-    \item Purpose of the act is the betterment of society/public welfare.
-    \item Innocent seller's injustice < innocent buyer's harm from drugs.
+    \item The Court treated the statute as a public-welfare offense.
+    \item The public interest in preventing harm from narcotics justified imposing liability without proof of knowledge of illegality.
 \end{itemize}
 }
 
 \subsection{Statutory Silence}
 
-\casebox{\textit{Staples v. U.S.} (1994)}
-{}
-{
-\textbf{Class Notes}
-\begin{itemize}
-    \item Statutory silence in this case regarding mens rea. 
-    \item Background common law says that $\exists$ requirement of \textit{mens rea}. 
-    \item Holds that unless there is a clear statement by Congress, assumes that proof of mens rea is required. 
-    \item Emphasizes value of right to bear arms: courts should avoid dispensing \textit{mens rea} if doing so would criminalize a broad range of apparently innocent conduct.
-\end{itemize}
-}
-
-\textbf{Spectrum between $\exists$ \textit{mens rea} and strict liability}
-\todoitem{Make spectrum graph}
-\begin{itemize}
-    \item \textbf{Presumption:} If there is ambiguity, judges should decide that there is a requirement for \textit{mens rea}. (Narrow reading, lenity)
-\end{itemize}
-\todoitem{Make chart of factors that decide whether mens rea should be required or strict liability}
-
-\casebox{\textit{Elonis v. U.S.} (2015)}
+\casebox{\textit{Staples v. United States} (1994)}
 {}
 {
 \textbf{Facts}
 \begin{itemize}
-    \item Elonis made online comments/threats about violence towards his wife and other people.
-    \item Court: instructed the jury to decide whether Elonis made a reasonable threat to inflict bodily harm on others.
-    \item Elonis wanted the jury to decide whether Elonis made a true threat to inflict bodily harm to others. 
-    \item $\exists$ Statutory silence regarding whether proof of mens rea was required for this act.
+    \item The defendant possessed an unregistered firearm that was legally classified as a machine gun.
+    \item The statute did not expressly state whether the prosecution had to prove knowledge of the firearm's characteristics.
 \end{itemize}
 
-\textbf{Question:} Does the statute require proof that the $\Delta$ had subjective intent? (Requires proof that $\Delta$ knew these were threatening statements) 
-
-\textbf{Holding:} Standard ``negligence'' is not enough to support a criminal conviction under the statute, and reversed the lower court's decision. 
-
-\textbf{Significance}
+\textbf{Question}
 \begin{itemize}
-    \item Makes it harder to prosecute people for threats made on social media.
-    \item Supreme Court trying to balance free speech vs criminal law protections. 
+    \item Did the statute impose strict liability, or did it require proof that the defendant knew the firearm possessed the relevant characteristics?
+\end{itemize}
+
+\textbf{Holding}
+\begin{itemize}
+    \item The Court required proof that the defendant knew the weapon possessed the characteristics that made it subject to regulation.
+\end{itemize}
+
+\textbf{Discussion}
+\begin{itemize}
+    \item Courts generally presume a mens rea requirement when statutory language is silent.
+    \item The Court was unwilling to criminalize a broad range of otherwise innocent firearm possession without a clear legislative statement.
+    \item The prosecution did not need to prove that the defendant knew the firearm was legally classified as a machine gun.
+\end{itemize}
+}
+
+\note{Spectrum Between Mens Rea and Strict Liability}{
+\begin{center}
+\begin{tikzpicture}[
+    case/.style={
+        align=center,
+        font=\small,
+        text width=2.5cm
+    },
+    label/.style={
+        align=center,
+        font=\small\bfseries
+    }
+]
+
+% Main continuum
+\draw[very thick, teal!60] (0,0) -- (12,0);
+
+% Case markers
+\draw[thick, teal!80!black, fill=white] (1,0) circle (0.13);
+\draw[thick, teal!80!black, fill=white] (4,0) circle (0.13);
+\draw[thick, orange!80!black, fill=white] (8,0) circle (0.13);
+\draw[thick, brown!80!black, fill=white] (11,0) circle (0.13);
+
+% End labels
+\node[label, anchor=west, text=teal!80!black] at (-1,2)
+    {Requires mens rea};
+
+\node[label, anchor=east, text=brown!80!black] at (13, 2)
+    {Strict liability};
+
+% Case labels
+\node[case, above=0.25cm of {(1,0)}, text=teal!80!black]
+    {\textbf{\textit{Liparota}}\\[2pt]
+    Food stamps};
+
+\node[case, below=0.25cm of {(4,0)}, text=teal!80!black]
+    {\textbf{\textit{Staples}}\\[2pt]
+    Unregistered firearm};
+
+\node[case, above=0.25cm of {(8,0)}, text=orange!80!black]
+    {\textbf{\textit{Balint}}\\[2pt]
+    Drugs};
+
+\node[case, below=0.25cm of {(11,0)}, text=brown!80!black]
+    {\textbf{\textit{Freed}}\\[2pt]
+    Unregistered grenades};
+
+\end{tikzpicture}
+\end{center}
+}
+
+\begin{table}[ht]
+\centering
+\small
+\renewcommand{\arraystretch}{1.5}
+
+\begin{tabular}{
+    |>{\centering\arraybackslash}p{0.28\textwidth}
+    |>{\centering\arraybackslash}p{0.32\textwidth}
+    |>{\centering\arraybackslash}p{0.32\textwidth}|
+}
+\hline
+
+\rowcolor{gray!60}
+\textcolor{white}{} &
+\textcolor{white}{\shortstack{\textbf{Strict liability/}\\
+\textbf{Public-welfare offense}}} &
+\textcolor{white}{\textbf{Mens rea offense}}
+\\
+\hline
+
+\textbf{Gravity of penalty}
+&
+Small penalty
+&
+Significant penalty
+\\
+\hline
+
+\textbf{Code placement}
+&
+Regulatory section, traffic laws, etc.
+&
+Regular penal code
+\\
+\hline
+
+\textbf{Statutory purpose}
+&
+Text or legislative history suggests strict liability
+&
+Common-law presumption of mens rea
+\\
+\hline
+
+\textbf{``Interpretive'' precedent}
+&
+\multicolumn{2}{|>{\centering\arraybackslash}p{0.64\textwidth}|}{
+An unbroken line of judicial decisions treating this class of offense as either strict liability or a mens rea offense
+}
+\\
+\hline
+
+\textbf{Legislative silence}
+&
+\multicolumn{2}{|>{\centering\arraybackslash}p{0.64\textwidth}|}{
+Traditional mens rea crime: presumption of mens rea.
+
+New crime: possible presumption of strict liability.
+}
+\\
+\hline
+
+\end{tabular}
+
+\caption{Factors Relevant to Strict Liability and Mens Rea}
+\end{table}
+
+\casebox{\textit{Elonis v. United States} (2015)}
+{}
+{
+\textbf{Facts}
+\begin{itemize}
+    \item Elonis posted threatening statements online concerning his wife and other people.
+    \item The jury was instructed to apply an objective reasonable-person standard.
+\end{itemize}
+
+\textbf{Question}
+\begin{itemize}
+    \item Did the statute permit conviction based only on negligence, or was proof of a culpable mental state required?
+\end{itemize}
+
+\textbf{Holding}
+\begin{itemize}
+    \item Negligence alone was insufficient to support a conviction.
+    \item The Court reversed the conviction but did not decide whether the statute required recklessness, knowledge, or purpose.
+\end{itemize}
+
+\textbf{Discussion}
+\begin{itemize}
+    \item Statutory silence does not automatically create strict liability.
+    \item Criminal conviction generally requires proof of a culpable mental state rather than merely an objective reasonable-person standard.
+    \item The case illustrates the tension between mens rea principles and protection of speech.
 \end{itemize}
 }
 
 \chapter{Common Law Requirements: Causation and Attendant Circumstances}
 
-
 \section{Foreseeability and Coincidence}
 
-\definition{Proximate Cause}{Historically used to separate results that an actor would be held responsible for from results an actor would not be held responsible for. The line of demarcation is flexible, and attempts at uniformity have failed, but that doesn't mean general guidelines and analysis approaches cannot be constructed.}
+\definition{Proximate Cause}
+{
+Proximate cause is the legal limit on responsibility for results caused by the defendant's conduct. The defendant's conduct need not be the sole cause of the harm, but it must be sufficiently connected to the result that assigning criminal responsibility is justified.
+}
 
-\rulebox{\textit{sine qua non} test}{An essential condition, action, or ingredient without which something else is impossible or cannot exist. (But-for test)}
+\subsection{Factual and Legal Causation}
+
+\commonlaw{Factual Cause}{
+\begin{itemize}
+    \item Factual causation asks whether the defendant's conduct was a necessary condition of the result.
+    \item The ordinary test is the \textit{sine qua non}, or ``but-for,'' test:
+    \begin{itemize}
+        \item But for the defendant's conduct, would the result have occurred?
+    \end{itemize}
+    \item Factual causation is necessary but not always sufficient for criminal liability.
+\end{itemize}
+}
+
+\commonlaw{Proximate or Legal Cause}{
+\begin{itemize}
+    \item Proximate cause asks whether the relationship between the defendant's conduct and the result is sufficiently direct to justify liability.
+    \item The defendant's conduct does not need to be the sole or exclusive cause of the harm.
+    \item The conduct must instead be a sufficiently direct or substantial factor in bringing about the result.
+    \item Causation is relevant primarily for result crimes, such as homicide.
+    \item Causation generally is not required for a completed conduct crime or an attempt, because those offenses do not require the prohibited result to occur.
+    \item The prosecution must prove causation beyond a reasonable doubt.
+\end{itemize}
+}
 
 \casebox
-    {\textit{People v. Arzon} (1978)}
-    {\textit{People v. Arzon}, 92 Misc. 2d 739, 401 N.Y.S.2d 156 (Sup. Ct. N.Y. County 1978).}
-    {
-        \textbf{Facts}
-        \begin{itemize}
-            \item $\Delta$ allegedly set fire to a couch on the fifth floor of an abandoned building.
-            \item Firefighters responded but withdrew after failing to control the fire.
-            \item During evacuation a separate fire caused smoke that made evacuation dangerous.
-            \item Firefighter Celic was injured during the evacuation and later died.
-            \item The second fire was also arson, but no sufficient evidence that connected Arzon to it.
-            \item Arzon charged with depraved-indifference murder and felony murder.
-        \end{itemize}
-
-        \textbf{Procedural History}
-        \begin{itemize}
-            \item $\Delta$ indicted for two counts of 2nd degree murder and one count of 3rd degree arson.
-            \item $\Delta$ moved to dismiss the two murder counts, arguing grand-jury evidence was insufficient and that prosecution had not established a causal relationship with his actions and Celic's death.
-        \end{itemize}
-
-        \textbf{Question}
-        \begin{itemize}
-            \item Was there sufficient relationship between the $\Delta$'s actions and Celic's death?
-            \item Court: Yes, there \textit{may} be, but something for the jury to decide. (Prosecution \textit{could} prove causation.)
-            \item Dismissing Arzon's claim that there was \textit{no} relation between his actions and the result. 
-        \end{itemize}
-
-        \textbf{Holding}
-        \begin{itemize}
-            \item The $\Delta$'s conduct doesn't need to be the sole and exclusive factor in the victim's death.
-            \item The fire set by the $\Delta$ was an indispensable link in the chain of events that caused Celic's death.
-        \end{itemize}
-
-        \textbf{Discussion}
-        \begin{itemize}
-            \item \textit{People v. Kibbe}: $\Delta$s' conduct was a sufficiently direct cause of victim's ensuing death.
-            \item Similar to \textit{Kibbe} and how the $\Delta$s were still charged with murder even though the victim died in a separate incident.
-            \item Foreseeable that the firemen would respond to the situation ($\Delta$'s fire) thus exposing them to life-threatening danger.
-            \item $\Delta$'s act put Celic in a particularly vulnerable position.
-        \end{itemize}
-    }
-
-\textbf{Class Notes}
+{\textit{People v. Arzon} (1978)}
+{Sup. Ct. N.Y. County, 1978}
+{
+\textbf{Facts}
 \begin{itemize}
-    \item plausibility $\neq$ Arzon is guilty
-    \item causation $\neq$ sole and exclusive factor, but rather that conduct must be a sufficiently direct reason of harm
+    \item Arzon set fire to a couch in an abandoned building.
+    \item Firefighters responded, and a firefighter later died during the evacuation of the building after a separate fire created dangerous smoke.
+    \item The second fire was not connected to Arzon.
 \end{itemize}
+
+\textbf{Question}
+\begin{itemize}
+    \item Was Arzon's fire sufficiently connected to the firefighter's death to establish causation?
+\end{itemize}
+
+\textbf{Holding}
+\begin{itemize}
+    \item The court held that the prosecution could establish causation and that the issue should be decided by the jury.
+\end{itemize}
+
+\textbf{Discussion}
+\begin{itemize}
+    \item The defendant's conduct need not be the sole and exclusive cause of death.
+    \item Arzon's fire was an indispensable link in the chain of events leading to the firefighter's death.
+    \item It was foreseeable that firefighters would respond to the fire and face life-threatening danger.
+    \item A defendant may be responsible for harm resulting from a foreseeable response to the danger that the defendant created.
+\end{itemize}
+}
+
+\note{Class Notes on \textit{Arzon}}{
+\begin{itemize}
+    \item The court's holding means only that causation was sufficiently plausible to submit to the jury; it does not establish that Arzon was necessarily guilty.
+    \item Causation does not require the defendant's conduct to be the sole cause of the harm.
+    \item The conduct must be a sufficiently direct cause of the result.
+\end{itemize}
+}
 
 \casebox
-    {\textit{People v. Acosta} (1991)}
-    {\textit{People v. Acosta}, 232 Cal. App. 3d 1375, 284 Cal. Rptr. 117 (Cal. Ct. App. 1991).}
-    {
-        \textbf{Facts} 
-        \begin{itemize}
-            \item Acosta was apprehended by police in a stolen vehicle.
-            \item Acosta led police on a high-speed chase through Orange County (48 miles).
-            \item Acosta drove ``egregiously'': running stop signs and red lights, driving on the wrong side of the street, etc.
-            \item Police helicopters helped in tracking Acosta during the chase.
-            \item Two police helicopters collided, killing three people (police officers).
-            \item Turner (expert) says that accident happened because one pilot violated FAA regulations.
-            \item Acosta argues that $\nexists$ sufficient evidence proving he proximately caused the death of his victims, because a crash between airborne vehicles was not a foreseeable result of his conduct.
-        \end{itemize}
-        
-        \textbf{Procedural History}
-        \begin{itemize}
-            \item Trial court jury convicted Acosta of three counts of 2nd degree murder and one count of unlawfully driving or taking a vehicle without consent.
-            \item Acosta appealed his conviction of 2nd degree murder in California's Court of Appeals (4th district).
-        \end{itemize}
-        
-        \textbf{Relevant law}
-        \begin{itemize}
-            \item Proximate cause of 2nd degree murder
-        \end{itemize}
-        
-        \textbf{Question}
-        \begin{itemize}
-            \item Was Acosta's actions the ``actual cause'' of the victim's injury (helicopter crash)? 
-            \item Equivalently: But for Acosta's actions, would the injury have occurred? 
-        \end{itemize}
-        
-        \textbf{Holding}
-        \begin{itemize}
-            \item Unless an act is an actual cause of the injury, it will not be considered a proximate cause. 
-            \item $\exists$ proximate cause here.
-            \item But, reverses because there was no requisite mens rea. 
-        \end{itemize}
-        
-        \textbf{Discussion (J. Wallin)}
-        \begin{itemize}
-            \item Virtually impossible to have a logical verbal formula that produces uniform results.
-            \item Standard should be to exclude extraordinary results and determination of facts to be through ``the common sense of the common man as to common things.''
-            \item Definition of foreseeability in California: not involving $\Delta$'s state of mind, but rather the objective conditions present when he acts.
-            \item But for Acosta fleeing the police, the helicopters wouldn't have been in the position for a crash.
-            \item Result of helicopter crash is not highly extraordinary.
-            \item Given emotional dynamics of pursuit, $\exists$ ``appreciable probability'' that pursuer could act negligently or recklessly in order to catch the $\Delta$.
-            \item Mens rea: the court found insufficient proof of malice for a murder conviction, as in Acosta didn't consciously disregard the risk to the helicopter pilots.
-        \end{itemize}
-        
-        \textbf{Dissent (J. Crosby)}
-        \begin{itemize}
-            \item The law does not assign blame to an otherwise blameworthy actor when neither the intervening negligent conduct nor the risk of harm was foreseeable.
-            \item Occupants of helicopter were not within the range of apprehension of a fleeing criminal on the ground.
-            \item This \textit{was} a highly extraordinary result.
-        \end{itemize}
-    }
-
-\textbf{Class Notes}
+{\textit{People v. Acosta} (1991)}
+{\textit{People v. Acosta}, 232 Cal. App. 3d 1375, 284 Cal. Rptr. 117 (Cal. Ct. App. 1991).}
+{
+\textbf{Facts}
 \begin{itemize}
-    \item Causation is relevant only when a crim is define with regard to result of conduct. (e.g.: relevant for homicide, not for the attempt.)
-    \item Causation is the link between the harm that is a result of (caused by) the $\Delta$'s conduct, which must be proved beyond a reasonable doubt. 
+    \item Acosta led police on a high-speed chase.
+    \item Two police helicopters assisting in the pursuit collided, killing three people.
+    \item Acosta argued that the helicopter collision was too unforeseeable to establish proximate cause.
 \end{itemize}
 
-% \casebox
-% {\textit{People v. Warner-Lambert Co.} (1980)}
-% {\textit{People v. Warner-Lambert Co.}, 414 N.E.2d 660 (N.Y. 1980)}
-% {
-% \textbf{Facts}
-% \begin{itemize}
-%    \item Warner-Lambert indicted for 2nd degree manslaughter and criminally negligent homicide.
-%    \item Several employees killed during an explosion at a factory.
-%    \item $\exists$ evidence that corporation used magnesium stearate, which is potentially explosive, in its manufacturing process.
-%    \item $\Delta$ knew about explosion hazard.
-%    \item Speculation on what caused the explosion.
-% \end{itemize}
+\textbf{Question}
+\begin{itemize}
+    \item Were Acosta's actions an actual and proximate cause of the helicopter crash?
+\end{itemize}
 
-% \textbf{Holding}
-% \begin{itemize}
-%    \item Court held that there was insufficient evidence to establish foreseeability of the immediate cause of the explosion.
-%    \item Dismissed the indictment.
-% \end{itemize}
+\textbf{Holding}
+\begin{itemize}
+    \item The court found sufficient evidence of actual and proximate causation.
+    \item However, it reversed the murder convictions because the prosecution had not established the required mens rea.
+\end{itemize}
 
-% \textbf{Discussion}
-% \begin{itemize}
-%          \item Reject prosecution's broad application of proximate cause.
-%          \item Prosecution's argument is that exposure of risk to death $\rightarrow$ death should be criminally liable.
-%         \item $\Delta$'s actions must be a \textit{sufficiently direct cause} of the ensuing death.
-% \end{itemize}
-% }
-
-\note
-{Statutory Standards}
-{
+\textbf{Discussion}
+\begin{itemize}
+    \item But for Acosta's flight, the helicopters would not have been in the position to collide.
+    \item The helicopter crash was not so extraordinary that causation was legally impossible.
+    \item Foreseeability was evaluated objectively based on the circumstances surrounding Acosta's conduct, not solely by examining Acosta's subjective state of mind.
+    \item Proximate cause and mens rea are separate requirements:
     \begin{itemize}
-        \item Most state codes have no explicit rules for determining causation.
-        \item Courts are left to decide based on evolving common-law principles.
+        \item The result may be sufficiently foreseeable for purposes of causation; but
+        \item The defendant may still lack the conscious disregard required for murder.
     \end{itemize}
+\end{itemize}
 }
 
-\note
-{The Specific Causal Mechanism}
-{
-    \begin{itemize}
-        \item Recently: NY courts limited the specific-causal-mechanism requirement to only contexts that involve a commercial or manufacturing process (not to fires in residential settings, etc.).
-        \question{Why not?}{If the specific-causal-mechanism requirement is sound, shouldn't it apply in residential situations as well?}
-    \end{itemize}
+\note{Class Notes on \textit{Acosta}}{
+\begin{itemize}
+    \item Causation is required when the crime is defined in terms of a result.
+    \item The prosecution must prove the causal link between the defendant's conduct and the result beyond a reasonable doubt.
+    \item A finding of proximate cause does not automatically establish the required mens rea.
+\end{itemize}
 }
 
-\note
-{Criticisms of Foreseeability Test}
-{
+
+\subsection{Intervening Causes and Foreseeability}
+
+\definition{Intervening Causes}{
+\begin{itemize}
+    \item An intervening cause is an event that occurs after the defendant's conduct and contributes to the prohibited result.
+    \item An intervening cause breaks the causal chain when it is so abnormal, unforeseeable, or independent that the defendant should not fairly be held responsible for the result.
+    \item A foreseeable response to the danger created by the defendant generally does not break the causal chain.
+    \item Examples of foreseeable responses may include:
     \begin{itemize}
-        \item Concept of foreseeability is inherently manipulable because of subjectivity in description of events. (Prof. Moore)
-        \item Alternatively, depend less on the degree of foreseeability or risk and more on the relationship between $\Delta$'s conduct and risk arising from it. (J. Posner)
+        \item Rescue attempts;
+        \item Police or firefighter intervention;
+        \item Medical treatment; and
+        \item Flight or other reactions by victims.
     \end{itemize}
+    \item The more independent and extraordinary the intervening event, the stronger the argument that proximate cause is absent.
+\end{itemize}
 }
 
-\rulebox
-{The Vulnerable Victim}
-{
+\subsubsection{Foreseeability}{
+\begin{itemize}
+    \item Foreseeability is a flexible standard rather than a precise formula.
+    \item Courts often ask whether the result was so extraordinary that assigning criminal responsibility would be unfair.
+    \item The analysis generally focuses on the objective circumstances surrounding the defendant's conduct.
+    \item Foreseeability should not be confused with the defendant's mens rea:
     \begin{itemize}
-        \item When a victim with underlying medical conditions died of fright, $\Delta$ was found guilty of murder, and the court said that liability was not limited to the deaths that were foreseeable.
-        \item But, if the victim dies \textit{after} an assault, $\Delta$ is not found guilty.
-        \question{Fairness}{Is this fair?}
+        \item Foreseeability helps determine proximate causation; and
+        \item Mens rea determines whether the defendant possessed the required culpable mental state.
     \end{itemize}
+    \item The ``common sense of the common person as to common things'' may guide the analysis.
+\end{itemize}
 }
 
-\mpc{Section 2.03 (1)}
+\subsubsection{Criticisms of Foreseeability}{
+\begin{itemize}
+    \item Foreseeability is potentially manipulable because courts can describe the relevant event at different levels of generality.
+    \item One approach focuses less on the abstract foreseeability of the result and more on the relationship between:
+    \begin{itemize}
+        \item The defendant's conduct;
+        \item The risk created by that conduct; and
+        \item The harm that ultimately occurred.
+    \end{itemize}
+\end{itemize}
+}
+
+\subsubsection{Specific Causal Mechanism}{
+\begin{itemize}
+    \item Some courts require the prosecution to establish the specific causal mechanism that produced the result, particularly when several possible mechanisms exist.
+    \item New York has limited this requirement primarily to cases involving commercial or manufacturing processes, where the causal explanation may be highly speculative.
+    \item The broader question is whether the prosecution has established a sufficiently direct causal connection, even if it cannot identify every precise step in the causal chain.
+\end{itemize}
+}
+
+\subsubsection{Vulnerable Victims}{
+\begin{itemize}
+    \item A defendant generally takes the victim as the defendant finds the victim.
+    \item An unusual medical condition or vulnerability does not necessarily defeat causation.
+    \item The prosecution must still establish that the defendant's conduct sufficiently caused the death or injury.
+    \item A later event may defeat causation if it is unrelated to the defendant's conduct or makes the result too remote.
+\end{itemize}
+}
+
+
+\subsection{MPC Causation}
+
+\mpc{\S 2.03(1): General Causation Rule}
 {
-    Conduct is the cause of a result when: 
-    \begin{enumerate}[label=\alph*)]
-        \item it is an antecedent but for which the result in question would not have occurred; and
-        \item the relationship between the conduct and result satisfies any additional causal requirements imposed by the Code or by the law defining the offense.
+\begin{itemize}
+    \item Conduct is the cause of a result when:
+    \begin{enumerate}
+        \item It is an antecedent but for which the result would not have occurred; and
+        \item The relationship between the conduct and the result satisfies any additional causal requirements imposed by the MPC or by the statute defining the offense.
     \end{enumerate}
-}
-\mpc{Section 2.03 (2)}
-{
-\todoitem{fill out mpc rule here}
+    \item The MPC therefore requires both factual causation and any additional legal-causation requirement imposed by the offense.
+\end{itemize}
 }
 
-\mpc{Section 2.03 (3)}
+\mpc{\S 2.03(2): Purpose or Knowledge}
 {
-\todoitem{fill out mpc rule here}
+\begin{itemize}
+    \item When purposely or knowingly causing a particular result is an element of the offense, causation is not established if the actual result is not within the defendant's purpose or knowledge.
+    \item Causation may still be established when:
+    \begin{itemize}
+        \item The actual result differs only because a different person or property was affected; or
+        \item The actual result involves the same kind of injury or harm intended, and the result was not too remote or accidental to have a just bearing on the defendant's liability or the grade of the offense.
+    \end{itemize}
+\end{itemize}
 }
 
-\mpc{Section 2.03 (4)}
+\mpc{\S 2.03(3): Recklessness or Negligence}
 {
-\todoitem{fill out mpc rule here}
+\begin{itemize}
+    \item When recklessly or negligently causing a particular result is an element of the offense, causation is not established unless:
+    \begin{itemize}
+        \item The actual result falls within the risk of which the defendant was aware, in the case of recklessness; or
+        \item The actual result falls within the risk of which the defendant should have been aware, in the case of negligence.
+    \end{itemize}
+    \item Causation may still be established when:
+    \begin{itemize}
+        \item The actual result differs only because a different person or property was affected; or
+        \item The actual result involves the same kind of injury or harm as the risked result, and was not too remote or accidental to have a just bearing on liability or grading.
+    \end{itemize}
+\end{itemize}
 }
+
+\mpc{\S 2.03(4): Result Too Remote or Accidental}
+{
+\begin{itemize}
+    \item When causing a particular result is an element of the offense, but the offense does not specify the required mental state regarding that result, causation is not established when the actual result is too remote or accidental to have a just bearing on the defendant's liability or the grade of the offense.
+\end{itemize}
+}
+
+
+\section{Attendant Circumstances}
+
+\definition{Attendant Circumstances}{
+\begin{itemize}
+    \item Attendant circumstances are facts surrounding the defendant's conduct that must exist for the conduct to constitute the offense.
+    \item They are distinct from:
+    \begin{itemize}
+        \item The defendant's conduct, which constitutes the actus reus; and
+        \item The result, which may require proof of causation.
+    \end{itemize}
+    \item Examples include:
+    \begin{itemize}
+        \item The building belonging to another person in a burglary prosecution;
+        \item The victim's age in a statutory-rape prosecution;
+        \item The victim's lack of consent in a sexual-assault prosecution; and
+        \item The defendant's status as a felon in a felon-in-possession prosecution.
+    \end{itemize}
+    \item The prosecution must prove each required attendant circumstance beyond a reasonable doubt.
+    \item Mens rea generally must attach separately to each material attendant circumstance unless the statute clearly makes the circumstance strict liability.
+\end{itemize}
+}
+
+\subsection{Attendant Circumstances and Mistake}{
+\begin{itemize}
+    \item A mistake about an attendant circumstance may negate the mens rea required for that circumstance.
+    \item Under the MPC's elemental approach, the court asks whether the defendant had the required mental state regarding:
+    \begin{itemize}
+        \item The conduct;
+        \item The attendant circumstances; and
+        \item The result, if the offense is result-based.
+    \end{itemize}
+    \item A defendant may therefore have intended the conduct but lacked the required awareness of an attendant circumstance.
+\end{itemize}
+}
+
 
 \chapter{Statutory \& Constitutional Standards}
+
 \section{Legality}
+
+\commonlaw{The Legality Principle}{
+\begin{itemize}
+    \item \textit{Nulla poena sine lege}: no punishment without law.
+    \item A person may not be punished unless the conduct was criminalized by a previously existing legal rule.
+    \item The legality principle requires:
+    \begin{itemize}
+        \item Fair notice;
+        \item Nonretroactivity;
+        \item Reasonably clear statutory language;
+        \item Limits on judicial discretion; and
+        \item Legislative rather than judicial definition of crimes.
+    \end{itemize}
+    \item The principle is closely related to:
+    \begin{itemize}
+        \item Due process;
+        \item The separation of powers;
+        \item Legislative supremacy; and
+        \item The rule of lenity.
+    \end{itemize}
+\end{itemize}
+}
+
+\textbf{Values Served by Legality}{
+\begin{itemize}
+    \item Fair warning: people should be able to know what conduct may result in criminal punishment.
+    \item Limiting discretion: clear rules constrain police, prosecutors, judges, and juries.
+    \item Preventing retroactive punishment: courts should not criminalize conduct after it occurred.
+    \item Separation of powers: legislatures, rather than courts, ordinarily define crimes and prescribe punishments.
+\end{itemize}
+}
 
 \casebox
 {\textit{Commonwealth v. Mochan} (1955)}
@@ -377,341 +949,1342 @@
 {
 \textbf{Facts}
 \begin{itemize}
-    \item $\Delta$, with intention, unlawfully, wickedly, and maliciously made numerous phone calls to the house of Louise Zivkovich during the day and night, to verbally harass her. 
-    \item Some members of Zivkovich’s household overheard the calls.
-    \item Zivkovich and $\Delta$ were strangers, and she was a married woman.
-\end{itemize}
-
-\textbf{Procedural History}
-\begin{itemize}
-    \item The defendant was charged with two indictments and convicted before a judge without a jury.
-    \item Defendant appealed, saying that this was not a criminal offense under any Pennsylvania statute, and thus did not constitute a misdemeanor at common law. 
-\end{itemize}
-
-\textbf{Law}
-\begin{itemize}
-    \commonlaw{Public Decency (Penn.)}{Conduct that “openly outrages decency and is injurious to public morals” may be punished as a common-law misdemeanor.}
+    \item Mochan repeatedly made obscene and sexually degrading telephone calls to a woman and her household.
+    \item No Pennsylvania statute specifically criminalized the conduct.
 \end{itemize}
 
 \textbf{Question}
 \begin{itemize}
-    \item Did Mochan’s repeated obscene and sexually explicit telephone calls constitute a punishable common-law misdemeanor, even though no Pennsylvania statute expressly criminalized that conduct?
+    \item Could the court punish Mochan for a common-law misdemeanor even though no statute specifically prohibited the conduct?
 \end{itemize}
 
 \textbf{Holding}
 \begin{itemize}
-    \item Majority: Yes, Pennsylvania’s common law permitted punishment of conduct that seriously injured or tended to injure public morality, even if no statute specifically addressed the conduct.
-    \item Thus affirmed the convictions and sentences. 
-\end{itemize}
-
-\textbf{Discussion, Majority (J. Hirt)}
-\begin{itemize}
-    \item Pennsylvania recognizes the common law of crimes unless the legislature have abolished it. 
-    \item Therefore, an act does not have to be specifically prohibited by statute to be criminal. 
-    \item The court acknowledges that no prior Pennsylvania case involved this exact conduct. 
-    \item But, the absence of an identical precedent is not decisive, should question whether the conduct could be punished as a misdemeanor under general common-law principles. 
-    \item Mochan’s repeated, obscene, and sexually degrading phone calls were more than mere verbal requests for adultery. 
-    \item His persistent intentional conduct and potential effect on other people using the telephone line were sufficiently offensive to public morality and resulted in “openly outraged decency” and injured public morals, and thus was punishable as a common-law misdemeanor.
-\end{itemize}
-
-\textbf{Discussion, Dissent (J. Woodside)}
-\begin{itemize}
-    \item Agreed that Mochan’s conduct was reprehensible but argued that reprehensible conduct $\neq$ not necessarily criminal conduct. 
-    \item Emphasized that the legislature has the authority to decide whether conduct is sufficiently harmful to the public to warrant criminal punishment. 
-    \item The majority created a new crime through judicial decision when they declared Mochan’s conduct as criminal for the first time. 
-    \item Warned that broad standards such as conduct that ``injures or tends to injure the public” or ``outrages decency” give courts too much discretion. 
-    \item Courts' decision to impose criminal punishment whenever $\exists$ immoral conduct undermines the legislature’s role in defining crimes.
-\end{itemize}
-}
-
-\textbf{Class Notes}
-\begin{itemize}
-    \item Anti-legality case (goes against the legality principle). 
-    \item \textit{Mochan} was later overturned, and is now bad law.
-    \item Superseded by principle that in order to punish criminally, the court first needs to prove that there \textit{was} a crime. 
-\end{itemize}
-
-\doctrine{\textit{Nulla poena sine lege}, The Legality Principle}
-{
-No punishment without the law. 
-    \question{What values does this principle serve?}
-    {
-    \begin{itemize}
-        \item Fair warning of conduct that could subject one to prosecution
-        \item Controlling discretion of police, prosecutors, and juries
-    \end{itemize}
-    }
-This principle bars retroactivity and vagueness, requiring previously established laws and reasonably clear terms. 
-}
-
-\note{Institutional Limits of Courts}
-{
-\begin{itemize}
-    \item Recall arguments made in LegReg.
-    \item Would it be okay if the courts reversed Mochan's conviction due to lack of fair warning, but held that \textit{from now on}, people making these phone calls would be subject to criminal misdemeanor charges. Would that be fair under the legality principle, or does the legality principle protect the separation of powers values as well? 
-\end{itemize}
-}
-
-\commonlaw{How Old Common Law Crimes Apply}
-{
-\begin{itemize}
-    \item \textbf{Old common law:} The offense developed over time, was historically recognized, and often received legislative approval or codification.
-    \item Most American states continued to apply English common laws, with the exception of when they were specifically repealed by new statutes. 
-    \item As more penal laws were enacted, some states abolished all common-law crimes not included in the new statutes.
-    \item Beginning in the 1960s, most states replaced these older statutes with modern criminal codes influenced by the Model Penal Code. 
-    \item Still, some states continued to preserve traditional common-law definitions.
-\end{itemize}
-}
-
-\commonlaw{How New Common Law Crimes Apply}
-{
-\begin{itemize}
-    \item \textbf{New common law:} A court declares conduct criminal even though: 
-    \begin{enumerate}
-        \item no statute prohibits it; and
-        \item no established precedent previously recognized it as a crime.
-    \end{enumerate}
-    \item This is what the majority did in Commonwealth v. Mochan.
-    \item New common-law crimes raise serious legality and separation-of-powers concerns, and most states have moved away from it (including Pennsylvania.)
-    \item Pennsylvania’s current criminal code provides that conduct is not criminal unless made so by statute or another legally authorized provision.
-    \item The United States Supreme Court has not held that judicial creation of state crimes is always unconstitutional, but have strongly opposed the creation of new federal common-law crimes. 
-    \item In \textit{United States v. Hudson \& Goodwin}, the Court held that federal courts lacked authority to create federal crimes. 
-    \item In \textit{United States v. Wiltberger}, Chief Justice Marshall emphasized that the legislature has the power to define crimes and prescribe punishment. 
-\end{itemize}
-}
-
-\section{Lenity}
-
-\doctrine{Rule of Lenity}{Reasonable doubts about the meaning or application of a criminal law should be resolved in favor of the defendant. Historically, the rule developed in English courts based partly on the assumption that Parliament would speak clearly when it intended to impose severe punishment. In the United States, lenity took on additional constitutional importance because it protects due process and fair notice, and the separation of powers.}
-
-\casebox{\textit{McBoyle v. United States} (1931)}
-{\textit{McBoyle v. United States}, 283 U.S. 25 (1931).}
-{
-\textbf{Facts}
-\begin{itemize}
-    \item McBoyle transported a airplane that he knew was stolen from Illinois to Oklahoma.
-\end{itemize}
-
-\textbf{Procedural History}
-\begin{itemize}
-    \item McBoyle was sentenced to serve three years of imprisonment and pay a fine of \$2000. 
-    \item McBoyle appealed to SCOTUS, writ of certiorari was granted on the question whether the National Motor Vehicle Theft Act applied to an airplane.
-\end{itemize}
-
-\textbf{Law}
-\begin{itemize}
-    \item \textbf{National Motor Vehicle Theft Act, Section 2 (a):} The term ``motor vehicle'' shall include an automobile, automobile truck, automobile wagon, motor cycle, or any other self-propelled vehicle not designed for running on rails;
-    \item \textbf{Section 3:} That whoever shall transport or cause to be transported in interstate or foreign commerce a motor vehicle, knowing the same to have been stolen, shall be punished by a fine of not more than \$5000 or by imprisonment of not more than five years, or both.
-\end{itemize}
-
-\textbf{Question}
-\begin{itemize}
-    \item Does the term ``vehicle'' in the sense of this act include airplanes?
-\end{itemize}
-
-\textbf{Holding}
-\begin{itemize}
-    \item No, airplanes are not included in this act.
-    \item Judgment reversed. 
+    \item The majority held that the conduct was punishable as a common-law misdemeanor because it outraged public decency and injured public morals.
 \end{itemize}
 
 \textbf{Discussion}
 \begin{itemize}
-    \item \textbf{Everyday speech:} vehicle = thing moving on land.
-    \item Theme of the language used in the act refers to vehicles on land. 
-    \item \textbf{Legislative intent:} Although airplanes were well-known in 1919, when this statute was passed, they were not mentioned in the reports or in the debates in Congress. $\Rightarrow$ \textbf{Meaningful silence} from legislature.
-    \item \textbf{Rule of Lenity:} A fair warning should be given, in terms that the general public would understand, of what the law is. 
-    \item Should not extend the statute to include airplanes just because we think a similar policy should apply or on speculation that legislation would have wanted us to interpret the act this way. 
+    \item The majority reasoned that Pennsylvania continued to recognize common-law crimes unless the legislature had abolished them.
+    \item The dissent argued that the majority had created a new crime through judicial decision.
+    \item The dissent emphasized that reprehensible conduct is not necessarily criminal conduct.
+    \item The case illustrates the danger of allowing courts to define crimes using vague standards such as conduct that ``outrages public morals.''
 \end{itemize}
 }
 
-\textbf{Class Notes}
+\note{Status of \textit{Mochan}}{
 \begin{itemize}
-    \item Rule of lenity 
+    \item \textit{Mochan} is generally treated as an anti-legality case because it allowed punishment without a clear, previously established statutory prohibition.
+    \item The decision was later superseded by Pennsylvania's modern criminal code.
+    \item Modern American jurisdictions generally reject the creation of new crimes through judicial decision.
+\end{itemize}
+}
+
+\commonlaw{Old Common-Law Crimes}{
+\begin{itemize}
+    \item Old common-law crimes developed over time and were historically recognized before modern criminal codes.
+    \item Some states continued to apply traditional common-law definitions unless the legislature repealed them.
+    \item Beginning in the twentieth century, most states replaced these offenses with statutory criminal codes influenced by the MPC.
+    \item Some jurisdictions nevertheless preserve portions of traditional common-law doctrine through statute or judicial interpretation.
+\end{itemize}
+}
+
+\commonlaw{New Common-Law Crimes}{
+\begin{itemize}
+    \item A new common-law crime exists when a court declares conduct criminal even though:
+    \begin{enumerate}
+        \item No statute prohibits the conduct; and
+        \item No established precedent previously recognized the conduct as criminal.
+    \end{enumerate}
+    \item New common-law crimes create serious legality and separation-of-powers concerns.
+    \item Federal courts may not create federal common-law crimes.
+    \item In \textit{United States v. Hudson \& Goodwin}, the Supreme Court held that federal courts lacked authority to create federal crimes.
+    \item In \textit{United States v. Wiltberger}, Chief Justice Marshall emphasized that the legislature has the power to define crimes and prescribe punishment.
+\end{itemize}
+}
+
+\note{Institutional Limits of Courts}{
+\begin{itemize}
+    \item Courts may interpret existing criminal laws, but interpretation cannot become judicial creation of a new offense.
+    \item The legality principle protects both:
     \begin{itemize}
-        \item Looking at lenity first vs lenity last. 
-        \item Constitutional foundations:
-        \begin{itemize}
-            \item Art. 1: Legislative supremacy
-            \item 14th Amendment: Fair notice/due process
-            \item 14th Amendment: Liberty/substantive rights
-        \end{itemize}
+        \item Individual fair notice; and
+        \item The legislature's institutional authority to define criminal conduct.
     \end{itemize}
+    \item A court generally cannot cure an absence of fair warning by announcing that the conduct will be criminal only prospectively.
+\end{itemize}
+}
+
+
+\section{Lenity}
+
+\doctrine{Rule of Lenity}{
+Reasonable doubt about the meaning or application of a penal law should be resolved in favor of the defendant.
+}
+
+\textbf{Purposes of Lenity}{
+\begin{itemize}
+    \item Protects fair notice and due process.
+    \item Prevents courts from extending criminal statutes beyond their ordinary meaning.
+    \item Preserves legislative supremacy by requiring the legislature to speak clearly when imposing criminal punishment.
+    \item Protects liberty by resolving serious statutory ambiguity in favor of the defendant.
+\end{itemize}
+}
+
+\textbf{When Lenity Applies}{
+\begin{itemize}
+    \item Courts generally begin with ordinary interpretive tools, including:
+    \begin{itemize}
+        \item Text;
+        \item Structure;
+        \item Context;
+        \item Statutory purpose; and
+        \item Legislative history.
+    \end{itemize}
+    \item Lenity generally applies when those tools leave a genuine and reasonable ambiguity.
+    \item Lenity is not triggered merely because a statute could have been drafted more clearly.
+    \item The modern debate is whether lenity should be used only as a final step or should operate as a background principle throughout interpretation.
+\end{itemize}
+}
+
+\note{}{Lenity can apply to causation as well; not just mens rea or actus reus.}
+
+\casebox
+{\textit{McBoyle v. United States} (1931)}
+{\textit{McBoyle v. United States}, 283 U.S. 25 (1931).}
+{
+\textbf{Facts}
+\begin{itemize}
+    \item McBoyle transported an airplane across state lines knowing that it had been stolen.
+    \item The statute prohibited transporting a stolen ``motor vehicle'' in interstate commerce.
 \end{itemize}
 
-\casebox{\textit{Wooden v. United States} (2022)}
+\textbf{Question}
+\begin{itemize}
+    \item Did the statutory term ``motor vehicle'' include airplanes?
+\end{itemize}
+
+\textbf{Holding}
+\begin{itemize}
+    \item No. The Court reversed McBoyle's conviction.
+\end{itemize}
+
+\textbf{Discussion}
+\begin{itemize}
+    \item Ordinary meaning suggested that ``motor vehicle'' referred to vehicles used on land.
+    \item The statute listed automobiles, trucks, wagons, and motorcycles, all of which travel on land.
+    \item The Court refused to extend the statute to airplanes merely because the same policy might apply to them.
+    \item The decision reflects both ordinary textual meaning and the rule of lenity: criminal statutes should provide fair warning before punishment is imposed.
+\end{itemize}
+}
+
+\casebox
+{\textit{Wooden v. United States} (2022)}
 {\textit{Wooden v. United States}, 595 U.S. 360 (2022).}
 {
 \textbf{Facts}
 \begin{itemize}
-    \item In 1997, William Wooden and several accomplices entered a storage facility in Georgia, where they broke through interior walls and stole property from ten storage units. 
-    \item Georgia charged Wooden with ten separate burglary counts (one for each storage unit). 
-    \item Wooden pleaded guilty to all ten counts and received concurrent sentences. 
-    \item In 2014, police found firearms in Wooden’s home. 
-    \item Because Wooden had a prior felony conviction, a jury convicted him of being a felon in possession of a firearm under 18 U.S.C. § 922(g). 
-    \item Prosecution sought an enhanced sentence under the Armed Career Criminal Act (ACCA). 
-    \item The Government argued that Wooden’s ten burglaries counted as ten different occasions.
+    \item Wooden and his accomplices entered a storage facility and burglarized ten units during one uninterrupted episode.
+    \item The government argued that the ten burglaries occurred on ten separate ``occasions'' under the Armed Career Criminal Act.
 \end{itemize}
-
-\textbf{Procedural History}
-\begin{itemize}
-    \item The federal district court accepted the Government’s argument that each entry into a different storage unit constituted a separate occasion, applying the ACCA enhancement and sentenced Wooden to 188 months—nearly sixteen years. 
-    \item The Sixth Circuit affirmed, reasoned that the burglaries occurred at distinct moments in time and that Wooden could not have been in multiple storage units simultaneously. 
-    \item The Supreme Court granted certiorari to resolve how to interpret ACCA’s ``occasions'' clause. 
-    \item The Supreme Court reversed the Sixth Circuit and held that Wooden’s ten burglaries occurred on one occasion, so they counted as only one ACCA predicate conviction.
-\end{itemize}
-
-\textbf{Armed Criminal Career Act (ACCA):} provides a fifteen-year mandatory minimum sentence for a person convicted under Section 922(g) who has three prior convictions for specified violent felonies or serious drug offenses “committed on occasions different from one another.'' 
 
 \textbf{Question}
 \begin{itemize}
-    \item Did Wooden's ten burglary convictions, arising from his entry into ten storage units in the same facility during one uninterrupted criminal episode, constitute ten different occasions for purposes of ACCA?
+    \item Did the ten burglaries occur on different occasions for purposes of the ACCA sentencing enhancement?
 \end{itemize}
 
 \textbf{Holding}
 \begin{itemize}
-    \item Wooden’s ten burglaries occurred on a single occasion. 
-    \item Because they did not occur on occasions different from one another, they counted as only one prior conviction under ACCA. 
-    \item Wooden therefore did not qualify for the ACCA enhancement.
+    \item No. The burglaries occurred on one occasion and counted as only one ACCA predicate offense.
 \end{itemize}
 
-\textbf{Discussion, Majority (J. Kagan)}
+\textbf{Discussion, Majority}{
 \begin{itemize}
-    \item \textbf{Ordinary meaning} of ``occasion'': one would say that Wooden burglarized ten storage units ``on one occasion,'' not that he burglarized one unit on one occasion, another unit on a second occasion, and so on. 
-    \item An occasion can include multiple activities that occur at different times, like how a wedding includes a ceremony, dinner, and dancing even though those activities are not simultaneous. 
-    \item ``Occasion'' = better understood as an episode or event.
-    \item Factors to be considered when considering the definition of ``occasion'': 
+    \item The ordinary meaning of ``occasion'' referred to one episode or event.
+    \item Relevant considerations included:
     \begin{itemize}
-        \item the timing of the offenses; 
-        \item whether the conduct was continuous or interrupted; 
-        \item the location of the offenses; 
-        \item the similarity or relationship between the offenses; and 
-        \item whether the offenses were part of a common scheme or purpose.
+        \item Timing;
+        \item Continuity or interruption;
+        \item Location;
+        \item Relationship among the offenses; and
+        \item Whether the offenses formed part of a common scheme or purpose.
     \end{itemize}
-
-    \item For all these factors, Wooden's crimes constituted one occasion, rather than multiple.
-    \item \textbf{Legislative history and purpose:} Congress added the occasions requirement after an earlier case treated multiple convictions arising from one criminal episode as separate within the meaning of the ACCA. 
-    \item The amendment was designed to prevent someone from becoming an armed career criminal based on multiple convictions arising from a single criminal episode (like Wooden!).
 \end{itemize}
+}
 
-\textbf{Discussion, Concurrence (J. Gorsuch)}
+\textbf{Discussion, Justice Gorsuch}{
 \begin{itemize}
-    \item Criticized majority’s multi-factor test as insufficiently clear and predictable.
-    \item The test gives courts many factors but little guidance about things like which factors matter most, how to weigh the factors, what qualifies as a substantial gap in time, what qualifies as a significant intervening event, and how courts should resolve close cases.
-    \item Worried that this approach would allow different judges to reach different conclusions based on differing intuitions. 
-    \item The fact that lower court judges in Wooden’s case concluded that the burglaries occurred on different occasions = reasonable disagreement was possible.
-    \item \textbf{Rule of Lenity:} Because reasonable judges could disagree about whether Wooden’s burglaries occurred on one occasion or many, lenity required judgment in Wooden’s favor.
-    \item Especially important because ACCA’s occasions clause gives courts little guidance and doesn't define the word ``occasion.” 
-    \item Since ambiguity remains, courts need a rule of decision, and lenity supplies that rule.
-    \item So, the court shouldn't decide based on which factors matter most, but instead should look at rule of lenity because the ACCA clause was reasonably ambiguous.
+    \item Criticized the majority's multi-factor test as insufficiently predictable.
+    \item Reasonable judges had disagreed about whether Wooden's crimes occurred on one occasion or several.
+    \item Because reasonable disagreement remained, the rule of lenity required resolving the ambiguity in Wooden's favor.
 \end{itemize}
+}
 }
 
 \section{Proof Beyond a Reasonable Doubt}
 
-\casebox{\textit{In re Winship} (1970)}
-{\textit{In re Winship}, 397 U.S. 358 (1970)}
+\textbf{The Beyond-a-Reasonable-Doubt Standard}{
+\begin{itemize}
+    \item The prosecution must prove every fact necessary to establish a criminal offense beyond a reasonable doubt.
+    \item The standard applies to:
+    \begin{itemize}
+        \item Actus reus;
+        \item Mens rea;
+        \item Causation;
+        \item Attendant circumstances; and
+        \item Any other element of the charged offense.
+    \end{itemize}
+    \item The standard reflects the judgment that convicting an innocent person is worse than allowing a guilty person to go free.
+\end{itemize}
+}
+
+\casebox
+{\textit{In re Winship} (1970)}
+{\textit{In re Winship}, 397 U.S. 358 (1970).}
 {
 \textbf{Facts}
 \begin{itemize}
-    \item Winship (12 yo juvenile) accused of entering a locker and stealing \$112 from a woman’s pocketbook. 
-    \item Under New York law, a juvenile was delinquent if he commits an act that would constitute a crime if committed by an adult. 
-    \item The juvenile court found that Winship had committed an act that would constitute larceny. 
-    \item The court applied preponderance of evidence standard. 
-    \item The judge acknowledged that the evidence might not have established guilt beyond a reasonable doubt but found it sufficient under the lower standard. 
-    \item Winship was ordered to be in a training school for at least eighteen months, with possible extensions until his eighteenth birthday (potentially six years of confinement).
+    \item A juvenile court found that Winship committed an act that would constitute larceny if committed by an adult.
+    \item The court applied the preponderance-of-the-evidence standard.
+    \item The finding could result in years of confinement in a juvenile training school.
 \end{itemize}
-
-\textbf{Procedural History}
-\begin{itemize}
-    \item New York Family Court found Winship delinquent. 
-    \item The Appellate Division affirmed. 
-    \item The New York Court of Appeals affirmed and upheld the constitutionality of using the preponderance standard in juvenile delinquency proceedings. 
-    \item Supreme Court granted review and reversed.
-\end{itemize}
-
-\textbf{Law} \textbf{The Due Process Clause of the Fourteenth Amendment} requires the government to prove every fact necessary to establish a criminal offense beyond a reasonable doubt.
 
 \textbf{Question}
 \begin{itemize}
-    \item Does due process require the prosecution to prove beyond a reasonable doubt that a juvenile committed an act that would constitute a crime if committed by an adult?
+    \item Does due process require proof beyond a reasonable doubt in a juvenile delinquency proceeding?
 \end{itemize}
 
 \textbf{Holding}
 \begin{itemize}
-    \item Yes, the Due Process Clause requires proof beyond a reasonable doubt when the juvenile is accused of conduct that would constitute a crime if committed by an adult.
-    \item Held that requiring proof beyond a reasonable doubt would not destroy the beneficial features of the juvenile system.
+    \item Yes. The Due Process Clause requires proof beyond a reasonable doubt when a juvenile is accused of conduct that would constitute a crime if committed by an adult.
 \end{itemize}
 
-\textbf{Discussion, Majority (J. Brennan)}
+\textbf{Discussion, Majority}{
 \begin{itemize}
-    \item Emphasized that the reasonable-doubt standard is a fundamental safeguard against factual error because it reduces the risk that an innocent person will be convicted and reinforces the presumption of innocence.
-    \item Reasons for this high standard:
+    \item The reasonable-doubt standard reduces the risk of factual error and protects the presumption of innocence.
+    \item The fact that juvenile proceedings were labeled civil or rehabilitative did not eliminate due process protections when the proceeding could result in significant confinement.
+    \item States could preserve informal juvenile procedures, but they still had to prove the alleged criminal conduct beyond a reasonable doubt.
+\end{itemize}
+}
+
+\textbf{Discussion, Justice Harlan}{
+\begin{itemize}
+    \item Society considers it substantially worse to convict an innocent person than to acquit a guilty person.
+    \item The reasonable-doubt standard reflects this fundamental allocation of risk.
+\end{itemize}
+}
+}
+
+\subsection{Burden-of-Proof Problems}{
+\begin{itemize}
+    \item Sufficiency issues may arise:
     \begin{itemize}
-        \item A criminal adjudication may deprive a person of liberty. 
-        \item A conviction carries serious stigma. 
-        \item The reasonable-doubt standard helps preserve public confidence in the criminal justice system. 
-        \item The standard reflects the judgment that convicting an innocent person is worse than allowing a guilty person to go free.
+        \item At the close of the prosecution's case;
+        \item At the close of all evidence;
+        \item During jury deliberations; or
+        \item On appeal after conviction.
     \end{itemize}
-    \item Rejected New York’s argument that juvenile proceedings were different because they were labeled civil and intended to rehabilitate rather than punish. 
-    \item Found that these labels did not eliminate due process protections when the proceeding could result in years of confinement and when the case death with criminal law.
-    \item Requiring proof beyond a reasonable doubt would not destroy the beneficial features of the juvenile system.
-    \item The higher standard applied only to the adjudicatory determination of whether the juvenile committed the alleged criminal act, and the states could still maintain informal procedures, confidentiality, etc.
-\end{itemize}
-
-\textbf{Discussion, Concurrence (J. Harlan)}
-\begin{itemize}
-    \item Focused on the different consequences of factual error. 
-    \item In civil cases, the law generally treats an erroneous judgment for one party as roughly comparable to an erroneous judgment for the other, but criminal cases are different because society considers it substantially worse to convict an innocent person than to acquit a guilty person.
-    \item The beyond-reasonable-doubt standard therefore reflects a fundamental value judgment that the legal system should tolerate some guilty people going free in order to reduce the risk of convicting the innocent. 
-    \item Juvenile courts could retain their distinctive procedures and rehabilitative goals, as long as the government proved the alleged criminal conduct beyond a reasonable doubt.
+    \item A judge should remove the case from the jury only when no reasonable juror could find guilt beyond a reasonable doubt.
+    \item The judge should not substitute personal credibility judgments for the jury's role.
 \end{itemize}
 }
 
-\note{Basis of the reasonable-doubt requirement}
+\subsection{Explaining Reasonable Doubt}{
+\begin{itemize}
+    \item Reasonable doubt is qualitative rather than mathematical.
+    \item Courts generally reject numerical explanations, such as ``seven and a half out of ten.''
+    \item Jury instructions should not dilute the standard by replacing reasonable doubt with terms such as:
+    \begin{itemize}
+        \item Grave uncertainty;
+        \item Moral certainty; or
+        \item Any lesser probability standard.
+    \end{itemize}
+    \item Some courts provide no further definition because attempting to define reasonable doubt may confuse the jury.
+\end{itemize}
+}
+
+\statutebox{California Penal Code \S 1096}{
+\textbf{Reasonable doubt:} It is not a mere possible doubt, because everything relating to human affairs is open to some possible or imaginary doubt. It is the state of the case that, after the entire comparison and consideration of all the evidence, leaves the jurors unable to say that they feel an abiding conviction of the truth of the charge.
+}
+
+\chapter{Intended Killings}
+\section{First-Degree Murder}
+
+\subsection{Defintions and Terms}
+
+\commonlaw{Common Law Murder}
 {
 \begin{itemize}
-    \item J. Harlan: Social disutility of convicting an innocent person is always worse than releasing a guilty person.
-    \item William Blackstone: Better that 10 guilty people escape rather than one innocent person suffer.
-    \item If we don't rely on the utility comparison, would that mean the reasonable-doubt requirement is not justified, or is there an underlying belief that people have a fundamental right not to suffer punishment without reliable proof of fault?
+    \item ``unlawful killing with `malice aforethought'.'' 
+    \item ``malice aforethought'' is not used in the individual words' ordinary sense, but rather a technical term of art. 
+    \item Now, ``malice aforethought'' is a comprehensive name for the different mental attitudes that have been defined at various points, the presence of any one of which would render a homicide particularly heinous and therefore murder. 
+    \item Gotten affected by the changes in the conception of mens rea as a necessary ingredient in criminal liability at common law for all crimes.
 \end{itemize}
 }
 
-\note{How burden-of-proof problems arise}
-{
-The issue can arise:
-\begin{itemize}
-    \item at the close of the prosecution’s case;
-    \item at the close of all evidence;
-    \item during the jury’s deliberations; and
-    \item on appeal for insufficient evidence.
-\end{itemize}
-}
-
-\note{Reasonable doubt as a matter of law}
+\commonlaw{Propositions of Murder}
 {
 \begin{itemize}
-    \item A judge should remove a case from the jury only when no reasonable juror could find guilt beyond a reasonable doubt. 
-    \item If reasonable jurors could fairly reach either conclusion, the issue belongs to the jury. 
-    \item The judge should not decide credibility or weigh evidence as a substitute for the jury.
+    \item It is murder if one person kills another with intent to do so, without provocation or on slight provocation, although there is no premeditation in the ordinary sense of the word.
+    \item It is murder if one person is killed by an act intended to kill another.
+    \item It is murder if a person is killed by an act intended to kill, although not intended to kill any particular individual, like if a man throws a bomb into a crowd of people.
+    \item It is murder if death results from an act which is intended to do no more than cause grievous bodily harm. 
+    \item It is murder if one person kills another by an intentional act which he knows to be likely to kill or to cause grievous bodily harm, although he may not intend to kill or to cause grievous bodily harm and may either be recklessly indifferent as to the results of his act or may even desire that no harm should be caused by it.
 \end{itemize}
 }
 
-\note{Explaining reasonable doubt (to a jury)}
+\todoitem{Put in Cal. Penal Code}
+
+\mpc{\S 210, on homicide, murder, and manslaughter}
 {
 \begin{itemize}
-    \item Jury instructions must not dilute the reasonable-doubt standard. 
-    \item Courts have criticized numerical explanations, such as saying reasonable doubt means “seven and a half out of ten,” because reasonable doubt is qualitative rather than mathematical. 
-    \item Courts have also rejected language such as ``grave uncertainty” or ``moral certainty” when it suggests a lower standard than the Constitution requires.
-    \item Some courts prefer to give the jury no explanation at all. 
-    \item A traditionally accepted defintion of reasonable doubt is the following Cal. Penal Code definition, but even here, what does ``moral evidence" or ``moral certainty" mean? 
+    \item \textbf{Section 210.0, Definitions:}
+    \begin{itemize}
+        \item \textbf{Human being:} a person who has been born and is alive.
+        \item \textbf{Bodily injury:} physical pain, illness, or impairment of physical condition.
+        \item \textbf{Serious bodily injury:} bodily injury creating a substantial risk of death, causing serious and permanent disfigurement, or causing protracted loss or impairment of a bodily member or organ.
+        \item \textbf{Deadly weapon:} any firearm or other weapon, device, instrument, material, or substance known to be capable of producing death or serious bodily injury in the manner in which it is used or intended to be used.
+    \end{itemize}
+
+    \item \textbf{Section 210.1, Criminal homicide:}
+    \begin{itemize}
+        \item A person is guilty of criminal homicide if he purposely, knowingly, recklessly, or negligently causes the death of another human being.
+        \item Criminal homicide is classified as murder, manslaughter, or negligent homicide.
+    \end{itemize}
+
+    \item \textbf{Section 210.2, Murder:} criminal homicide constitutes murder when:
+    \begin{itemize}
+        \item it is committed purposely or knowingly; or
+        \item it is committed recklessly under circumstances demonstrating extreme indifference to the value of human life.
+    \end{itemize}
+
+    \item Recklessness and extreme indifference are presumed when the defendant is engaged in, is an accomplice to, attempts to commit, or flees after committing or attempting to commit robbery, rape, forcible deviate sexual intercourse, arson, burglary, kidnapping, or felonious escape.
+
+    \item The extreme mental or emotional disturbance provision in Section 210.3(1)(b) may reduce what would otherwise be murder to manslaughter.
+
+    \item Murder is a felony of the first degree. A person convicted of murder may be sentenced to death under Section 210.6.
+
+    \item \textbf{Section 210.3, Manslaughter:} criminal homicide constitutes manslaughter when:
+    \begin{itemize}
+        \item it is committed recklessly; or
+        \item a homicide that would otherwise constitute murder is committed under the influence of extreme mental or emotional disturbance for which there is a reasonable explanation or excuse.
+    \end{itemize}
+
+    \item The reasonableness of the explanation or excuse is determined from the viewpoint of a person in the actor's situation, under the circumstances as the actor believed them to be.
+
+    \item Manslaughter is a felony of the second degree.
+
+    \item \textbf{Section 210.4, Negligent homicide:} criminal homicide constitutes negligent homicide when it is committed negligently.
+
+    \item Negligent homicide is a felony of the third degree.
+
+    \item \textbf{Section 210.5, Causing or Aiding Suicide:} 
+    \item (1) Causing another to commit suicide only if he purposely causes such suicide by force, duress, or deception. 
+    \item (2) Aiding or soliciting suicide as an independent offense. 
+\end{itemize}
+}
+
+\casebox
+    {\textit{Commonwealth v. Carroll}}
+    {Supreme Court of Pennsylvania, 1963}
+    {
+        \textbf{Facts}
+        \begin{itemize}
+            \item Carroll and his wife had a troubled relationship. His wife had previously received psychiatric treatment and had allegedly abused or mistreated their children.
+            \item Before leaving for an electronics course, Carroll placed a loaded .22-caliber pistol on the window sill near the couple's bed at his wife's request.
+            \item When Carroll returned, he told his wife that he had accepted a teaching assignment that would require him to be away from home several nights each week.
+            \item The couple argued violently for several hours.
+            \item During the early morning, Carroll became increasingly angry, remembered the gun, picked it up, and shot his wife twice in the back of the head while she was lying in bed.
+            \item Carroll wrapped his wife's body in blankets and sheets, tied it with clothesline, moved it to the cellar, and later transported it to a remote location near a trash dump.
+            \item A psychiatrist testified that Carroll's rage, desperation, and panic produced an impulsive and automatic homicide rather than an intentional and premeditated killing.
+        \end{itemize}
+
+        \textbf{Procedural History}
+        \begin{itemize}
+            \item Carroll pleaded guilty generally to an indictment charging him with murder.
+            \item He was tried by a judge without a jury.
+            \item The trial court found him guilty of first-degree murder and sentenced him to life imprisonment.
+            \item Carroll appealed, arguing that the evidence supported no more than second-degree murder.
+        \end{itemize}
+
+        \textbf{Relevant Law}
+        \begin{itemize}
+            \item First-degree murder requires a willful, deliberate, and premeditated killing.
+            \item The specific intent to kill may be inferred from the defendant's words, conduct, surrounding circumstances, and reasonable inferences from those circumstances.
+            \item The intentional use of a deadly weapon against a vital part of another person's body may support an inference of specific intent to kill.
+            \item There is no minimum amount of time required for premeditation. The intent to kill may be formed immediately before the killing.
+        \end{itemize}
+
+        \textbf{Question}
+        \begin{itemize}
+            \item Did the evidence support a conviction for first-degree murder, or did it establish only second-degree murder?
+            \item Did Carroll's good character and the psychiatric testimony that the killing was not intentional or premeditated require the court to reduce the conviction to second-degree murder?
+        \end{itemize}
+
+        \textbf{Holding}
+        \begin{itemize}
+            \item The evidence was sufficient to support a conviction for first-degree murder.
+            \item The judgment of the lower court was affirmed.
+            \item Even accepting Carroll's own account, his act of remembering the gun, deliberately taking it, and firing twice into his wife's head demonstrated a willful, deliberate, and premeditated intent to kill.
+        \end{itemize}
+
+        \textbf{Discussion}
+        \begin{itemize}
+            \item \textbf{Time required for premeditation}
+            \begin{itemize}
+                \item \textbf{Carroll:} There was insufficient time for him to premeditate the killing. His good reputation also suggested that he was not the type of person who would deliberately plan a murder.
+                \item \textbf{Court:} The amount of time between the formation of the intent to kill and the killing is legally immaterial. The intent may be formed in a very brief period so long as the killing is intentional, willful, deliberate, and premeditated.
+                \item There is no minimum amount of time necessary for premeditation.
+            \end{itemize}
+
+            \item \textbf{The circumstances surrounding the killing}
+            \begin{itemize}
+                \item \textbf{Carroll:} The time and location of the killing, his difficulty disposing of the body, and his failure to create an escape plan showed that he had not planned the murder.
+                \item \textbf{Court:} These facts may be arguments for the factfinder, but they do not legally negate premeditation.
+                \item Carroll remembered the location of the gun, deliberately picked it up, and fired it twice into his wife's head. The use of a deadly weapon against a vital part of the body supported an inference of intent to kill.
+            \end{itemize}
+
+            \item \textbf{Psychiatric testimony}
+            \begin{itemize}
+                \item \textbf{Carroll:} The psychiatrist's testimony established that the killing was an automatic and uncontrollable response to rage, desperation, and panic rather than a premeditated act.
+                \item \textbf{Court:} Neither a judge nor a jury is required to believe all or any part of a defendant's testimony or a witness's testimony.
+                \item The psychiatrist's opinion relied heavily on Carroll's own statements, which the factfinder was not required to accept and which were inconsistent with the surrounding facts.
+                \item The court gave the psychiatrist's opinion little weight because Carroll's actions, statements, and confession contradicted the conclusion that he lacked intent.
+            \end{itemize}
+
+            \item \textbf{Emotional disturbance and criminal responsibility}
+            \begin{itemize}
+                \item \textbf{Carroll:} His emotional state made the killing impulsive and therefore prevented the formation of the intent necessary for first-degree murder.
+                \item \textbf{Court:} Emotional upset, rage, or an alleged irresistible impulse does not automatically excuse murder or reduce it to second-degree murder.
+                \item Carroll did not claim legal insanity. The question was whether he possessed the intent required for first-degree murder, and that legal question belonged to the court or factfinder rather than to the psychiatrist.
+                \item Courts cannot transfer the determination of criminal responsibility or legal intent to psychiatric experts.
+            \end{itemize}
+
+            \item \textbf{Application to Carroll}
+            \begin{itemize}
+                \item Even accepting Carroll's version of events, he remembered the gun, reached for it, took it from the window sill, and fired two shots into his wife's head.
+                \item These actions demonstrated a deliberate and intentional killing.
+                \item Therefore, the evidence established first-degree murder rather than second-degree murder.
+            \end{itemize}
+        \end{itemize}
+    }
+
+\textbf{Class Notes}
+\begin{itemize}
+    \item Penn. court in Carroll: aforethought = intent (no need for premeditation/time)
+    \item other jurisdiction assessing premeditation:
+    \begin{itemize}
+        \item measures (like preparation or planning)
+        \item motives
+        \item manner of means
+    \end{itemize}
+    \item Premeditation: question of fact vs law
+    \begin{itemize}
+        \item law: premeditation is formed whenever intent is proved
+        \item fact: experts testify to trends, juries make findings of fact
+        \item common law norms in silence: find intent and apply lenity (unless exceptions apply, like strict liability)
+    \end{itemize}
 \end{itemize}
 
-\statutebox{Cal. Penal Code Section 1096 (1994)}
+
+\section{Police Killings (Use of Force in Law Enforcement, Revisited)}
+
+\subsection{General Principles}
 {
-\textbf{Reasonable doubt:} It is not a mere possible doubt; because everything relating to human affairs is open to some possible or imaginary doubt. It is that state of the case, which, after the entire comparison and consideration of all the evidence, leaves the minds of jurors in that condition that they cannot say they feel an abiding conviction of the truth of the charge.
-}
+\begin{itemize}
+    \item Law enforcement officers may use force to prevent crime or effect an arrest.
+    \item Force must be proportionate to the harm the officer is trying to prevent.
+    \item Police officers differ from private citizens because they generally have a duty to intervene in dangerous situations rather than avoid them.
+    \item This duty does not give officers unlimited authority to use force.
+    \item The central question is whether the officer's use of force was reasonable under the circumstances known to the officer at the time.
+\end{itemize}
 }
 
+\subsection{Deadly Force During Misdemeanor Enforcement}
+{
+\begin{itemize}
+    \item At common law, deadly force was not permissible merely to prevent a misdemeanor or make a misdemeanor arrest.
+    \item Deadly force may nevertheless be justified when the suspect's conduct creates a reasonable threat of death or serious bodily harm to the officer or others.
+    \item The justification comes from the threat to human life, not simply from the officer's desire to complete the arrest.
+    \item If a suspect resists with deadly force, an officer may respond with deadly force when reasonably necessary for self-protection.
+    \item The fact that deadly force is legally permissible does not mean that it is always the best exercise of police discretion. Officers should consider de-escalation and less intrusive alternatives.
+\end{itemize}
+}
+
+\subsection{Deadly Force During Felony Arrests}
+{
+\begin{itemize}
+    \item The common-law rule originally allowed deadly force to prevent any felony or make any felony arrest.
+    \item As felony law expanded to include many nonviolent offenses, courts limited the rule to forcible and atrocious crimes.
+    \item Under the MPC, deadly force to make an arrest is generally limited to situations where:
+    \begin{itemize}
+        \item the offense involved the use or threatened use of deadly force; or
+        \item there is a substantial risk that the suspect will cause death or serious bodily harm if apprehension is delayed.
+    \end{itemize}
+    \item Under the Fourth Amendment, an officer may use deadly force to stop a fleeing suspect only when the officer has probable cause to believe that the suspect poses a threat of serious physical harm to the officer or others.
+    \item \textit{Tennessee v. Garner}: the seriousness of the underlying felony is not enough, by itself, to justify deadly force.
+    \item \textit{Scott v. Harris} and \textit{Plumhoff v. Rickard}: deadly force may be reasonable when a fleeing suspect's conduct creates a grave threat to public safety.
+\end{itemize}
+}
+
+\subsection{Intermediate and Less-Than-Deadly Force}
+{
+\begin{itemize}
+    \item Force does not need to be deadly to be constitutionally excessive.
+    \item Tasers, chokeholds, police dogs, batons, and roadblocks must also be evaluated for proportionality and reasonableness.
+    \item A Taser is generally not classified as deadly force, but its use may still be excessive against an unarmed or nonviolent person suspected of only a minor offense.
+    \item Officers should consider whether less intrusive methods could safely accomplish the arrest.
+    \item A suspect's mental illness or emotional disturbance may make the use of force more dangerous and may require greater efforts at de-escalation.
+\end{itemize}
+}
+
+\subsection{Reasonableness and Bias}
+{
+\begin{itemize}
+    \item The reasonableness inquiry depends on the circumstances confronting the officer at the time, not simply on hindsight.
+    \item Relevant factors include:
+    \begin{itemize}
+        \item whether the suspect appeared armed;
+        \item whether the suspect threatened the officer or others;
+        \item whether the suspect was fleeing or resisting;
+        \item the seriousness of the underlying offense;
+        \item the danger posed to bystanders; and
+        \item the availability of less intrusive alternatives.
+    \end{itemize}
+    \item Perceptions of danger may be influenced by racial or cultural assumptions.
+    \item The factfinder should distinguish an objectively reasonable perception of danger from an unsupported or biased perception.
+\end{itemize}
+}
+
+
+\begin{itemize}
+    \item When an officer intentionally kills a suspect, the analysis proceeds in two stages:
+    \begin{enumerate}
+        \item Was the use of deadly force justified?
+        \item If not, what level of criminal homicide has been established?
+    \end{enumerate}
+    \item A justified killing is not criminal homicide, even if the officer intentionally used deadly force.
+    \item If the use of force was unjustified, the officer may be liable for homicide, but an unjustified killing is not automatically murder.
+    \item The prosecution must still prove the jurisdiction's required mental state for first-degree murder, such as a willful, deliberate, and premeditated intent to kill.
+    \item The unlawfulness of the force determines whether the justification defense fails; it does not, by itself, establish premeditation.
+\end{itemize}
+
+\section{Provocation/Mitigation}
+
+\casebox
+    {\textit{Girouard v. State}}
+    {Court of Appeals of Maryland, 1991}
+    {
+        \textbf{Facts}
+        \begin{itemize}
+            \item Steven Girouard and Joyce Girouard had been married for approximately two months.
+            \item During an angry argument, Joyce repeatedly insulted Steven, told him that she wanted a divorce, and threatened to report him to his commanding officer for abuse.
+            \item Joyce asked Steven what he was going to do. Steven then retrieved a kitchen knife that he had hidden behind a pillow and stabbed Joyce 19 times.
+            \item After the killing, Steven attempted to commit suicide, called the police, and told them that he had murdered his wife.
+        \end{itemize}
+
+        \textbf{Procedural History}
+        \begin{itemize}
+            \item Following a bench trial, Girouard was convicted of second-degree murder.
+            \item He argued that Joyce's insults and threats constituted adequate provocation and should have mitigated the killing to voluntary manslaughter.
+        \end{itemize}
+
+        \textbf{Relevant Law}
+        \begin{itemize}
+            \item Reflects common law principles.
+            \item Adequate provocation must be sufficient to inflame the passion of a reasonable person and cause the person to act from passion rather than reason.
+            \item Traditional categories of adequate provocation include:
+            \begin{itemize}
+                \item extreme assault or battery;
+                \item mutual combat;
+                \item an illegal arrest;
+                \item injury or serious abuse of a close relative; and
+                \item the sudden discovery of a spouse's adultery.
+            \end{itemize}
+            \item Words alone generally do not constitute adequate provocation.
+            \item Words may constitute adequate provocation when accompanied by conduct demonstrating a present intention and ability to cause the defendant bodily harm.
+            \item The standard is objective: the court considers the response of a reasonable person, not the defendant's individual psychological vulnerabilities.
+        \end{itemize}
+
+        \textbf{Question}
+        \begin{itemize}
+            \item Were Joyce's insults, threats, and conduct sufficient provocation to mitigate Girouard's murder conviction to voluntary manslaughter?
+        \end{itemize}
+
+        \textbf{Holding}
+        \begin{itemize}
+            \item No. The provocation was insufficient as a matter of law to mitigate the killing to voluntary manslaughter.
+            \item The court affirmed Girouard's second-degree murder conviction.
+        \end{itemize}
+
+        \textbf{Discussion}
+        \begin{itemize}
+            \item \textbf{Words and threats:} Joyce's insults, threats of divorce, and threats to report Girouard were not adequate provocation because they were merely verbal.
+            \item \textbf{Physical conduct:} Although Joyce stepped on Girouard's back and pulled his hair, she did not have the apparent size or strength to cause him serious bodily harm. Her conduct therefore did not create a reasonable fear of imminent physical injury.
+            \item \textbf{Objective standard:} The court rejected Girouard's argument that his particular psychological problems and need for acceptance made the provocation adequate. The relevant question was whether a reasonable person would have responded by stabbing Joyce 19 times.
+            \item \textbf{Policy:} Domestic arguments can easily escalate into violence, but the law should not create a mitigation rule for people who respond to verbal domestic conflict by killing their spouses.
+            \item The court left open the possibility that the categories of adequate provocation could be expanded in a future case, but the facts here did not justify such an expansion.
+        \end{itemize}
+    }
+
+\casebox
+    {\textit{Maher v. People}}
+    {Supreme Court of Michigan, 1862}
+    {
+        \textbf{Facts}
+        \begin{itemize}
+            \item Maher was charged with assault with intent to murder Patrick Hunt after shooting and injuring him.
+            \item Maher offered evidence that Hunt had committed adultery with Maher's wife less than an hour before the shooting.
+            \item Maher had followed his wife and Hunt into the woods, followed Hunt to a saloon, and was told by a friend that they had committed adultery the previous day.
+            \item The trial court excluded the evidence, and the jury convicted Maher of assault with intent to murder.
+        \end{itemize}
+
+        \textbf{Procedural History}
+        \begin{itemize}
+            \item Maher appealed, arguing that the evidence should have been admitted because it could establish provocation.
+            \item If the evidence could reduce a resulting homicide from murder to manslaughter, Maher could not be convicted of assault with intent to murder.
+        \end{itemize}
+
+        \textbf{Relevant Law}
+        \begin{itemize}
+            \item An intentional killing may be mitigated from murder to manslaughter when it is committed in the heat of passion, under the influence of adequate provocation, and before a reasonable opportunity for the defendant's passion to cool.
+            \item Adequate provocation is conduct naturally tending to disturb the reason of an ordinary person and cause action from passion rather than judgment.
+            \item The law should not restrict adequate provocation to a fixed list of pre-established categories.
+            \item Whether provocation was sufficient and whether the defendant acted before cooling time expired are generally questions for the jury.
+        \end{itemize}
+
+        \textbf{Question}
+        \begin{itemize}
+            \item Was evidence of Hunt's alleged adultery relevant and admissible to show that Maher acted under adequate provocation?
+        \end{itemize}
+
+        \textbf{Holding}
+        \begin{itemize}
+            \item Yes. The evidence should have been admitted.
+            \item The judgment was reversed and a new trial was ordered.
+        \end{itemize}
+
+        \textbf{Discussion}
+        \begin{itemize}
+            \item \textbf{Adequacy of the provocation:} Evidence that Maher witnessed circumstances suggesting adultery, immediately pursued Hunt, and shot him while visibly agitated could support a finding that the shooting resulted from heat of passion.
+            \item \textbf{Role of the jury:} Provocation is generally a factual question. Jurors are better positioned than judges to evaluate how ordinary people might react to provocative circumstances.
+            \item \textbf{Role of the judge:} A judge may exclude evidence only when the alleged provocation could not reasonably have produced the required state of mind. If reasonable people could disagree, the evidence should go to the jury.
+            \item \textbf{Cooling time:} Whether enough time had passed for the defendant's passion to cool also depends on the circumstances and should generally be decided by the jury.
+            \item \textbf{Dissent:} The dissent argued that provocation should have to occur in the defendant's immediate presence. Allowing suspicion or secondhand information to establish provocation could expose innocent people to violence.
+        \end{itemize}
+    }
+
+\examtip{Distinguish between issues of law vs fact. 
+For example: law says that words alone are never enough for provocation excuse. }
+\textbf{Issues of reasonableness:} for the jury.
+
+\textbf{Approaches}
+\begin{enumerate}
+    \item subjective
+    \item objective: circumstances as reasonable person would perceive (old and modern common law approach)
+    \item mixed-hybrid: assessing subjective perspectives according to an objective standard (MPC approach)
+\end{enumerate}
+
+\policybox{Reasonableness as an expression of values}
+{
+\begin{itemize}
+    \item \textbf{Why would we punish less for provocation?}
+    \item \textbf{retributivists:} less moral culpability because intention was malformed
+    \item \textbf{utilitarians:} harshly punishing aberrant episodes in unusual circumstances won't deter/have much social utility
+    \item \textbf{expressivists:} given the value of human life, society is more morally outraged by killings, but less when they're provoked
+    \question{}{What does society express when it declines to punish police, mass shooters, etc. }
+\end{itemize}
+}
+
+
+\subsection{Adequate Provocation: Two Approaches}
+
+\begin{itemize}
+    \item \textbf{Categorical approach:}
+    \begin{itemize}
+        \item Adequate provocation is limited to recognized categories, such as:
+        \begin{itemize}
+            \item extreme assault or battery;
+            \item mutual combat;
+            \item illegal arrest;
+            \item serious injury or abuse of a close relative; and
+            \item sudden discovery of a spouse's adultery.
+        \end{itemize}
+        \item Words alone are generally insufficient.
+        \item Some jurisdictions allow words to qualify when they reveal facts that would have been adequate provocation if the defendant had directly observed them.
+    \end{itemize}
+
+    \item \textbf{Flexible approach:}
+    \begin{itemize}
+        \item Adequate provocation is not limited to pre-established categories.
+        \item The jury considers whether the circumstances, viewed as a whole, could cause an ordinary person to lose self-control and act from passion rather than reason.
+        \item The flexible approach gives the jury greater authority to determine whether the provocation was sufficient.
+    \end{itemize}
+\end{itemize}
+
+
+\subsection{Rationales for the Provocation Defense}
+
+\begin{itemize}
+    \item \textbf{Partial excuse:}
+    \begin{itemize}
+        \item The killing remains wrongful, but the defendant's loss of self-control reduces his moral culpability.
+        \item The focus is on whether the provocation caused an extraordinary emotional state that impaired the defendant's ability to control his actions.
+        \item The reasonable-person standard should not imply that a reasonable person would kill. It should ask whether a reasonable person might lose self-control and act impulsively.
+    \end{itemize}
+
+    \item \textbf{Partial justification:}
+    \begin{itemize}
+        \item The victim's serious wrongdoing makes the defendant's response less blameworthy than an unprovoked killing.
+        \item The victim's conduct is relevant to the moral evaluation of the defendant's reaction.
+        \item The killing is not fully justified, but the defendant may have had some legitimate basis for feeling seriously wronged.
+    \end{itemize}
+
+    \item The provocation defense may reflect both partial excuse and partial justification.
+\end{itemize}
+
+
+\subsection{Arguments for and Against the Provocation Defense}
+{
+\begin{itemize}
+    \item \textbf{Arguments for retaining the defense:}
+    \begin{itemize}
+        \item A killing committed in response to serious wrongdoing may be less blameworthy than an unprovoked killing motivated by greed, lust, or revenge.
+        \item Provocation may reveal an extraordinary situation rather than an unusually depraved character.
+        \item Eliminating the defense may prevent the law from recognizing meaningful differences in moral culpability.
+    \end{itemize}
+
+    \item \textbf{Arguments for abolishing or limiting the defense:}
+    \begin{itemize}
+        \item People generally retain the ability to control themselves even when angry.
+        \item The defense may excuse or legitimize violent reactions, particularly violence against women.
+        \item Reasonableness standards may reflect gendered or cultural assumptions about acceptable violence.
+        \item The defense may improperly place the victim's conduct on trial.
+    \end{itemize}
+
+    \item Some jurisdictions have abolished the provocation defense or moved consideration of provocation to sentencing rather than liability.
+\end{itemize}
+}
+
+\subsection{Cooling Time}
+
+\begin{itemize}
+    \item The defendant must act before a reasonable opportunity has passed for the passion to cool and reason to regain control.
+    \item The amount of cooling time depends on the nature of the provocation and the circumstances of the defendant's response.
+    \item Many courts treat cooling time as a legal barrier when a substantial period clearly elapsed.
+    \item Courts often reject ``rekindling'' theories in which old provocation is revived by later reminders or continued resentment.
+    \item Some courts permit the jury to determine whether the passage of time cooled the defendant's passion or instead intensified a continuing emotional reaction.
+\end{itemize}
+
+\subsection{Sexual Infidelity as Provocation}
+
+\begin{itemize}
+    \item Traditional common law sometimes recognized the sudden discovery of a spouse's adultery as adequate provocation.
+    \item Modern jurisdictions have increasingly questioned whether sexual infidelity should mitigate an intentional killing.
+    \item Jurisdictions that retain the category often construe it narrowly:
+    \begin{itemize}
+        \item past admissions of adultery may be insufficient;
+        \item the defendant may need to discover the spouse in the act of sexual intercourse; and
+        \item some jurisdictions require a formal marriage.
+    \end{itemize}
+    \item The doctrine raises concerns about gender bias because defendants invoking the defense are disproportionately men and victims are disproportionately women.
+    \item A related question is whether provocation should be limited to situations in which the defendant would have been legally entitled to use some degree of force against the victim.
+\end{itemize}
+
+
+\textbf{Unwelcome Sexual Advances}
+
+\begin{itemize}
+    \item Courts have generally rejected provocation claims based solely on an unwelcome, nonviolent same-sex sexual advance.
+    \item A sexual advance does not, by itself, establish that the victim posed a threat of bodily harm.
+    \item Allowing such claims may reinforce homophobic or transphobic assumptions that the victim's identity or sexual conduct makes the killing understandable.
+    \item The central issue is whether the defendant experienced an objectively adequate loss of self-control, rather than whether the defendant held a biased or discriminatory belief about the victim.
+\end{itemize}
+
+
+\textbf{Nonprovoking Victims and Misdirected Reactions}
+
+\begin{itemize}
+    \item A defendant may kill someone other than the person who caused the provocation.
+    \item This raises two separate questions:
+    \begin{itemize}
+        \item whether provocation can transfer from the actual provoker to an innocent bystander; and
+        \item whether a defendant's mistake about the victim should affect the availability of mitigation.
+    \end{itemize}
+    \item A partial-excuse theory may support mitigation because the defendant's loss of self-control is the same regardless of who was actually struck.
+    \item A partial-justification theory may reject mitigation because the person killed did not commit the provoking wrong.
+\end{itemize}
+
+\chapter{Unintended Killings}
+
+\examtip{Make sure to read the facts and the law with respect to the state's specific statute.}
+
+\section{Other types of murder}
+
+\casebox
+    {\textit{Commonwealth v. Malone}}
+    {Supreme Court of Pennsylvania, 1946\\
+    47 A.2d 445}
+    {
+        \textbf{Facts}
+        \begin{itemize}
+            \item Malone, age 17, and Long, age 13, were friends.
+            \item Malone and Long loaded one bullet into a revolver and decided to play ``Russian Poker,'' a game in which participants point the gun at a person and pull the trigger.
+            \item Malone held the revolver against Long's side and pulled the trigger three times. The third pull fired the gun and fatally wounded Long.
+            \item Malone claimed that he did not expect the gun to fire and did not intend to harm Long.
+        \end{itemize}
+
+        \textbf{Procedural History}
+        \begin{itemize}
+            \item Malone was convicted of second-degree murder and sentenced to five to ten years in prison.
+            \item He appealed, arguing that the evidence supported only involuntary manslaughter.
+        \end{itemize}
+
+        \textbf{Relevant Law}
+        \begin{itemize}
+            \item First-degree murder requires a specific intent to take life.
+            \item At common law, malice includes a wicked, depraved, or malignant disposition and does not require personal hatred toward the victim.
+            \item Malice may be implied from an intentional act committed in reckless and wanton disregard of its likely consequences.
+            \item Motive is relevant but is not an element of murder.
+        \end{itemize}
+
+        \textbf{Question}
+        \begin{itemize}
+            \item Did Malone's conduct establish second-degree murder, or did the absence of an intent to harm limit the offense to involuntary manslaughter?
+        \end{itemize}
+
+        \textbf{Holding}
+        \begin{itemize}
+            \item The evidence supported a conviction for second-degree murder.
+            \item The judgment was affirmed.
+        \end{itemize}
+
+        \textbf{Discussion}
+        \begin{itemize}
+            \item \textbf{Malone:} He did not intend to shoot or harm Long, so the killing was accidental and should constitute only involuntary manslaughter.
+            \item \textbf{Court:} Malone intentionally performed an extremely dangerous act by firing a gun known to contain a bullet at a vital part of Long's body.
+            \item Pulling the trigger three times demonstrated reckless and wanton disregard for the likely consequences, even without a specific intent to kill.
+            \item The court treated this extreme recklessness as malice sufficient for second-degree murder.
+            \item The absence of a motive did not excuse Malone because motive is not required to establish murder.
+        \end{itemize}
+    }
+
+\subsection{Definitions and Terms}
+\commonlaw{Approaches to Unintentional Murder}
+{
+\begin{itemize}
+    \item Common-law definitions often describe unintentional murder using phrases such as:
+    \begin{itemize}
+        \item ``wicked, depraved, and malignant heart'';
+        \item ``abandoned and malignant heart''; or
+        \item ``depraved indifference to human life.''
+    \end{itemize}
+    \item These formulations distinguish murder from manslaughter by asking whether the defendant's conduct demonstrated an exceptionally wicked disregard for human life.
+    \item Classic examples include:
+    \begin{itemize}
+        \item throwing a heavy object into a crowded street;
+        \item shooting into an occupied building; and
+        \item severely beating a person and unintentionally causing death.
+    \end{itemize}
+\end{itemize}
+}
+
+\mpc{Approaches to Unintentional Murder}
+{
+\begin{itemize}
+    \item Under MPC \S 210.2(1)(b), criminal homicide constitutes murder when the defendant acts recklessly under circumstances manifesting extreme indifference to the value of human life.
+    \item Ordinary recklessness is generally sufficient for manslaughter under MPC \S 210.3(1)(a).
+    \item The distinction between manslaughter and murder is therefore the degree of recklessness:
+    \begin{itemize}
+        \item \textbf{Manslaughter:} ordinary conscious disregard of a substantial and unjustifiable risk.
+        \item \textbf{Murder:} conscious disregard so extreme that it demonstrates indifference comparable to an intent to kill.
+    \end{itemize}
+    \item The question is not merely how likely death was, but whether the defendant's disregard of the risk represented a gross deviation from the conduct of a law-abiding person.
+    \item Purposeful or knowing killings ordinarily demonstrate extreme indifference to human life, unless mitigation applies.
+\end{itemize}
+}
+
+\subsection{Manslaughter vs Unintentional Murder}
+\begin{itemize}
+    \item Both offenses may involve reckless conduct that causes death.
+    \item The distinction depends on how extreme, morally blameworthy, or indifferent to human life the conduct was.
+    \item The common-law language of a ``depraved heart'' leaves substantial judgment to the factfinder.
+    \item MPC language is more specific but still requires the factfinder to determine whether the recklessness manifested extreme indifference.
+    \item \textit{People v. Taylor}: conduct involving a victim's death was insufficient for depraved-indifference murder because the prosecution did not establish an exceptionally brutal or prolonged course of conduct.
+    \item \textit{People v. Prindle}: a high-speed chase involving repeated traffic violations and driving into oncoming traffic was held sufficient only for reckless manslaughter by the majority, although the dissent viewed the conduct as extreme indifference equivalent to an intent to kill.
+\end{itemize}
+
+\subsection{Murder by Omission}
+\begin{itemize}
+    \item An omission may constitute murder when:
+    \begin{enumerate}
+        \item the defendant had a legal duty to act;
+        \item the defendant was aware of the circumstances creating the duty; and
+        \item the failure to act caused the victim's death with the level of culpability required for murder.
+    \end{enumerate}
+    \item When a legal duty exists, an omission may be treated as the equivalent of an affirmative act for purposes of grading homicide.
+    \item \textit{People v. Burden}: a father's knowing failure to feed his child, despite awareness that the child was starving, supported a second-degree murder conviction.
+    \item The relevant question is whether the defendant's failure to act demonstrated the same level of intentional or extreme reckless disregard that would support murder if the defendant had acted affirmatively.
+\end{itemize}
+
+\subsection{Probability and Extreme Recklessness}
+\begin{itemize}
+    \item The probability that death will occur may help demonstrate the degree of recklessness, but probability alone does not determine criminal liability.
+    \item The factfinder should consider:
+    \begin{itemize}
+        \item what the defendant knew about the danger;
+        \item how serious the possible harm was;
+        \item how unnecessary the conduct was; and
+        \item whether the defendant consciously disregarded the risk.
+    \end{itemize}
+    \item A defendant need not desire the victim's death for conduct to constitute murder.
+    \item The central issue is whether the defendant's conduct reflected an extreme disregard for human life rather than ordinary carelessness or ordinary recklessness.
+\end{itemize}
+
+\subsection{Drunk Driving}
+\casebox
+    {\textit{United States v. Fleming}}
+    {United States Court of Appeals for the Fourth Circuit, 1984\\
+    739 F.2d 945}
+    {
+        \textbf{Facts}
+        \begin{itemize}
+            \item Fleming drove while intoxicated at speeds between 70 and 100 miles per hour on the George Washington Memorial Parkway, where the speed limit was 45 miles per hour.
+            \item He repeatedly drove into oncoming traffic to avoid congestion, forcing other vehicles to move to avoid head-on collisions.
+            \item Fleming eventually lost control and struck another vehicle traveling in the opposite direction.
+            \item The driver of the other vehicle, Margaret Haley, died from her injuries.
+            \item Fleming's blood-alcohol level was tested at .315.
+        \end{itemize}
+
+        \textbf{Procedural History}
+        \begin{itemize}
+            \item Fleming was indicted and convicted of second-degree murder.
+            \item He appealed, arguing that the evidence established no more than manslaughter because he did not intend to kill anyone.
+        \end{itemize}
+
+        \textbf{Relevant Law}
+        \begin{itemize}
+            \item Under 18 U.S.C. \S 1111(a), murder is the unlawful killing of a human being with malice aforethought.
+            \item First-degree murder requires a willful, deliberate, malicious, and premeditated killing or a killing committed during certain felonies.
+            \item All other murders are second-degree murder.
+            \item Malice may be established by conduct demonstrating a depraved disregard for human life, even without a specific intent to kill.
+        \end{itemize}
+
+        \textbf{Question}
+        \begin{itemize}
+            \item Did Fleming's intoxicated and dangerously reckless driving demonstrate malice aforethought sufficient to support a second-degree murder conviction?
+        \end{itemize}
+
+        \textbf{Holding}
+        \begin{itemize}
+            \item Yes. The evidence was sufficient for the jury to find malice aforethought.
+            \item The court affirmed Fleming's second-degree murder conviction.
+        \end{itemize}
+
+        \textbf{Discussion}
+        \begin{itemize}
+            \item \textbf{Fleming:} He did not intend to kill anyone, so the death should be treated as manslaughter.
+            \item \textbf{Court:} The relevant question was not whether Fleming specifically intended to kill, but whether his conduct demonstrated a depraved disregard for human life.
+            \item Fleming's extreme speed, repeated movement into oncoming traffic, intoxication, and creation of an obvious risk of collision supported an inference of malice.
+            \item The court distinguished ordinary drunk-driving homicides, in which the driver's impairment causes reckless driving without additional evidence of a conscious and wanton decision to endanger others.
+            \item The difference between malice sufficient for murder and gross negligence sufficient for manslaughter is primarily a difference in degree.
+        \end{itemize}
+    }
+
+\subsubsection{Murder by Drunk Driving}
+{
+\begin{itemize}
+    \item Ordinary drunk driving that causes a death will generally constitute manslaughter rather than murder.
+    \item Murder may be appropriate when the defendant's conduct demonstrates an extreme or depraved disregard for human life.
+    \item Factors supporting a murder charge may include:
+    \begin{itemize}
+        \item extreme intoxication;
+        \item excessive speed;
+        \item driving into oncoming traffic;
+        \item repeated violations of traffic rules;
+        \item prior drunk-driving convictions or warnings; and
+        \item other evidence that the defendant understood the danger but drove in an extraordinarily dangerous manner anyway.
+    \end{itemize}
+    \item The central question is whether the defendant merely drove while impaired or consciously engaged in conduct demonstrating extreme indifference to human life.
+\end{itemize}
+}
+
+\mpc{\S 210.2(1)(b): Extreme Recklessness}
+{
+\begin{itemize}
+    \item Criminal homicide constitutes murder when it is committed recklessly under circumstances manifesting extreme indifference to the value of human life.
+    \item The provision distinguishes murder from manslaughter by requiring more than ordinary recklessness.
+    \item The defendant's conduct must demonstrate a level of disregard for human life comparable to the disregard shown by a purposeful or knowing killer.
+\end{itemize}
+}
+
+\note{The MPC and Inadvertent Murder}
+{
+\begin{itemize}
+    \item Under the MPC, creating a risk of death without the required subjective culpability should not constitute murder, even when the risk creation is highly unjustified.
+    \item Negligent or less serious reckless homicide should be treated separately from murder.
+    \item Serious felony punishment should be based on the defendant's subjective culpability, not merely on the fact that the defendant created a highly dangerous situation.
+    \item The factfinder must therefore determine whether the defendant consciously disregarded the risk and whether that disregard manifested extreme indifference to human life.
+\end{itemize}
+}
+
+\mpc{\S 2.08(2): Intoxication and Recklessness}
+{
+\begin{itemize}
+    \item When recklessness establishes an element of an offense, a defendant's unawareness of a risk is immaterial if the unawareness resulted from self-induced intoxication.
+    \item The relevant question is whether the defendant would have been aware of the risk had he been sober.
+    \item Voluntary intoxication therefore cannot be used to avoid responsibility by claiming that the defendant failed to recognize a risk that he would have recognized while sober.
+\end{itemize}
+}
+
+\note{The MPC and Voluntary Intoxication}
+{
+\begin{itemize}
+    \item The MPC's treatment of intoxication may appear to conflict with its emphasis on subjective culpability.
+    \item A defendant may genuinely believe that he can drive safely while intoxicated, which could suggest negligence rather than recklessness.
+    \item Section 2.08(2), however, prevents the defendant from relying on intoxication to deny awareness of a risk that he would have recognized while sober.
+    \item A separate question remains whether the defendant's conduct manifested the extreme indifference required for murder, rather than merely ordinary or gross negligence.
+\end{itemize}
+}
+
+\subsubsection{Intent to Inflict Great Bodily Harm}
+{
+\begin{itemize}
+    \item Some common-law jurisdictions treat an intent to inflict grievous or serious bodily harm as sufficient malice for murder when death results.
+    \item This doctrine elevates certain intentional but nonlethal attacks to murder when the victim unexpectedly dies.
+    \item The MPC does not separately recognize this doctrine.
+    \item The MPC reasons that recklessness manifesting extreme indifference to the value of human life should capture the nonintentional killings that deserve murder liability.
+    \item The central question is whether the intent to cause serious injury demonstrates the same level of culpability as extreme indifference to human life.
+\end{itemize}
+}
+
+\section{Manslaughter}
+
+\casebox
+    {\textit{Commonwealth v. Welansky}}
+    {Massachusetts Supreme Judicial Court, 1944}
+    {
+        \textbf{Facts}
+        \begin{itemize}
+            \item Welansky controlled and operated the Cocoanut Grove nightclub in Boston.
+            \item The club was severely overcrowded and had dangerous conditions, including blocked, locked, or poorly marked emergency exits, narrow passageways, and flammable decorations.
+            \item During a crowded evening, a match ignited an artificial palm tree and the fire rapidly spread through the club.
+            \item Patrons panicked and rushed toward the exits. Many were unable to escape and died in the fire.
+            \item Welansky was hospitalized on the night of the fire, but the dangerous conditions reflected the club's regular practices.
+        \end{itemize}
+
+        \textbf{Procedural History}
+        \begin{itemize}
+            \item Welansky was charged with numerous counts of involuntary manslaughter.
+            \item The prosecution relied on his failure to maintain safe conditions, including adequate exits and fire precautions.
+            \item He was convicted and sentenced to 12 to 15 years in prison.
+            \item Welansky appealed.
+        \end{itemize}
+
+        \textbf{Relevant Law}
+        \begin{itemize}
+            \item Involuntary manslaughter requires wanton or reckless conduct causing death.
+            \item Wanton or reckless conduct involves a grave danger to others that was apparent, together with a voluntary choice to disregard the risk.
+            \item The defendant must intend the conduct, but need not intend the resulting harm.
+            \item Where a defendant has a duty to protect business visitors, wanton or reckless conduct may consist of an intentional failure to take reasonable safety precautions.
+            \item Wanton or reckless conduct is more culpable than ordinary negligence or gross negligence.
+        \end{itemize}
+
+        \textbf{Question}
+        \begin{itemize}
+            \item Can a business owner's failure to maintain safe conditions constitute wanton or reckless conduct sufficient for involuntary manslaughter?
+        \end{itemize}
+
+        \textbf{Holding}
+        \begin{itemize}
+            \item Yes. A failure to act may constitute wanton or reckless conduct when the defendant has a duty to protect others and disregards a grave and apparent danger.
+            \item The conviction was affirmed.
+        \end{itemize}
+
+        \textbf{Discussion}
+        \begin{itemize}
+            \item \textbf{\textit{Actus Reus}: Act of omission.} Wanton or reckless conduct usually involves an affirmative act, but an omission can satisfy the requirement when the defendant has a duty to protect others.
+            \item \textbf{\textit{Mens Rea}/Intent:} The defendant must intentionally engage in the conduct or intentionally fail to act. He does not need to intend to injure or kill anyone.
+            \item \textbf{Causation:} Strict liability for the act of omission.
+            \item \textbf{Subjective and objective standards:}
+            \begin{itemize}
+                \item If the defendant actually realized the grave danger, choosing to proceed anyway is wanton or reckless.
+                \item Even if the defendant did not personally recognize the danger, the conduct may still qualify if an ordinary person in the same circumstances would have recognized it.
+            \end{itemize}
+            \item \textbf{Negligence distinction:} Criminal liability begins only when conduct passes beyond negligence and gross negligence into wanton or reckless disregard of probable harmful consequences. Here, there's no firmly established duty of care. 
+            \item The dangerous conditions at the nightclub were sufficiently serious that a jury could find that Welansky disregarded a grave risk to the lives of the patrons.
+        \end{itemize}
+    }
+
+\subsection{Criminal Negligence and Wanton or Reckless Conduct}
+{
+\begin{itemize}
+    \item Ordinary negligence is generally sufficient for civil liability but not criminal homicide.
+    \item Gross negligence is more serious than ordinary negligence, but may still be insufficient for criminal liability.
+    \item Wanton or reckless conduct requires:
+    \begin{enumerate}
+        \item a grave danger to others;
+        \item an apparent or reasonably knowable risk of harm; and
+        \item a voluntary choice to disregard or accept that risk.
+    \end{enumerate}
+    \item The defendant must intend the conduct, but need not intend the resulting injury or death.
+    \item Massachusetts does not treat ``criminal negligence'' as a separate common-law category; conduct must rise to the level of wanton or reckless disregard.
+    \item \textit{Commonwealth v. Pugh} reaffirmed that wanton or reckless conduct requires more than a mistake in judgment or gross negligence.
+\end{itemize}
+}
+
+\subsubsection{Subjective and Objective Recklessness}
+{
+\begin{itemize}
+    \item A subjective standard asks whether the defendant actually recognized the danger and consciously disregarded it.
+    \item An objective standard asks whether an ordinary person in the defendant's circumstances would have recognized the danger.
+    \item Under \textit{Welansky}, a defendant may be treated as reckless even if he claims not to have recognized the risk, when the danger would have been apparent to an ordinary person.
+    \item The objective standard prevents a particularly careless or heedless defendant from avoiding liability merely by claiming that he failed to appreciate an obvious danger.
+\end{itemize}
+}
+
+\subsection{Negligent Homicides}
+\casebox
+    {\textit{People v. Hall}}
+    {Supreme Court of Colorado, 2000}
+    {
+        \textbf{Facts}
+        \begin{itemize}
+            \item Hall was skiing at Vail Mountain when he flew off a knoll and collided with Allen Cobb, who was skiing below him.
+            \item Cobb suffered traumatic brain injuries and died.
+            \item Witnesses testified that Hall was skiing too fast for the conditions, traveling straight down the slope, and was not in control.
+            \item Hall admitted that he saw Cobb and other skiers below him but was unable to stop before the collision.
+            \item Hall was a trained ski racer, a ski-area employee, and had significant skiing experience.
+        \end{itemize}
+
+        \textbf{Procedural History}
+        \begin{itemize}
+            \item Hall was charged with felony reckless manslaughter.
+            \item At the preliminary hearing, the county court found no probable cause and dismissed the charge.
+            \item The district court affirmed, reasoning that a risk was not substantial unless death was more likely than not.
+            \item The Colorado Supreme Court reversed and remanded.
+        \end{itemize}
+
+        \textbf{Relevant Law}
+        \begin{itemize}
+            \item Colorado statutes follow MPC.
+            \item A person commits reckless manslaughter when he recklessly causes the death of another person.
+            \item A person acts recklessly when he consciously disregards a substantial and unjustifiable risk that death could result from his conduct.
+            \item The risk must be of a nature and degree that the disregard constitutes a gross deviation from the standard of care a reasonable person would observe in the situation.
+            \item A substantial risk does not require a greater-than-fifty-percent probability of death.
+        \end{itemize}
+
+        \textbf{Question}
+        \begin{itemize}
+            \item Did the evidence support a finding that Hall consciously disregarded a substantial and unjustifiable risk of causing another person's death?
+        \end{itemize}
+
+        \textbf{Holding}
+        \begin{itemize}
+            \item Yes. The evidence was sufficient to establish probable cause for reckless manslaughter.
+            \item A risk may be substantial even when the probability of death is less than fifty percent.
+            \item The district court applied the wrong legal standard by requiring death to be more likely than not.
+        \end{itemize}
+
+        \textbf{Discussion}
+        \begin{itemize}
+            \item \textbf{Substantial risk:} Although skiing ordinarily involves a low risk of death, Hall's particular conduct created a substantial risk because he was skiing extremely fast, was out of control, and could not stop when he saw people below him.
+            \item \textbf{Unjustifiable risk:} Hall was skiing primarily for his own enjoyment, while the risk threatened the lives of other skiers. A reasonable juror could find that he had no sufficient justification for creating that danger.
+            \item \textbf{Gross deviation:} Skiing may involve temporary losses of control, but Hall's conduct went beyond the ordinary risks of the sport. He violated the duty of a skier to avoid colliding with people below him.
+            \item \textbf{Conscious disregard:} Hall's training, experience, employment at the ski area, and knowledge that people were below him supported an inference that he was aware of the danger.
+            \item The court was deciding only whether probable cause existed, not whether Hall was ultimately guilty.
+        \end{itemize}
+    }
+
+\subsubsection{Reckless Manslaughter and Substantial Risk}
+\begin{itemize}
+    \item A risk may be substantial even if the harmful result is statistically unlikely.
+    \item The probability of death is only one factor. The factfinder should also consider:
+    \begin{itemize}
+        \item the seriousness of the potential harm;
+        \item the defendant's ability to avoid the risk;
+        \item the defendant's purpose in creating the risk; and
+        \item the defendant's knowledge, training, or experience.
+    \end{itemize}
+    \item The substantial-risk requirement does not mean that death must be more likely than not.
+    \item A rare result may still be sufficiently foreseeable when the defendant's conduct is precisely the type of conduct that creates the danger.
+\end{itemize}
+
+
+\subsubsection{Gross Deviation from the Standard of Care}
+\begin{itemize}
+    \item Recklessness requires more than ordinary civil negligence.
+    \item The defendant's conduct must constitute a gross deviation from the conduct of a reasonable, law-abiding person in the same circumstances.
+    \item The relevant comparison may include the defendant's role, training, experience, and responsibilities.
+    \item A statutory duty may help establish the standard of care, even if violating the statute does not itself establish criminal liability.
+    \item The existence of ordinary risks in an activity does not excuse an extreme departure from safe conduct.
+\end{itemize}
+
+
+\subsubsection{Outcome and Criminal Negligence}
+\begin{itemize}
+    \item At trial, the jury rejected the reckless-manslaughter charge and convicted Hall of negligent homicide.
+    \item Hall received a 90-day jail sentence.
+    \item The outcome illustrates the difference between:
+    \begin{itemize}
+        \item \textbf{Recklessness:} consciously disregarding a substantial and unjustifiable risk; and
+        \item \textbf{Negligence:} failing to recognize a substantial risk that a reasonable person would have recognized.
+    \end{itemize}
+\end{itemize}
+
+
+\subsubsection{Objectivity and Individualization in Criminal Negligence}
+\begin{itemize}
+    \item The reasonable-person standard asks what a reasonable person would have recognized or done in the defendant's circumstances.
+    \item A central question is how much the law should individualize the standard:
+    \begin{itemize}
+        \item Should the law consider the defendant's particular skills and abilities?
+        \item Or should it apply one objective standard regardless of the defendant's individual limitations?
+    \end{itemize}
+    \item The reason for the defendant's lack of awareness may also matter:
+    \begin{itemize}
+        \item the defendant may fail to recognize an icy condition that he should have noticed;
+        \item the defendant may know of the icy condition but mistakenly believe that he is skilled enough to handle it; or
+        \item the defendant may recognize the danger but decide that taking the risk is justified.
+    \end{itemize}
+    \item These differences raise the question whether criminal negligence should depend only on the failure to recognize a risk or also on why the defendant failed to recognize it.
+\end{itemize}
+
+\subsubsection{Criminal Law Punishments}
+Using criminal law justifications/policies and criminal process/liability requirements to avoid further harms through \textbf{punishment}.
+
+\subsubsection{Civil Law Punishments}
+Using societal norms, anti-discrimination norms, and professional sanctions to repair and avoid further harms through \textbf{payment}.
+
+\section{Felony Murder}
+\casebox
+    {\textit{People v. Stamp}}
+    {California Court of Appeal, 1969}
+    {
+        \textbf{Facts}
+        \begin{itemize}
+            \item Stamp burglarized a business and robbed Carl Honeyman at gunpoint.
+            \item During the robbery, Stamp led Honeyman from his office and forced him to lie on the floor for approximately ten minutes.
+            \item Shortly after Stamp fled, Honeyman died from a heart attack.
+            \item Honeyman was obese, had a history of heart disease, and was under significant stress.
+            \item Doctors testified that the fright caused by the robbery shocked Honeyman's system.
+        \end{itemize}
+
+        \textbf{Procedural History}
+        \begin{itemize}
+            \item Stamp was convicted of first-degree murder under the felony-murder rule.
+            \item He challenged the conviction because Honeyman's death was not a foreseeable or probable result of the robbery.
+        \end{itemize}
+
+        \textbf{Relevant Law}
+        \begin{itemize}
+            \item Under the felony-murder rule, a killing committed during the commission of a felony constitutes murder.
+            \item The prosecution does not need to prove that the defendant intended, knew of, or recklessly disregarded the risk of death.
+            \item The prosecution must still prove:
+            \begin{itemize}
+                \item the actus reus of the underlying felony;
+                \item the defendant's mens rea for the underlying felony; and
+                \item that the felony legally caused the victim's death.
+            \end{itemize}
+        \end{itemize}
+
+        \textbf{Question}
+        \begin{itemize}
+            \item Does the felony-murder rule apply when a robbery victim dies from a heart attack caused by the fright of the robbery, even though the death was not foreseeable or probable?
+        \end{itemize}
+
+        \textbf{Holding}
+        \begin{itemize}
+            \item Yes. The felony-murder rule applied because the robbery was the direct cause of Honeyman's death.
+            \item The court affirmed Stamp's first-degree murder conviction.
+        \end{itemize}
+
+        \textbf{Discussion}
+        \begin{itemize}
+            \item \textbf{Mens rea:} The felony-murder rule imposed strict liability with respect to the resulting death. Stamp did not need to intend or foresee Honeyman's death.
+            \item \textbf{Actus reus:} Stamp intentionally committed the robbery by using force and a gun to control Honeyman.
+            \item \textbf{Causation:} The fright and physical stress caused by the robbery directly contributed to Honeyman's heart attack.
+            \item \textbf{Foreseeability:} The court rejected a requirement that the death be a natural or probable consequence of the felony.
+            \item \textbf{Preexisting condition:} Honeyman's heart disease did not break the causal chain because the robbery was still a substantial factor in causing his death.
+            \item The court applied an expansive version of the felony-murder rule: once the felony directly caused the death, the defendant was responsible even for an unusual or unforeseeable result.
+        \end{itemize}
+    }
+
+\mpc{\S 210.2: Felony-Murder Presumption}
+{
+\begin{itemize}
+    \item Under MPC \S 210.2(1)(b), a criminal homicide constitutes murder when it is committed recklessly under circumstances manifesting extreme indifference to the value of human life.
+    \item The MPC provides that this recklessness and indifference are presumed when the defendant is engaged in, is an accomplice to, attempts to commit, or flees after committing or attempting to commit:
+    \begin{itemize}
+        \item robbery;
+        \item rape or forcible deviate sexual intercourse;
+        \item arson;
+        \item burglary;
+        \item kidnapping; or
+        \item felonious escape.
+    \end{itemize}
+    \item Unlike the broad traditional rule, the MPC does not create automatic strict liability for every death occurring during a felony.
+    \item The felony creates a presumption of extreme indifference, but the prosecution must still establish the culpability required for murder.
+\end{itemize}
+}
+
+\subsection{Felony-Murder Rule: Mens Rea}
+\begin{itemize}
+    \item The traditional felony-murder rule eliminates the need to prove a mens rea regarding the victim's death.
+    \item The prosecution does not need to prove that the defendant:
+    \begin{itemize}
+        \item intended to kill;
+        \item knew death was possible;
+        \item consciously disregarded a risk of death; or
+        \item negligently failed to recognize a risk of death.
+    \end{itemize}
+    \item This does not eliminate mens rea entirely. The prosecution must still prove the defendant's mens rea for the underlying felony.
+    \item The underlying felony's mens rea is effectively used to impose murder liability for the resulting death.
+\end{itemize}
+
+
+\subsection{Felony-Murder Rule: Actus Reus}
+\begin{itemize}
+    \item The defendant must actually commit, attempt, or participate in the underlying felony.
+    \item The killing must occur during the commission of the felony or during the felony's immediate consequences, depending on the jurisdiction.
+    \item The felony-murder rule does not eliminate the requirement that the defendant's conduct constitute the actus reus of a felony.
+    \item The death must result from conduct connected to the felony rather than from a completely unrelated event.
+\end{itemize}
+
+\subsection{Felony-Murder Rule: Causation}
+\begin{itemize}
+    \item The felony-murder rule does not eliminate the actus reus or causation requirements.
+    \item The prosecution must prove that:
+    \begin{enumerate}
+        \item but for the felony, the victim would not have died; and
+        \item the death was sufficiently attributable to the felony rather than being a coincidence or the result of an independent intervening cause.
+    \end{enumerate}
+    \item Jurisdictions differ on the second requirement:
+    \begin{itemize}
+        \item Some require the death to be a natural, probable, or foreseeable consequence of the felony.
+        \item Others, as in \textit{Stamp}, require only a direct causal connection and do not require foreseeability.
+    \end{itemize}
+    \item A victim's preexisting condition generally does not break the causal chain. The defendant takes the victim as he finds him.
+    \item However, the felony cannot be treated as the legal cause if the victim's condition was the only substantial factor producing death.
+\end{itemize}
+
+\subsection{Felony-Murder Rule: Sentencing Consequences}
+\begin{itemize}
+    \item At common law, the felony-murder rule had less practical significance because nearly all felonies were punishable by death.
+    \item In modern criminal law, the rule can dramatically increase punishment because:
+    \begin{itemize}
+        \item many more offenses are classified as felonies; and
+        \item felony murder may impose murder-level punishment for a death that would otherwise constitute manslaughter or negligent homicide.
+    \end{itemize}
+    \item The felony-murder rule therefore raises a grading question: should committing a separate felony justify imposing the punishment associated with intentional murder?
+\end{itemize}
+
+\subsection{Rationale of the Felony-Murder Rule}
+\begin{itemize}
+    \item \textbf{Argument for the rule:} Committing a serious felony demonstrates additional culpability, so a defendant who causes death during the felony may deserve greater punishment than someone who causes death through negligence alone.
+    \item \textbf{Argument against the rule:} The underlying felony already has its own punishment. It is difficult to justify imposing murder liability when the defendant lacks the mens rea ordinarily required for murder.
+    \item The central criticism is that the felony-murder rule substitutes the mens rea of the underlying felony for the mens rea of murder.
+    \item The MPC limits this substitution by treating the felony as evidence of extreme indifference rather than as automatic proof of murder.
+\end{itemize}
 
 \end{document}

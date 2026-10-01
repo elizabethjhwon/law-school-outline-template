@@ -11,12 +11,17 @@
 \RequirePackage{tikz}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{enumitem}
+\RequirePackage{amssymb}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 \RequirePackage{tocloft}
 \RequirePackage{hyperref}
 \RequirePackage{etoolbox}
+\RequirePackage{tikz}
+\RequirePackage{tabularx}
+\RequirePackage{array}
+\RequirePackage[table]{xcolor}
 
 \definecolor{ink}{HTML}{202020}
 \definecolor{muted}{HTML}{777777}
